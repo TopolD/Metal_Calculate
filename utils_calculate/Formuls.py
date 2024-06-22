@@ -8,7 +8,7 @@ class GetDataCalculate:
         self.db = ConnDb()
         self.Tcn = Tcn
 
-        self.GetDataFuse()
+        self.GetData()
 
     @staticmethod
     def is_nan(value):
@@ -18,8 +18,7 @@ class GetDataCalculate:
         except (ValueError, TypeError):
             return False
 
-    @db_session
-    def GetDataFuse(self):
+    def GetData(self):
         try:
             fuse_instance = self.db.Fuse.get(Tcn=self.Tcn)
             Non_none_values = {}
@@ -34,5 +33,3 @@ class GetDataCalculate:
             print(f' Object not found: {Error}')
         except MultipleObjectsFoundError as Error:
             print(f' several objects detected: {Error}')
-
-
