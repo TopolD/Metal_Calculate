@@ -17,28 +17,75 @@ class TestFuseDb(unittest.TestCase):
     def test_create_record(self):
         NewFuse = self.conn_db.Fuse(
             FuseName='FuseName',
-            Tcn=999,
-            TempVd=999,
-            Temp_ccm1=999,
-            Temp_ccm2=999,
-            C=0.999,
-            Si=0.999,
-            Mn=0.999,
-            S=0.999,
-            Al=0.999,
-            Cr=0.999,
-            Mo=0.999,
-            Ni=0.999,
-            Cu=0.999,
-            V=0.999,
-            Nb=0.999,
-            Ti=0.999,
-            B=0.999,
-            Ca=0.999,
-            Cpr=0.999
+            Tc='1',
+            TempV='1',
+            Temp_ccm1='1',
+            Temp_ccm2='1',
+            C='1',
+            Si='1',
+            Mn='1',
+            S='1',
+            Al='1',
+            Cr='1',
+            Mo='1',
+            Ni='1',
+            Cu='1',
+            V='1',
+            Nb='1',
+            Ti='1',
+            B='1',
+            Ca='1',
+            Cpr='1'
         )
         commit()
         self.assertIsNotNone(NewFuse.ID)
+
+    @db_session
+    def test_create_record(self):
+        NewChemicalData = self.conn_db.ChemicalComposition(
+            MaterialName='1',
+            C='1',
+            Si='1',
+            Mn='1',
+            Cr='1',
+            Ti='1',
+            V='1',
+            Mo='1',
+            Nb='1',
+            Ni='1',
+            Cu='1',
+            Al='1',
+            S='1',
+            Fe='1',
+            Ca='1',
+            P='1'
+        )
+        commit()
+        self.assertIsNotNone(NewChemicalData.ID)
+
+    @db_session
+    def test_create_record(self):
+        NewAbsorptionRate = self.conn_db.AbsorptionRate(
+            AbrName='1',
+            C='1',
+            Si='1',
+            Mn='1',
+            Cr='1',
+            Ti='1',
+            V='1',
+            Mo='1',
+            B='1',
+            Nb='1',
+            Ni='1',
+            Cu='1',
+            Al='1',
+            S='1',
+            Fe='1',
+            Ca='1',
+            P='1'
+        )
+        commit()
+        self.assertIsNotNone(NewAbsorptionRate.ID)
 
 
 if __name__ == "__main__":
