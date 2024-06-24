@@ -1,29 +1,6 @@
 from Inser_Delete_Update_Db import *
 
 
-example =  WorkWithEntityInstances()
+example =  WorkWithEntityInstances('Fuse')
 
-result=example.CreatingEntity(
-    'Fuse',
-    '666',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-    '1',
-
-)
+result=example.DeleteEntity('1')

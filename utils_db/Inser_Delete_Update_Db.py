@@ -5,13 +5,14 @@ from utils_db.Db_models import ConnDb
 
 class WorkWithEntityInstances:
 
-    def __init__(self):
+    def __init__(self, NameDb):
         self.db = ConnDb()
         self.cm = commit()
+        self.NameDb = NameDb
 
-    def CreatingEntity(self, NameDb, *args: str):
+    def CreatingEntity(self, *args: str):
         with db_session:
-            if NameDb == self.db.Fuse._table_:
+            if self.NameDb == self.db.Fuse._table_:
                 if len(args) == 20:
                     NewFuse = self.db.Fuse(
                         Tcn=args[0],
@@ -40,8 +41,12 @@ class WorkWithEntityInstances:
                 else:
                     print(f"Dont created Fuse ")
 
-    def DeleteEntity(self):
-        pass
+    def DeleteEntity(self, FuseName):
+        with db_session:
+            if self.NameDb == self.db.Fuse._table_:
+                Fuse = self.db.Fuse.get(FuseName=FuseName).delete()
+                print(f' Deleted Fuse {FuseName}')
+                return True
 
     def UpdateEntity(self):
         pass
