@@ -8,14 +8,15 @@ class ConnDb:
 
         # set_sql_debug(True)
 
+        self.ModelsData()
 
+        self.db.generate_mapping(create_tables=True)
+
+    def ModelsData(self):
         self.ChemicalData()
         self.FuseData()
         self.AbsorptionRateData()
         self.CoredWireData()
-
-        self.db.generate_mapping(create_tables=True)
-
 
     def AbsorptionRateData(self):
         class AbsorptionRate(self.db.Entity):
