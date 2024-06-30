@@ -9,18 +9,30 @@ class WorkWithEntityInstances:
         self.db = ConnDb()
         self.sv = Services()
 
+    def MathchData(self, NameDb: str, DictData: dict):
+        try:
+            match NameDb:
+                case 'AbsorptionRate':
+                    return self.sv.CreateAbsorptionRateEntity(DictData)
+                case 'ChemicalComposition':
+                    return self.sv.CreateChemicalCompositionEntity(DictData)
+                case 'CoredWire':
+                    return self.sv.CreateCoredWireEntity(DictData)
+                case 'Fuse':
+                    return self.sv.CreateFuseEntity(DictData)
+                case _:
+                    return False
+        except Exception as e:
+            print(f'Was  caused an exception {e}')
+
     def CreatingEntity(self, NameDb: str, DictData: dict):
-            if NameDb == 'Fuse':
-                return self.sv.CreateFuseEntity(DictData)
+        try:
+            self.MathchData(NameDb, DictData)
+        except:
+            pass  # доделать исключение!
 
-    def DeleteEntity(self, FuseName):
-        with db_session:
-            if self.NameDb == self.db.Fuse._table_:
-                Fuse = self.db.Fuse.get(FuseName=FuseName).delete()
-                print(f' Deleted Fuse {FuseName}')
-                return True
+    def DeleteEntity(self, NameCol):
+        pass
 
-    def UpdateEntity(self):
-        with db_session:
-            if self.NameDb == self.db.Fuse._table_:
-                pass
+    def UpdateEntity(self, NameCol, Col, Data):
+        pass

@@ -34,3 +34,12 @@ class Services:
             )
 
             print(f' Created Fuse {NewFuse}')
+
+    def CreateAbsorptionRateEntity(self):
+        pass
+
+    def CreateChemicalCompositionEntity(self):
+        pass
+
+    def CreateCoredWireEntity(self):
+        pass
