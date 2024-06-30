@@ -1,25 +1,24 @@
-from pony.orm import *
-from utils_db.Db_models import ConnDb
-from utils_db.services import Services
+from utils_db.services import CreateServices, DeleteServices, UpdateServices
 
 
 class WorkWithEntityInstances:
 
     def __init__(self):
-        self.db = ConnDb()
-        self.sv = Services()
+        self.csv = CreateServices()
+        self.dsv = DeleteServices()
+        self.usv = UpdateServices()
 
     def MathchData(self, NameDb: str, DictData: dict):
         try:
             match NameDb:
                 case 'AbsorptionRate':
-                    return self.sv.CreateAbsorptionRateEntity(DictData)
+                    return self.csv.CreateAbsorptionRateEntity(DictData)
                 case 'ChemicalComposition':
-                    return self.sv.CreateChemicalCompositionEntity(DictData)
+                    return self.csv.CreateChemicalCompositionEntity(DictData)
                 case 'CoredWire':
-                    return self.sv.CreateCoredWireEntity(DictData)
+                    return self.csv.CreateCoredWireEntity(DictData)
                 case 'Fuse':
-                    return self.sv.CreateFuseEntity(DictData)
+                    return self.csv.CreateFuseEntity(DictData)
                 case _:
                     return False
         except Exception as e:
