@@ -7,104 +7,124 @@ class CreateServices:
     def __init__(self):
         self.db = ConnDb()
 
-    def CreateAbsorptionRateEntity(self, DictData):
+    def CreateAbsorptionRateEntity(self, Data: dict):
+
         with db_session:
             try:
                 NewAbsorptionRate = self.db.AbsorptionRate(
-                    AbrName=DictData.get('AbrName'),
-                    C=DictData.get('C'),
-                    Mn=DictData.get('Mn'),
-                    Si=DictData.get('Si'),
-                    Cr=DictData.get('Cr'),
-                    Ti=DictData.get('Ti'),
-                    V=DictData.get('V'),
-                    Mo=DictData.get('Mo'),
-                    B=DictData.get('B'),
-                    Nb=DictData.get('Nb'),
-                    Ni=DictData.get('Ni'),
-                    Cu=DictData.get('Cu'),
-                    Al=DictData.get('Al'),
-                    S=DictData.get('S'),
-                    Fe=DictData.get('Fe'),
-                    Ca=DictData.get('Ca'),
-                    P=DictData.get('P'),
+                    AbrName=Data.get('AbrName'),
+                    C=Data.get('C'),
+                    Mn=Data.get('Mn'),
+                    Si=Data.get('Si'),
+                    Cr=Data.get('Cr'),
+                    Ti=Data.get('Ti'),
+                    V=Data.get('V'),
+                    Mo=Data.get('Mo'),
+                    B=Data.get('B'),
+                    Nb=Data.get('Nb'),
+                    Ni=Data.get('Ni'),
+                    Cu=Data.get('Cu'),
+                    Al=Data.get('Al'),
+                    S=Data.get('S'),
+                    Fe=Data.get('Fe'),
+                    Ca=Data.get('Ca'),
+                    P=Data.get('P'),
                 )
                 print(f' Created AbsorptionRate {NewAbsorptionRate}')
             except Exception as e:
-                pass
+                print(f' Was cause Exseption {e}')
 
-    def CreateChemicalCompositionEntity(self, DictData):
+    def CreateChemicalCompositionEntity(self, Data: dict):
         with db_session:
             try:
                 NewChemicalComposition = self.db.ChemicalComposition(
-                    MaterialName=DictData.get('MaterialName'),
-                    C=DictData.get('C'),
-                    Mn=DictData.get('Mn'),
-                    Si=DictData.get('Si'),
-                    Cr=DictData.get('Cr'),
-                    Ti=DictData.get('Ti'),
-                    V=DictData.get('V'),
-                    Mo=DictData.get('Mo'),
-                    Nb=DictData.get('Nb'),
-                    Ni=DictData.get('Ni'),
-                    Cu=DictData.get('Cu'),
-                    Al=DictData.get('Al'),
-                    S=DictData.get('S'),
-                    Fe=DictData.get('Fe'),
-                    Ca=DictData.get('Ca'),
-                    P=DictData.get('P'),
+                    MaterialName=Data.get('MaterialName'),
+                    C=Data.get('C'),
+                    Mn=Data.get('Mn'),
+                    Si=Data.get('Si'),
+                    Cr=Data.get('Cr'),
+                    Ti=Data.get('Ti'),
+                    V=Data.get('V'),
+                    Mo=Data.get('Mo'),
+                    B=Data.get('B'),
+                    Nb=Data.get('Nb'),
+                    Ni=Data.get('Ni'),
+                    Cu=Data.get('Cu'),
+                    Al=Data.get('Al'),
+                    S=Data.get('S'),
+                    Fe=Data.get('Fe'),
+                    Ca=Data.get('Ca'),
+                    P=Data.get('P'),
                 )
                 print(f' Created ChemicalComposition {NewChemicalComposition}')
             except Exception as e:
-                pass
+                print(f' Was cause Exseption {e}')
 
-    def CreateFuseEntity(self, DictData):
+    def CreateFuseEntity(self, Data: dict):
         with db_session:
             try:
                 NewFuse = self.db.Fuse(
-                    Tcn=DictData.get('Tcn'),
-                    FuseName=DictData.get('FuseName'),
-                    TempVd=DictData.get('TempVd'),
-                    Temp_ccm1=DictData.get('Temp_ccm1'),
-                    Temp_ccm2=DictData.get('Temp_ccm2'),
-                    C=DictData.get('C'),
-                    Si=DictData.get('Si'),
-                    Mn=DictData.get('Mn'),
-                    S=DictData.get('S'),
-                    Al=DictData.get('Al'),
-                    Cr=DictData.get('Cr'),
-                    Mo=DictData.get('Mo'),
-                    Ni=DictData.get('Ni'),
-                    Cu=DictData.get('Cu'),
-                    V=DictData.get('V'),
-                    Nb=DictData.get('Nb'),
-                    Ti=DictData.get('Ti'),
-                    B=DictData.get('B'),
-                    Ca=DictData.get('Ca'),
-                    Cpr=DictData.get('Cpr'),
+                    Tcn=Data.get('Tcn'),
+                    FuseName=Data.get('FuseName'),
+                    TempVd=Data.get('TempVd'),
+                    Temp_ccm1=Data.get('Temp_ccm1'),
+                    Temp_ccm2=Data.get('Temp_ccm2'),
+                    C=Data.get('C'),
+                    Si=Data.get('Si'),
+                    Mn=Data.get('Mn'),
+                    S=Data.get('S'),
+                    Al=Data.get('Al'),
+                    Cr=Data.get('Cr'),
+                    Mo=Data.get('Mo'),
+                    Ni=Data.get('Ni'),
+                    Cu=Data.get('Cu'),
+                    V=Data.get('V'),
+                    Nb=Data.get('Nb'),
+                    Ti=Data.get('Ti'),
+                    B=Data.get('B'),
+                    Ca=Data.get('Ca'),
+                    Cpr=Data.get('Cpr'),
                 )
 
                 print(f' Created Fuse {NewFuse}')
             except Exception as e:
-                pass
+                print(f' Was cause Exseption {e}')
 
-    def CreateCoredWireEntity(self, DictData):
+    def CreateCoredWireEntity(self, Data: dict):
         with db_session:
             try:
                 NewCoreWire = self.db.CoredWire(
-                    CWName=DictData.get('CWName'),
-                    provider=DictData.get('provider'),
-                    CorWire=DictData.get('CorWire'),
-                    weight=DictData.get('weight')
+                    CWName=Data.get('CWName'),
+                    provider=Data.get('provider'),
+                    CorWire=Data.get('CorWire'),
+                    weight=Data.get('weight')
                 )
+
                 print(f' Created CoreWire {NewCoreWire}')
             except Exception as e:
-                pass
+                print(f' Was cause Exseption {e}')
 
 
 class DeleteServices(CreateServices):
     pass
 
 
-class UpdateServices:
-    pass
+class UpdateServices(CreateServices):
+
+    def __init(self, Data: dict):
+        self.Data = Data
+
+    def UpdateService(self):
+        with db_session:
+
+
+            try:
+
+                NameDbList = ['AbsorptionRate', 'ChemicalComposition', 'CoredWire', 'Fuse'].pop(self.Data.get('NameDb'))
+
+                NewRequest = self.db.NameDbList.get(self.Data.get('Tcn'))
+
+                NewRequest[NewRequest.ID] = set(**self.Data)
+
+            except Exception as e:
+                pass

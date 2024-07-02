@@ -20,10 +20,10 @@ class GetDataCalculate:
 
     def GetData(self):
         try:
-            fuse_instance = self.db.Fuse.get(Tcn=self.Tcn)
+            instance = self.db.Fuse.get(Tcn=self.Tcn)
             Non_none_values = {}
-            if fuse_instance:
-                for attr_name, attr_value in fuse_instance.to_dict().items():
+            if instance:
+                for attr_name, attr_value in instance.to_dict().items():
                     if not self.is_nan(attr_value) and attr_value is not None:
                         Non_none_values[attr_name] = attr_value
             return Non_none_values

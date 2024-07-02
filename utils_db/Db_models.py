@@ -52,6 +52,7 @@ class ConnDb:
             Ti = Optional(str)
             V = Optional(str)
             Mo = Optional(str)
+            B = Optional(str)
             Nb = Optional(str)
             Ni = Optional(str)
             Cu = Optional(str)
