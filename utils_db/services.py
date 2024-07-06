@@ -63,132 +63,173 @@ class AbsorptionRateEntity(ConnDb):
             print(f"Error updating entity: {e}")
 
 
-# class ChemicalCompositionEntity
-#
-#
-# class CoredWireEntity
-#
-#
-# class FuseEntity
+class ChemicalCompositionEntity(ConnDb):
+    def CreateChemicalCompositionEntity(self, Data: dict):
+        try:
+            with db_session:
+
+                NewChemicalComposition = self.db.ChemicalComposition(
+                    MaterialName=Data.get('MaterialName'),
+                    C=Data.get('C'),
+                    Mn=Data.get('Mn'),
+                    Si=Data.get('Si'),
+                    Cr=Data.get('Cr'),
+                    Ti=Data.get('Ti'),
+                    V=Data.get('V'),
+                    Mo=Data.get('Mo'),
+                    B=Data.get('B'),
+                    Nb=Data.get('Nb'),
+                    Ni=Data.get('Ni'),
+                    Cu=Data.get('Cu'),
+                    Al=Data.get('Al'),
+                    S=Data.get('S'),
+                    Fe=Data.get('Fe'),
+                    Ca=Data.get('Ca'),
+                    P=Data.get('P'),
+                )
+                print(f' Created ChemicalComposition {NewChemicalComposition}')
+        except Exception as e:
+            print(f' Error create entity: {e}')
+
+    def GetInstance(self, Data: dict):
+        try:
+            with db_session:
+                return self.db.ChemicalComposition.get(MaterialName=Data.get('MaterialName'))
+        except Exception as e:
+            print(f"Error get entity: {e}")
+
+    def DeleteEntityChemical(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.delete()
+                    print(f'Entity with MaterialName {instance} was deleted')
+                else:
+                    print('Entity not found')
+        except Exception as e:
+            print(f"Error deleted entity: {e}")
+
+    def UpdateEntityChemical(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.set(**Data)
+                    print(f'Entity with MaterialName {instance} was deleted')
+                else:
+                    print('Entity not update')
+        except Exception as e:
+            print(f"Error updating entity: {e}")
 
 
-# def CreateAbsorptionRateEntity(self, Data: dict):
-#     with db_session:
-#         try:
-#             NewAbsorptionRate = self.db.AbsorptionRate(
-#                 AbrName=Data.get('AbrName'),
-#                 C=Data.get('C'),
-#                 Mn=Data.get('Mn'),
-#                 Si=Data.get('Si'),
-#                 Cr=Data.get('Cr'),
-#                 Ti=Data.get('Ti'),
-#                 V=Data.get('V'),
-#                 Mo=Data.get('Mo'),
-#                 B=Data.get('B'),
-#                 Nb=Data.get('Nb'),
-#                 Ni=Data.get('Ni'),
-#                 Cu=Data.get('Cu'),
-#                 Al=Data.get('Al'),
-#                 S=Data.get('S'),
-#                 Fe=Data.get('Fe'),
-#                 Ca=Data.get('Ca'),
-#                 P=Data.get('P'),
-#             )
-#             print(f' Created AbsorptionRate {NewAbsorptionRate}')
-#         except Exception as e:
-#             print(f' Was cause Exseption {e}')
+class FuseEntity(ConnDb):
+    def CreateFuseEntity(self, Data: dict):
+        try:
+            with db_session:
+
+                NewFuse = self.db.Fuse(
+                    Tcn=Data.get('Tcn'),
+                    FuseName=Data.get('FuseName'),
+                    TempVd=Data.get('TempVd'),
+                    Temp_ccm1=Data.get('Temp_ccm1'),
+                    Temp_ccm2=Data.get('Temp_ccm2'),
+                    C=Data.get('C'),
+                    Si=Data.get('Si'),
+                    Mn=Data.get('Mn'),
+                    S=Data.get('S'),
+                    Al=Data.get('Al'),
+                    Cr=Data.get('Cr'),
+                    Mo=Data.get('Mo'),
+                    Ni=Data.get('Ni'),
+                    Cu=Data.get('Cu'),
+                    V=Data.get('V'),
+                    Nb=Data.get('Nb'),
+                    Ti=Data.get('Ti'),
+                    B=Data.get('B'),
+                    Ca=Data.get('Ca'),
+                    Cpr=Data.get('Cpr')
+                )
+                print(f' Created Fuse {NewFuse}')
+        except Exception as e:
+            print(f' Error create entity: {e}')
+
+    def GetInstance(self, Data: dict):
+        try:
+            with db_session:
+                return self.db.Fuse.get(FuseName=Data.get('FuseName'))
+        except Exception as e:
+            print(f"Error get entity: {e}")
+
+    def DeleteEntityChemical(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.delete()
+                    print(f'Entity with FuseName {instance} was deleted')
+                else:
+                    print('Entity not found')
+        except Exception as e:
+            print(f"Error deleted entity: {e}")
+
+    def UpdateEntityChemical(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.set(**Data)
+                    print(f'Entity with Fuse {instance} was deleted')
+                else:
+                    print('Entity not update')
+        except Exception as e:
+            print(f"Error updating entity: {e}")
+
+
 #
-#
-# def CreateChemicalCompositionEntity(self, Data: dict):
-#     with db_session:
-#         try:
-#             NewChemicalComposition = self.db.ChemicalComposition(
-#                 MaterialName=Data.get('MaterialName'),
-#                 C=Data.get('C'),
-#                 Mn=Data.get('Mn'),
-#                 Si=Data.get('Si'),
-#                 Cr=Data.get('Cr'),
-#                 Ti=Data.get('Ti'),
-#                 V=Data.get('V'),
-#                 Mo=Data.get('Mo'),
-#                 B=Data.get('B'),
-#                 Nb=Data.get('Nb'),
-#                 Ni=Data.get('Ni'),
-#                 Cu=Data.get('Cu'),
-#                 Al=Data.get('Al'),
-#                 S=Data.get('S'),
-#                 Fe=Data.get('Fe'),
-#                 Ca=Data.get('Ca'),
-#                 P=Data.get('P'),
-#             )
-#             print(f' Created ChemicalComposition {NewChemicalComposition}')
-#         except Exception as e:
-#             print(f' Was cause Exseption {e}')
-#
-#
-# def CreateFuseEntity(self, Data: dict):
-#     with db_session:
-#         try:
-#             NewFuse = self.db.Fuse(
-#                 Tcn=Data.get('Tcn'),
-#                 FuseName=Data.get('FuseName'),
-#                 TempVd=Data.get('TempVd'),
-#                 Temp_ccm1=Data.get('Temp_ccm1'),
-#                 Temp_ccm2=Data.get('Temp_ccm2'),
-#                 C=Data.get('C'),
-#                 Si=Data.get('Si'),
-#                 Mn=Data.get('Mn'),
-#                 S=Data.get('S'),
-#                 Al=Data.get('Al'),
-#                 Cr=Data.get('Cr'),
-#                 Mo=Data.get('Mo'),
-#                 Ni=Data.get('Ni'),
-#                 Cu=Data.get('Cu'),
-#                 V=Data.get('V'),
-#                 Nb=Data.get('Nb'),
-#                 Ti=Data.get('Ti'),
-#                 B=Data.get('B'),
-#                 Ca=Data.get('Ca'),
-#                 Cpr=Data.get('Cpr'),
-#             )
-#
-#             print(f' Created Fuse {NewFuse}')
-#         except Exception as e:
-#             print(f' Was cause Exseption {e}')
-#
-#
-# def CreateCoredWireEntity(self, Data: dict):
-#     with db_session:
-#         try:
-#             NewCoreWire = self.db.CoredWire(
-#                 CWName=Data.get('CWName'),
-#                 provider=Data.get('provider'),
-#                 CorWire=Data.get('CorWire'),
-#                 weight=Data.get('weight')
-#             )
-#
-#             print(f' Created CoreWire {NewCoreWire}')
-#         except Exception as e:
-#             print(f' Was cause Exseption {e}')
-#
-#
-# class DeleteServices(CreateServices):
-#     pass
-#
-#
-# class UpdateServices(CreateServices):
-#
-#     def __init(self, Data: dict):
-#         self.Data = Data
-#
-#     def UpdateService(self):
-#         with db_session:
-#
-#             try:
-#
-#                 NewRequest = 0
-#
-#
-#
-#             except Exception as e:
-#                 pass
+class CoredWireEntity(ConnDb):
+    def CreateCoredWireEntity(self, Data: dict):
+        try:
+            with db_session:
+
+                NewCoreWire = self.db.Fuse(
+                    CWName=Data.get('CWName'),
+                    provider=Data.get('provider'),
+                    CorWire=Data.get('CorWire'),
+                    weight=Data.get('weight'),
+
+                )
+                print(f' Created CoreWire {NewCoreWire}')
+        except Exception as e:
+            print(f' Error create entity: {e}')
+
+    def GetInstance(self, Data: dict):
+        try:
+            with db_session:
+                return self.db.Fuse.get(CWName=Data.get('CWName'))
+        except Exception as e:
+            print(f"Error get entity: {e}")
+
+    def DeleteEntityCoredWire(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.delete()
+                    print(f'Entity with CWName {instance} was deleted')
+                else:
+                    print('Entity not found')
+        except Exception as e:
+            print(f"Error deleted entity: {e}")
+
+    def UpdateEntityCoredWire(self, Data: dict):
+        try:
+            with db_session:
+                instance = self.GetInstance(Data)
+                if instance:
+                    instance.set(**Data)
+                    print(f'Entity with CWName {instance} was deleted')
+                else:
+                    print('Entity not update')
+        except Exception as e:
+            print(f"Error updating entity: {e}")
