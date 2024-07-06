@@ -1,28 +1,25 @@
-from Inser_Delete_Update_Db import *
+from services import *
 
 DictData = {
-    'Tcn': '1',
-    'FuseName': '1',
-    'TempVd': '1',
-    'Temp_ccm1': '1',
-    'Temp_ccm2': '1',
+    'AbrName': '1',
     'C': '1',
-    'Si': '1',
     'Mn': '1',
-    'S': '0.01',
-    'Al': '0.02',
-    'Cr': '0.03',
-    'Mo': '0.04',
-    'Ni': '0.05',
-    'Cu': '0.06',
-    'V': '0.07',
-    'Nb': '0.08',
-    'Ti': '0.09',
-    'B': '0.10',
-    'Ca': '0.11',
-    'Cpr': '0.12',
+    'Si': '1',
+    'Cr': '1',
+    'Ti': '1',
+    'V': '1',
+    'Mo': '1',
+    'B': '0.01',
+    'Nb': '0.02',
+    'Ni': '0.03',
+    'Cu': '0.04',
+    'Al': '0.05',
+    'S': '0.06',
+    'Fe': '0.07',
+    'Ca': '0.08',
+    'P': '0.09',
 }
 
-example = WorkWithEntityInstances()
+example = AbsorptionRateEntity()
 
-result = example.CreatingEntity('Fuse', DictData)
+result = example.DeleteEntityAbsor(DictData)
