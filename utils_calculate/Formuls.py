@@ -4,11 +4,19 @@ from utils_db.Db_models import ConnDb
 
 class GetDataCalculate:
 
-    def __init__(self, Tcn):
+    def __init__(self, tcn):
         self.db = ConnDb()
-        self.Tcn = Tcn
+        self.Tcn = tcn
 
-        self.GetData()
+    @db_session
+    def GetDataFuse(self):
+        instance = self.db.Fuse.get(Tcn=self.Tcn)
+        CleanFuse = {}
+        if instance:
+            for attr_name, attr_value in instance.to_dict().items():
+                if not self.is_nan(attr_value) and attr_value is not None:
+                    CleanFuse[attr_name] = attr_value
+            return CleanFuse
 
     @staticmethod
     def is_nan(value):
@@ -18,18 +26,22 @@ class GetDataCalculate:
         except (ValueError, TypeError):
             return False
 
-    def GetData(self):
-        try:
-            instance = self.db.Fuse.get(Tcn=self.Tcn)
-            Non_none_values = {}
-            if instance:
-                for attr_name, attr_value in instance.to_dict().items():
-                    if not self.is_nan(attr_value) and attr_value is not None:
-                        Non_none_values[attr_name] = attr_value
-            return Non_none_values
-        except MultipleRowsFound as Error:
-            print(f'Multiple rows {Error}')
-        except ObjectNotFound as Error:
-            print(f' Object not found: {Error}')
-        except MultipleObjectsFoundError as Error:
-            print(f' several objects detected: {Error}')
+    @db_session
+    def GetDataAbsorCoef(self, Material_name):
+        Material = self.db.ChemicalComposition.get(MaterialName=Material_name)
+        return Material
+
+    @db_session
+    def GetDataMaterial(self, Data: dict):
+        Fuse = self.GetDataFuse()
+        materials = {}
+
+        if Fuse:
+            Weight = Data.get('W') * 1000
+            C = ((float(Fuse.get('C')) - Data.get('C')) * Weight) / float(self.GetDataAbsorCoef(Data.get('NameC')).C)
+
+            materials.update({
+                'C': int(C),
+
+            })
+            return  materials

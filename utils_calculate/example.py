@@ -1,16 +1,15 @@
 from Formuls import GetDataCalculate
-from pony.orm import *
 
-
-
-
-Tcn='181'
-
-
+Tcn = '26'
+Data = {
+    'W':160,
+    'C':0.03,
+    'NameC':'GKA',
+    'Si': 0.20,
+    'NameSi':'Fesi65'
+}
 
 example = GetDataCalculate(Tcn)
-result = example.GetDataFuse()
-
-
+result = example.GetDataMaterial(Data)
 
 print(result)
