@@ -2,14 +2,16 @@ from Formuls import GetDataCalculate
 
 Tcn = '26'
 Data = {
-    'W':160,
-    'C':0.03,
-    'NameC':'GKA',
+    'W': 170,
+    'C': 0.03,
+    'NameC': 'GKA',
     'Si': 0.20,
-    'NameSi':'Fesi65'
+    'NameSi': 'FeSi65',
+    'Mn': 0.3,
+    'NameMn': 'SiMn17'
 }
 
 example = GetDataCalculate(Tcn)
-result = example.GetDataMaterial(Data)
+result = example.GetBaseDataMaterial(Data)
 
 print(result)

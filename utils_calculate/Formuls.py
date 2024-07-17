@@ -32,16 +32,26 @@ class GetDataCalculate:
         return Material
 
     @db_session
-    def GetDataMaterial(self, Data: dict):
+    def GetBaseDataMaterial(self, Data: dict):
         Fuse = self.GetDataFuse()
         materials = {}
 
         if Fuse:
             Weight = Data.get('W') * 1000
-            C = ((float(Fuse.get('C')) - Data.get('C')) * Weight) / float(self.GetDataAbsorCoef(Data.get('NameC')).C)
+            C = (((float(Fuse.get('C')) - Data.get('C')) * Weight)
+                 / float(self.GetDataAbsorCoef(Data.get('NameC')).C))
+            Si = (((float(Fuse.get('Si')) - Data.get('Si')) * Weight)
+                  / float(self.GetDataAbsorCoef(Data.get('NameSi')).Si))
+            Mn = (((float(Fuse.get('Mn')) - Data.get('Mn')) * Weight)
+                  / float(self.GetDataAbsorCoef(Data.get('NameMn')).Mn))
+            if self.GetDataAbsorCoef(Data.get('NameMn')).C and self.GetDataAbsorCoef(Data.get('NameMn')).Si:
+                C -= (Mn * float(self.GetDataAbsorCoef(Data.get('NameMn')).C)) / 100
+                Si -= (Mn * float(self.GetDataAbsorCoef(Data.get('NameMn')).Si)) / 100
 
             materials.update({
                 'C': int(C),
+                'Si': int(Si),
+                'Mn': int(Mn)
 
             })
-            return  materials
+            return materials
