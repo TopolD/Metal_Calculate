@@ -37,21 +37,34 @@ class GetDataCalculate:
         materials = {}
 
         if Fuse:
-            Weight = Data.get('W') * 1000
-            C = (((float(Fuse.get('C')) - Data.get('C')) * Weight)
-                 / float(self.GetDataAbsorCoef(Data.get('NameC')).C))
-            Si = (((float(Fuse.get('Si')) - Data.get('Si')) * Weight)
-                  / float(self.GetDataAbsorCoef(Data.get('NameSi')).Si))
-            Mn = (((float(Fuse.get('Mn')) - Data.get('Mn')) * Weight)
-                  / float(self.GetDataAbsorCoef(Data.get('NameMn')).Mn))
             if self.GetDataAbsorCoef(Data.get('NameMn')).C and self.GetDataAbsorCoef(Data.get('NameMn')).Si:
-                C -= (Mn * float(self.GetDataAbsorCoef(Data.get('NameMn')).C)) / 100
-                Si -= (Mn * float(self.GetDataAbsorCoef(Data.get('NameMn')).Si)) / 100
+                Weight = Data.get('W') * 1000
 
-            materials.update({
-                'C': int(C),
-                'Si': int(Si),
-                'Mn': int(Mn)
+                Mn = (((float(Fuse.get('Mn')) - Data.get('Mn')) * Weight)
+                      / float(self.GetDataAbsorCoef(Data.get('NameMn')).Mn))
 
-            })
-            return materials
+                GetCWithMn = Mn / Weight * float(self.GetDataAbsorCoef(Data.get('NameMn')).C)
+                GetSiWithMn = Mn / Weight * float(self.GetDataAbsorCoef(Data.get('NameMn')).Si)
+
+                Si = (((float(Fuse.get('Si')) - Data.get('Si') - GetSiWithMn) * Weight)
+                      / float(self.GetDataAbsorCoef(Data.get('NameSi')).Si))
+                if Fuse.get('Cr'):
+                    Cr = (((float(Fuse.get('Cr')) - Data.get('Cr')) * Weight)
+                          / float(self.GetDataAbsorCoef(Data.get('NameCr')).Cr))
+                    GetCWithCr = (Cr / Weight * (float(self.GetDataAbsorCoef(Data.get('NameCr')).C) + float(
+                        self.GetDataAbsorCoef(Data.get('NameMn')).C)))
+                    C = (((float(Fuse.get('C')) - Data.get('C') - (GetCWithMn + GetCWithCr)) * Weight)
+                         / float(self.GetDataAbsorCoef(Data.get('NameC')).C))
+                    materials.update({
+                        'Cr': int(Cr)
+                    })
+                else:
+                    C = (((float(Fuse.get('C')) - Data.get('C') - GetCWithMn) * Weight)
+                         / float(self.GetDataAbsorCoef(Data.get('NameC')).C))
+                materials.update({
+                    'C': int(C),
+                    'Si': int(Si),
+                    'Mn': int(Mn),
+
+                })
+                return materials

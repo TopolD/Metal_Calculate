@@ -1,14 +1,18 @@
 from Formuls import GetDataCalculate
 
-Tcn = '26'
+
+
+Tcn = '159'
 Data = {
     'W': 170,
-    'C': 0.03,
+    'C': 0.1,
     'NameC': 'GKA',
-    'Si': 0.20,
+    'Si': 0.2,
     'NameSi': 'FeSi65',
     'Mn': 0.3,
-    'NameMn': 'SiMn17'
+    'NameMn': 'SiMn17',
+    'Cr':0,
+    'NameCr':'FeCr800'
 }
 
 example = GetDataCalculate(Tcn)
