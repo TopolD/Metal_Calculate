@@ -1,21 +1,25 @@
-from Formuls import GetDataCalculate
+from Formuls_example import GetDataCalculate
 
-
-
-Tcn = '159'
+Tcn = ('159'
+       '')
 Data = {
-    'W': 170,
-    'C': 0.1,
-    'NameC': 'GKA',
-    'Si': 0.2,
-    'NameSi': 'FeSi65',
-    'Mn': 0.3,
-    'NameMn': 'SiMn17',
-    'Cr':0,
-    'NameCr':'FeCr800'
+    'W': 170.0,
+    'samples': {
+        'C': 0.49,
+        'Si': 0.2,
+        'Mn': 0.3,
+        'Cr':0.15
+    },
+    'material': {
+        'C': 'GKA',
+        'Si': 'FeSi65',
+        'Mn': 'SiMn17',
+        'Cr': 'FeCr800'
+    }
+
 }
 
-example = GetDataCalculate(Tcn)
-result = example.GetBaseDataMaterial(Data)
+example = GetDataCalculate(Tcn, Data)
+result = example.material()
 
 print(result)

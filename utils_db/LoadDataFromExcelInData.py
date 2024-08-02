@@ -26,10 +26,10 @@ def load_data_from_excel_fuse(file_path, sheet_name, start_row, conn_db):
                 Fe=str(row.iloc[15]),
                 Ca=str(row.iloc[16]),
                 P=str(row.iloc[17]),
-                )
-
+            )
 
             commit()
+
 
 file_path = 'CALC_LF_V11 2.xlsx'
 sheet_name = 'ХСМ'

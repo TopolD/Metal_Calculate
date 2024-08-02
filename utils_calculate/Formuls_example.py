@@ -4,12 +4,10 @@ from utils_db.Db_models import ConnDb
 
 class GetDataCalculate:
 
-    def __init__(self, tcn, Data: dict):
+    def __init__(self, Tcn, Data: dict):
         self.db = ConnDb()
-        self.Tcn = tcn
+        self.Tcn = Tcn
         self.Data = Data
-
-
 
     def clean_data(self, DataDb):
         try:
@@ -24,11 +22,8 @@ class GetDataCalculate:
 
     @db_session
     def get_data_fuse(self):
-        try:
-            result=self.clean_data(self.db.Fuse(Tcn=self.Tcn))
-            return result
-        except Exception as e:
-            print(e)
+        result = self.clean_data(self.db.Fuse.get(Tcn=self.Tcn))
+        return result
 
     @staticmethod
     def is_nan(value):
@@ -38,40 +33,76 @@ class GetDataCalculate:
         except (ValueError, TypeError):
             return False
 
-
-
     @db_session
     def get_material(self):
-        Material_list = self.Data['material']
+        Material_dict = self.Data.get('material')
         Material = {}
-        try:
-            if Material_list:
-                for value in Material_list:
-                    result = self.clean_data(self.db.ChemicalComposition.get(MaterialName=value))
+
+        if Material_dict:
+            for value_atr, value_name in Material_dict.items():
+                raw_result = self.db.ChemicalComposition.get(MaterialName=value_name)
+                if raw_result:
+                    result = self.clean_data(raw_result)
                     filtered_result = {k: v for k, v in result.items() if k not in ('ID', 'MaterialName')}
-                    Material[value] = filtered_result
-                return Material
-        except Exception as e:
-            print(e)
+                    Material[value_atr] = filtered_result
+            return Material
 
     def get_samples(self):
         Samples = self.Data['samples']
-        try:
-            if Samples:
-                return Samples
-            else:
-                return 'No samples'
-        except Exception as e:
-            print(e)
 
+        if Samples:
+            return Samples
+        else:
+            return 'No samples'
 
-def material_calculation(self):
-    Samples = self.get_samples()
-    Materials = self.get_material()
-    Fuse = self.get_data_fuse()
+    @db_session
+    def get_absr_coef(self, sourceMaterial, derivedMaterial):
+        sourceMaterial = self.db.ChemicalComposition.get(MaterialName=sourceMaterial)
+        CleanSourceMaterial = self.clean_data(sourceMaterial)
+        derivedMaterial = CleanSourceMaterial.get(f'{derivedMaterial}')
+        return derivedMaterial
 
-    pass
+    @staticmethod
+    def calculate_data(element, material, fuse, samples, weight, abs_coef=0):
+        return ((float(fuse.get(element)) - float(samples.get(element)) - abs_coef) * weight) / float(
+            material.get(element).get(element))
 
+    @staticmethod
+    def calculate_remainder(element, material, derivedMaterial, sourceMaterial, weight):
+        return derivedMaterial / weight * float(material.get(sourceMaterial).get(element))
+
+    def material(self):
+        Fuse = self.get_data_fuse()
+        Samples = self.get_samples()
+        Materials = self.get_material()
+
+        result = {}
+
+        if Fuse:
+            Weight = self.Data.get('W') * 1000
+            Mn = self.calculate_data('Mn', Materials, Fuse, Samples, Weight)
+
+            Cr = self.calculate_data('Cr', Materials, Fuse, Samples, Weight)
+            # переделать как-то
+            CWithMn = self.calculate_remainder('C', Materials, Mn, 'Mn', Weight)
+            CWithCr = self.calculate_remainder('C', Materials, Cr, 'Cr', Weight)
+            CWithAll = CWithCr + CWithMn
+            SiWithMn = self.calculate_remainder('Si', Materials, Mn, 'Mn', Weight)
+
+            C = self.calculate_data('C', Materials, Fuse, Samples, Weight, CWithAll)
+
+            Si = self.calculate_data('Si', Materials, Fuse, Samples, Weight, SiWithMn)
+
+            result.update(
+                {
+                    'C': int(C),
+                    'Si': int(Si),
+                    'Mn': int(Mn),
+                    'Cr': int(Cr)
+                }
+            )
+
+        return result
 # @db_session
 # def GetDataAbsorCoef(self):
 #     Materials = {}
