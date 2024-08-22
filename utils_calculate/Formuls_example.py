@@ -32,8 +32,7 @@ class GetDataCalculate:
 
     @db_session
     def get_data_fuse(self):
-        result = self.clean_data(self.db.Fuse.get(Tcn=self.Tcn))
-        return result
+        return self.clean_data(self.db.Fuse.get(Tcn=self.Tcn))
 
     @staticmethod
     def is_nan(value):
@@ -91,14 +90,13 @@ class Calculate(GetDataCalculate):
         return self.__calculate_data(self.Data_fuse, name)
 
     @staticmethod
-    def __calculate_data(Data: dict, element):
-        return (float(Data.get('Fuse').get(element)) - (float(Data.get('Samples').get(element)))) * (float(
-            Data.get('W') * 1000) / (float(
-            Data.get('Materials').get(element).get(element))))
+    def __calculate_data(data: dict, element):
+        fuse_element = float(data['Fuse'][element])
+        samples_element = float(data['Samples'][element])
+        materials_element = float(data['Materials'][element][element])
+        multiplied_w = float(data['W']) * 1000
 
-
-    @staticmethod
-
+        return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
     def _calculate_materials_c(self):
         return self.__get_formula_result('C')
