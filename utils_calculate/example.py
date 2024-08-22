@@ -1,25 +1,24 @@
-from Formuls_example import GetDataCalculate
+from Formuls_example import  Calculate, DataHolder
 
-Tcn = ('159'
+Tcn = ('222'
        '')
 Data = {
     'W': 170.0,
     'samples': {
-        'C': 0.49,
-        'Si': 0.2,
-        'Mn': 0.3,
-        'Cr':0.15
+        'C': 0,
+        'Si': 0,
+        'Mn': 0.1,
+
     },
     'material': {
         'C': 'GKA',
-        'Si': 'FeSi65',
+        'Si': 'FeSi75',
         'Mn': 'SiMn17',
-        'Cr': 'FeCr800'
+
     }
 
 }
-
-example = GetDataCalculate(Tcn, Data)
-result = example.material()
-
-print(result)
+DataHolder.set_data(Tcn, Data)
+result = Calculate()
+example_result = result._calculate_materials_mn()
+print(example_result)

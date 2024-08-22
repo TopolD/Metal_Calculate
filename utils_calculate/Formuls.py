@@ -68,3 +68,45 @@ class GetDataCalculate:
 
                 })
                 return materials
+
+
+
+result = {}
+
+        if Fuse:
+            Weight = float(self.Data.get('W')) * 1000
+            C = self.calculate_data('C', Materials, Fuse, Samples, Weight)
+            Si = self.calculate_data('Si', Materials, Fuse, Samples, Weight)
+            if Materials.get('Mn').get('C') and Materials.get('Mn').get('Si'):
+                Mn = self.calculate_data('Mn', Materials, Fuse, Samples, Weight)
+                example_c = self.calculate_remainder(Mn, Materials, 'Mn', 'C', Weight)
+                C = C - example_c
+                example_si = (Mn / Weight) * (
+                        (float(Materials.get('Mn').get('Si')) / float(Materials.get('Si').get('Si'))) * Weight)
+                Si = Si - example_si
+                Weight_C = (Mn / Weight) * float(Materials.get('Mn').get('C'))
+                if Materials.get('Cr'):
+                    if Materials.get('Cr').get('C'):
+                        Cr = self.calculate_data('Cr', Materials, Fuse, Samples, Weight)
+                        example_c = (Cr / Weight) * (
+                                float(Materials.get('Cr').get('C')) / float(Materials.get('C').get('C')) * Weight)
+                        C = C - example_c
+
+                        result.update(
+                            {
+                                'C': int(C),
+                                'Si': int(Si),
+                                'Mn': int(Mn),
+                                'Cr': int(Cr)
+                            }
+                        )
+                else:
+                    result.update(
+                        {
+                            'C': int(C),
+                            'Si': int(Si),
+                            'Mn': int(Mn),
+                        }
+                    )
+
+        return result
