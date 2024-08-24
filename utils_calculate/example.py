@@ -1,4 +1,4 @@
-from Formuls_example import  Calculate, DataHolder
+from Formuls_example import Calculate, DataHolder
 
 Tcn = ('222'
        '')
@@ -7,18 +7,18 @@ Data = {
     'samples': {
         'C': 0,
         'Si': 0,
-        'Mn': 0.1,
+        'Mn': 1,
 
     },
     'material': {
         'C': 'GKA',
         'Si': 'FeSi75',
-        'Mn': 'SiMn17',
+        'Mn': 'FeMn90',
 
     }
 
 }
 DataHolder.set_data(Tcn, Data)
 result = Calculate()
-example_result = result._calculate_materials_mn()
+example_result = result._calculate_materials_c()
 print(example_result)

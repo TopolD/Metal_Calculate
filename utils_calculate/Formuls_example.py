@@ -86,9 +86,6 @@ class Calculate(GetDataCalculate):
         super().__init__()
         self.Data_fuse = self.gather_materials()
 
-    def __get_formula_result(self, name):
-        return self.__calculate_data(self.Data_fuse, name)
-
     @staticmethod
     def __calculate_data(data: dict, element):
         fuse_element = float(data['Fuse'][element])
@@ -98,11 +95,65 @@ class Calculate(GetDataCalculate):
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
+    def remainder_material(self):
+        instance = self.Data_fuse['Materials'].items()
+        for attr_key, attr_value in instance:
+            material_type = self.Data_fuse['Materials'][attr_key]
+            for element_key, element_value in material_type.items():
+                if element_key != attr_key:
+                    if element_key == 'C':
+                        return self.remainder_materials_all(attr_key, element_key)
+
+                    if element_key == 'Si':
+                        return self.remainder_materials_all(attr_key, element_key)
+
+    @staticmethod
+    def calculate_remainder_material(data: dict, material, element, residue):
+        multiplied_w = float(data['W']) * 1000
+        materials_element = float(data['Materials'][element][residue])
+        value = float(data['Materials'][residue][residue])
+        return (material / multiplied_w) * (materials_element / value) * multiplied_w
+
+    def remainder_materials_all(self, element, material):
+        instance = self.__calculate_data(self.Data_fuse, material)
+        Mn = self._calculate_materials_mn()
+        if element:
+            if element == 'Mn':
+                result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
+                result = instance - result_mn
+                return result
+            if element == 'Cr':
+                Cr = self.__calculate_data(self.Data_fuse, 'Cr')
+                result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
+                result_cr = self.calculate_remainder_material(self.Data_fuse, Cr, element, material)
+                result = instance - (result_mn + result_cr)
+                return result
+
     def _calculate_materials_c(self):
-        return self.__get_formula_result('C')
+        if self.Data_fuse['Materials']['Mn']['C']:
+            return self.remainder_material()
+        return self.__calculate_data(self.Data_fuse, 'C')
 
     def _calculate_materials_si(self):
-        return self.__get_formula_result('Si')
+        return self.__calculate_data(self.Data_fuse, 'Si')
 
     def _calculate_materials_mn(self):
-        return self.__get_formula_result('Mn')
+        return self.__calculate_data(self.Data_fuse, 'Mn')
+
+    def _calculate_materials_cr(self):
+        return self.__calculate_data(self.Data_fuse, 'Cr')
+
+    def _calculate_materials_ni(self):
+        return self.__calculate_data(self.Data_fuse, 'ni')
+
+    def _calculate_materials_cu(self):
+        return self.__calculate_data(self.Data_fuse, 'cu')
+
+    def _calculate_materials_mo(self):
+        return self.__calculate_data(self.Data_fuse, 'mo')
+
+    def _calculate_materials_v(self):
+        return self.__calculate_data(self.Data_fuse, 'v')
+
+    def _calculate_materials_Nb(self):
+        return self.__calculate_data(self.Data_fuse, 'Nb')
