@@ -1,18 +1,43 @@
 from pony.orm import db_session
+
 from utils_db.Db_models import ConnDb
 
 
 class Instance(ConnDb):
 
-    def GetInstance(self, Data: dict, model_name, field_name, field_value):
+    def get_instance(self, model_name, field_name, field_value):
         try:
             with db_session:
                 model = getattr(self.db, model_name)
                 return model.get(**{field_name: field_value})
         except Exception as e:
-            print(f' Error {e}')
+            print(f' Error get instance: {e}')
         finally:
-            db_session.close()
+            db_session.retry()
+
+    def delete_entity(self, model_name, field_name, field_value):
+        try:
+            with db_session:
+                instance = self.get_instance(model_name, field_name, field_value)
+                instance.delete()
+                print(f'Entity with {field_name} {field_value} was deleted')
+        except Exception as e:
+            print(f"Error deleted entity: {e}")
+
+        finally:
+            db_session.retry()
+
+    def update_entity(self, Data: dict, model_name, field_name, field_value):
+        try:
+            with db_session:
+                instance = self.get_instance(model_name, field_name, field_value)
+                instance.set(**Data)
+                print(f'Entity with {field_name} {field_value} was updated ')
+        except Exception as e:
+            print(f"Error updated entity: {e}")
+
+        finally:
+            db_session.retry()
 
 
 class AbsorptionRateEntity(Instance):
@@ -20,7 +45,7 @@ class AbsorptionRateEntity(Instance):
     def __init__(self):
         super().__init__()
 
-    def CreateAbsorptionRateEntity(self, Data: dict):
+    def _CreateAbsorptionRateEntity(self, Data: dict):
         try:
             with db_session:
 
@@ -47,33 +72,9 @@ class AbsorptionRateEntity(Instance):
         except Exception as e:
             print(f' Error create entity: {e}')
 
-    def DeleteEntityAbsor(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'AbsorptionRate', 'AbrName', Data.get('AbrName'))
-                if instance:
-                    instance.delete()
-                    print(f'Entity with AbrName {instance} was deleted')
-                else:
-                    print('Entity not found')
-        except Exception as e:
-            print(f"Error deleted entity: {e}")
-
-    def UpdateEntityAbsor(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'AbsorptionRate', 'AbrName', Data.get('AbrName'))
-                if instance:
-                    instance.set(**Data)
-                    print(f'Entity with AbrName {instance} was deleted')
-                else:
-                    print('Entity not update')
-        except Exception as e:
-            print(f"Error updating entity: {e}")
-
 
 class ChemicalCompositionEntity(Instance):
-    def CreateChemicalCompositionEntity(self, Data: dict):
+    def _CreateChemicalCompositionEntity(self, Data: dict):
         try:
             with db_session:
 
@@ -100,33 +101,9 @@ class ChemicalCompositionEntity(Instance):
         except Exception as e:
             print(f' Error create entity: {e}')
 
-    def DeleteEntityChemical(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'ChemicalComposition', 'MaterialName', Data.get('MaterialName'))
-                if instance:
-                    instance.delete()
-                    print(f'Entity with MaterialName {instance} was deleted')
-                else:
-                    print('Entity not found')
-        except Exception as e:
-            print(f"Error deleted entity: {e}")
-
-    def UpdateEntityChemical(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'ChemicalComposition', 'MaterialName', Data.get('MaterialName'))
-                if instance:
-                    instance.set(**Data)
-                    print(f'Entity with MaterialName {instance} was deleted')
-                else:
-                    print('Entity not update')
-        except Exception as e:
-            print(f"Error updating entity: {e}")
-
 
 class FuseEntity(Instance):
-    def CreateFuseEntity(self, Data: dict):
+    def _CreateFuseEntity(self, Data: dict):
         try:
             with db_session:
 
@@ -156,34 +133,10 @@ class FuseEntity(Instance):
         except Exception as e:
             print(f' Error create entity: {e}')
 
-    def DeleteEntityChemical(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'Fuse', 'FuseName', Data.get('FuseName'))
-                if instance:
-                    instance.delete()
-                    print(f'Entity with FuseName {instance} was deleted')
-                else:
-                    print('Entity not found')
-        except Exception as e:
-            print(f"Error deleted entity: {e}")
-
-    def UpdateEntityChemical(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'Fuse', 'FuseName', Data.get('FuseName'))
-                if instance:
-                    instance.set(**Data)
-                    print(f'Entity with Fuse {instance} was deleted')
-                else:
-                    print('Entity not update')
-        except Exception as e:
-            print(f"Error updating entity: {e}")
-
 
 #
 class CoredWireEntity(Instance):
-    def CreateCoredWireEntity(self, Data: dict):
+    def _CreateCoredWireEntity(self, Data: dict):
         try:
             with db_session:
 
@@ -197,27 +150,3 @@ class CoredWireEntity(Instance):
                 print(f' Created CoreWire {NewCoreWire}')
         except Exception as e:
             print(f' Error create entity: {e}')
-
-    def DeleteEntityCoredWire(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'CoredWire', 'CWName', Data.get('CWName'))
-                if instance:
-                    instance.delete()
-                    print(f'Entity with CWName {instance} was deleted')
-                else:
-                    print('Entity not found')
-        except Exception as e:
-            print(f"Error deleted entity: {e}")
-
-    def UpdateEntityCoredWire(self, Data: dict):
-        try:
-            with db_session:
-                instance = self.GetInstance(Data, 'CoredWire', 'CWName', Data.get('CWName'))
-                if instance:
-                    instance.set(**Data)
-                    print(f'Entity with CWName {instance} was deleted')
-                else:
-                    print('Entity not update')
-        except Exception as e:
-            print(f"Error updating entity: {e}")

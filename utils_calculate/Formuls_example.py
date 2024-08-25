@@ -135,6 +135,8 @@ class Calculate(GetDataCalculate):
         return self.__calculate_data(self.Data_fuse, 'C')
 
     def _calculate_materials_si(self):
+        if self.Data_fuse['Materials']['Mn']['Si']:
+            return self.remainder_material()
         return self.__calculate_data(self.Data_fuse, 'Si')
 
     def _calculate_materials_mn(self):
@@ -144,16 +146,16 @@ class Calculate(GetDataCalculate):
         return self.__calculate_data(self.Data_fuse, 'Cr')
 
     def _calculate_materials_ni(self):
-        return self.__calculate_data(self.Data_fuse, 'ni')
+        return self.__calculate_data(self.Data_fuse, 'Ni')
 
     def _calculate_materials_cu(self):
-        return self.__calculate_data(self.Data_fuse, 'cu')
+        return self.__calculate_data(self.Data_fuse, 'Cu')
 
     def _calculate_materials_mo(self):
-        return self.__calculate_data(self.Data_fuse, 'mo')
+        return self.__calculate_data(self.Data_fuse, 'Mo')
 
     def _calculate_materials_v(self):
-        return self.__calculate_data(self.Data_fuse, 'v')
+        return self.__calculate_data(self.Data_fuse, 'V')
 
-    def _calculate_materials_Nb(self):
+    def _calculate_materials_nb(self):
         return self.__calculate_data(self.Data_fuse, 'Nb')
