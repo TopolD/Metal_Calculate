@@ -11,9 +11,7 @@ class Instance(ConnDb):
                 model = getattr(self.db, model_name)
                 return model.get(**{field_name: field_value})
         except Exception as e:
-            print(f' Error get instance: {e}')
-        finally:
-            db_session.retry()
+            print(f' Error get instance: {field_value}')
 
     def delete_entity(self, model_name, field_name, field_value):
         try:
@@ -22,10 +20,7 @@ class Instance(ConnDb):
                 instance.delete()
                 print(f'Entity with {field_name} {field_value} was deleted')
         except Exception as e:
-            print(f"Error deleted entity: {e}")
-
-        finally:
-            db_session.retry()
+            print(f"Error deleted entity: {field_value}")
 
     def update_entity(self, Data: dict, model_name, field_name, field_value):
         try:
@@ -34,10 +29,7 @@ class Instance(ConnDb):
                 instance.set(**Data)
                 print(f'Entity with {field_name} {field_value} was updated ')
         except Exception as e:
-            print(f"Error updated entity: {e}")
-
-        finally:
-            db_session.retry()
+            print(f"Error updated entity: {field_value}")
 
 
 class AbsorptionRateEntity(Instance):
@@ -70,7 +62,7 @@ class AbsorptionRateEntity(Instance):
                 )
                 print(f' Created AbsorptionRate {NewAbsorptionRate}')
         except Exception as e:
-            print(f' Error create entity: {e}')
+            print(f' Error create entity: {NewAbsorptionRate}')
 
 
 class ChemicalCompositionEntity(Instance):
@@ -99,7 +91,7 @@ class ChemicalCompositionEntity(Instance):
                 )
                 print(f' Created ChemicalComposition {NewChemicalComposition}')
         except Exception as e:
-            print(f' Error create entity: {e}')
+            print(f' Error create entity: {NewChemicalComposition}')
 
 
 class FuseEntity(Instance):
@@ -131,7 +123,7 @@ class FuseEntity(Instance):
                 )
                 print(f' Created Fuse {NewFuse}')
         except Exception as e:
-            print(f' Error create entity: {e}')
+            print(f' Error create entity: {NewFuse}')
 
 
 #
@@ -149,4 +141,4 @@ class CoredWireEntity(Instance):
                 )
                 print(f' Created CoreWire {NewCoreWire}')
         except Exception as e:
-            print(f' Error create entity: {e}')
+            print(f' Error create entity: {NewCoreWire}')

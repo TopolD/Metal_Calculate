@@ -1,8 +1,8 @@
 from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QMainWindow, QMessageBox, QLabel
+from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
-from example import *
-from utils_calculate.Formuls_example import GetDataCalculate
+from Gui import *
+from utils_calculate.Formuls_example import *
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -14,17 +14,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.material()
         self.CoreWire()
 
-    def CoreWire(self):
-        self.label_250.setText('C')
-        self.label_251.setText('Al')
-        self.label_252.setText('Ti')
-        self.label_253.setText('t,°C/S ')
+    def DisplayExternalDetailsCoreWire(self):
+        self.label_34.setText('C')
+        self.label_35.setText('Al')
+        self.label_36.setText('Ti')
+        self.label_37.setText('t,°C/S ')
 
-    def material(self):
-        self.label_265.setText('C')
-        self.label_266.setText('Si')
-        self.label_267.setText('Mn')
-        self.label_268.setText('Cr')
+    def DisplayExternalDetailsMaterials(self):
+        self.label_2.setText('C')
+        self.label_3.setText('Si')
+        self.label_4.setText('Mn')
+        self.label_5.setText('Cr')
 
     def get_weight_and_tech_card(self):
         self.lineEdit_67.setValidator(QIntValidator(0, 999))
@@ -34,20 +34,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_68.editingFinished.connect(self.update_label)
 
     def get_sample_and_set_material(self):
-        self.lineEdit_74.setValidator(QDoubleValidator(0, 10, 2))
-        self.lineEdit_75.setValidator(QDoubleValidator(0.0, 10, 2))
-        self.lineEdit_76.setValidator(QDoubleValidator(0.0, 10, 2))
-        self.lineEdit_76.editingFinished.connect(self.set_material_weight)
+        self.lineEdit_1.setValidator(QDoubleValidator(0, 10, 2))
+        self.lineEdit_2.setValidator(QDoubleValidator(0.0, 10, 2))
+        self.lineEdit_3.setValidator(QDoubleValidator(0.0, 10, 2))
+        self.lineEdit_3.editingFinished.connect(self.set_material_weight)
 
-    def get_material_weight(self):
+    def get_replace_material_weight(self):
 
         Data = {
             'Tcn': self.lineEdit_67.text(),
-            'W': self.lineEdit_68.text().replace(',','.'),
+            'W': self.lineEdit_68.text().replace(',', '.'),
             'samples': {
-                'C': self.lineEdit_74.text().replace(',', '.'),
-                'Si': self.lineEdit_75.text().replace(',', '.'),
-                'Mn': self.lineEdit_76.text().replace(',', '.'),
+                'C': self.lineEdit_1.text().replace(',', '.'),
+                'Si': self.lineEdit_2.text().replace(',', '.'),
+                'Mn': self.lineEdit_3.text().replace(',', '.'),
             },
             'material': {
                 'C': self.comboBox.currentText(),
@@ -56,8 +56,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             }
 
         }
-        DataMaterial = GetDataCalculate(Data.get('Tcn'), Data)
-        CalculateMaterial = DataMaterial.material()
+        DataMaterial = DataHolder.set_data(self.lineEdit_67.text(), Data)
+        CalculateMaterial = DataMaterial.gather_materials()
         return CalculateMaterial
 
     @staticmethod
@@ -71,14 +71,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @QtCore.pyqtSlot()
     def set_material_weight(self):
 
-        DataMaterial = self.get_material_weight()
-        self.label_277.setText(str(DataMaterial.get('C')))
-        self.label_278.setText(str(DataMaterial.get('Si')))
-        self.label_279.setText(str(DataMaterial.get('Mn')))
+        DataMaterials = self.get_replace_material_weight()
+        self.label_24.setText(str(DataMaterials.get('C')))
+        self.label_25.setText(str(DataMaterials.get('Si')))
+        self.label_26.setText(str(DataMaterials.get('Mn')))
 
-        self.check_for_values(int(self.label_277.text()), self.label_277)
-        self.check_for_values(int(self.label_278.text()), self.label_278)
-        self.check_for_values(int(self.label_279.text()), self.label_279)
+        self.check_for_values(int(self.label_24.text()), self.label_24)
+        self.check_for_values(int(self.label_25.text()), self.label_25)
+        self.check_for_values(int(self.label_26.text()), self.label_26)
 
     def show_notification(self, message):
         self.notification_label = QLabel(message, self)
@@ -114,8 +114,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
-    import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = MainWindow()
     MainWindow.show()
