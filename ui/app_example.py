@@ -1,3 +1,5 @@
+from idlelib.autocomplete import TRY_A
+
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
@@ -35,35 +37,6 @@ class DisplayWindow(QMainWindow, Ui_MainWindow):
         self.label_41.setText('Ti')
         self.label_42.setText('t,°C/S')
 
-    def replace_label(self, value):
-        self.data_tech_card(value)
-
-        for attr_key, attr_value in value.items():
-            if self.label_5.text() != attr_key:
-                self.hide_layout(self._Cr)
-            if self.label_6.text() != attr_key:
-                self.hide_layout(self._Ni)
-            if self.label_7.text() != attr_key:
-                self.hide_layout(self._Cu)
-            if self.label_8.text() != attr_key:
-                self.hide_layout(self._Mo)
-            if self.label_9.text() != attr_key:
-                self.hide_layout(self._V)
-            if self.label_10.text() != attr_key:
-                self.hide_layout(self._Nb)
-            if self.label_11.text() != attr_key:
-                self.hide_layout(self._B)
-
-    def hide_layout(self, layout):
-        if layout is not None:
-            for i in range(layout.count()):
-                item = layout.itemAt(i)
-                widget = item.widget()
-                if widget is not None:
-                    widget.hide()
-                else:
-                    self.hide_layout(item.layout())
-
     def data_tech_card(self, value):
         self.label_244.setText(value.get('FuseName'))
         self.label_246.setText(value.get('TempVd'))
@@ -77,18 +50,61 @@ class DisplayWindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_68.setValidator(QDoubleValidator(0, 200, 1))
         self.lineEdit_68.editingFinished.connect(self.update_label)
 
+    def Processor_of_material_data_at_the_time_of_entry(self, DataMaterials: dict):
+
+        self.toggle_all_material_widgets(visible=False)
+
+        for attr_key in DataMaterials.keys():
+            self.toggle_specific_material_widget(attr_key, visible=True)
+
+    def toggle_specific_material_widget(self, material, visible=True):
+        layout_map = {
+            'Cr': self._Cr,
+            'Ni': self._Ni,
+            'Cu': self._Cu,
+            'Mo': self._Mo,
+            'V': self._V,
+            'Nb': self._Nb,
+            'B': self._B
+        }
+
+        layout = layout_map.get(material)
+        if layout:
+            self.toggle_widgets_in_layout(layout, visible)
+
+    def toggle_all_material_widgets(self, visible=False):
+
+        for layout in [self._Cr, self._Ni, self._Cu, self._Mo, self._V, self._Nb, self._B]:
+            self.toggle_widgets_in_layout(layout, visible)
+
+    def toggle_widgets_in_layout(self, layout, visible=True):
+        for i in range(layout.count()):
+            item = layout.itemAt(i)
+            widget = item.widget()
+            if widget is not None:
+                widget.setVisible(visible)
+
+    @staticmethod
+    def verification_conditions(operator, value):
+        if operator:
+            value.setVisible(True)
+        else:
+            value.setVisible(False)
+
     def update_label(self):
         DataHolder.set_data(self.lineEdit_67.text(), None)
-        Fuse = GetDataCalculate()
-        return self.replace_label(Fuse.get_data_fuse())
+        FuseData = GetDataCalculate()
+        Fuse = FuseData.get_data_fuse()
+        self.Processor_of_material_data_at_the_time_of_entry(Fuse)
+        return self.data_tech_card(Fuse)
 
     @staticmethod
     def check_for_values(value, constant):
         if value < 0:
-            constant.setStyleSheet("background-color: #FFA5A5;")
+            constant.setStyleSheet("border-bottom: 2px solid #FF3B30;")
             constant.setText('ALARM')
         else:
-            constant.setStyleSheet("background-color: #C2FFAE;")
+            constant.setStyleSheet("border-bottom: 2px solid #34C759;")
 
 
 if __name__ == "__main__":

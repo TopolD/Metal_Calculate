@@ -24,7 +24,7 @@ class GetDataCalculate:
             if DataDb:
                 Clean_Data = {}
                 for attr_name, attr_value in DataDb.to_dict().items():
-                    if not self.is_nan(attr_value) and attr_value is not None:
+                    if attr_value != 0.0:
                         Clean_Data[attr_name] = attr_value
                 return Clean_Data
         except Exception as e:
@@ -33,14 +33,6 @@ class GetDataCalculate:
     @db_session
     def get_data_fuse(self):
         return self.clean_data(self.db.Fuse.get(Tcn=self.Tcn))
-
-    @staticmethod
-    def is_nan(value):
-        try:
-            import math
-            return math.isnan(float(value))
-        except (ValueError, TypeError):
-            return False
 
     @db_session
     def get_material(self):
@@ -88,10 +80,10 @@ class Calculate(GetDataCalculate):
 
     @staticmethod
     def __calculate_data(data: dict, element):
-        fuse_element = float(data['Fuse'][element])
-        samples_element = float(data['Samples'][element])
-        materials_element = float(data['Materials'][element][element])
-        multiplied_w = float(data['W']) * 1000
+        fuse_element = data['Fuse'][element]
+        samples_element = data['Samples'][element]
+        materials_element = data['Materials'][element][element]
+        multiplied_w = data['W'] * 1000
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
@@ -109,9 +101,9 @@ class Calculate(GetDataCalculate):
 
     @staticmethod
     def calculate_remainder_material(data: dict, material, element, residue):
-        multiplied_w = float(data['W']) * 1000
-        materials_element = float(data['Materials'][element][residue])
-        value = float(data['Materials'][residue][residue])
+        multiplied_w = data['W'] * 1000
+        materials_element = data['Materials'][element][residue]
+        value = data['Materials'][residue][residue]
         return (material / multiplied_w) * (materials_element / value) * multiplied_w
 
     def remainder_materials_all(self, element, material):
@@ -131,31 +123,31 @@ class Calculate(GetDataCalculate):
 
     def _calculate_materials_c(self):
         if self.Data_fuse['Materials']['Mn']['C']:
-            return self.remainder_material()
-        return self.__calculate_data(self.Data_fuse, 'C')
+            return round(self.remainder_material(),1)
+        return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
 
     def _calculate_materials_si(self):
         if self.Data_fuse['Materials']['Mn']['Si']:
-            return self.remainder_material()
-        return self.__calculate_data(self.Data_fuse, 'Si')
+            return round(self.remainder_material(),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Si'),1)
 
     def _calculate_materials_mn(self):
-        return self.__calculate_data(self.Data_fuse, 'Mn')
+        return round(self.__calculate_data(self.Data_fuse, 'Mn'),1)
 
     def _calculate_materials_cr(self):
-        return self.__calculate_data(self.Data_fuse, 'Cr')
+        return round(self.__calculate_data(self.Data_fuse, 'Cr'),1)
 
     def _calculate_materials_ni(self):
-        return self.__calculate_data(self.Data_fuse, 'Ni')
+        return round(self.__calculate_data(self.Data_fuse, 'Ni'),1)
 
     def _calculate_materials_cu(self):
-        return self.__calculate_data(self.Data_fuse, 'Cu')
+        return round(self.__calculate_data(self.Data_fuse, 'Cu'),1)
 
     def _calculate_materials_mo(self):
-        return self.__calculate_data(self.Data_fuse, 'Mo')
+        return round(self.__calculate_data(self.Data_fuse, 'Mo'),1)
 
     def _calculate_materials_v(self):
-        return self.__calculate_data(self.Data_fuse, 'V')
+        return round(self.__calculate_data(self.Data_fuse, 'V'),1)
 
     def _calculate_materials_nb(self):
-        return self.__calculate_data(self.Data_fuse, 'Nb')
+        return round(self.__calculate_data(self.Data_fuse, 'Nb'),1)
