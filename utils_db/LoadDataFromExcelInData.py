@@ -28,23 +28,23 @@ def load_data_from_excel_fuse(file_path, sheet_name, start_row, conn_db):
                 Mn=to_float(row.iloc[8]),
                 Si=to_float(row.iloc[7]),
                 Cr=to_float(row.iloc[11]),
-                Ti=to_float(row.iloc[16]),
+                Ti=to_float(row.iloc[17]),
                 V=to_float(row.iloc[15]),
                 Mo=to_float(row.iloc[12]),
-                B=to_float(row.iloc[17]),
-                Nb=to_float(row.iloc[14]),
+                B=to_float(row.iloc[18]),
+                Nb=to_float(row.iloc[16]),
                 Ni=to_float(row.iloc[13]),
                 Cu=to_float(row.iloc[14]),
                 Al=to_float(row.iloc[10]),
                 S=to_float(row.iloc[9]),
-                Ca=to_float(row.iloc[18]),
-                Cpr=to_float(row.iloc[19]),
+                Ca=to_float(row.iloc[19]),
+                Cpr=to_float(row.iloc[20]),
             )
 
             commit()
 
 
-file_path = 'CALC_LF_V11 (1).xlsx'
+file_path = 'CALC_LF_V11 2.xlsx'
 sheet_name = 'ТК(ТП)'
 start_row = 2
 conn_db = ConnDb()

@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget
+from PyQt5.QtCore import QPropertyAnimation, QRect
+from PyQt5.QtWidgets import QWidget
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from Lrf1 import *
 from utils_calculate.Formuls_example import *
-from Gui import *
 
 
 class DisplayWindow(QWidget, Ui_LRF1_Widget):
@@ -11,8 +11,12 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
 
         self.setupUi(self)
         self.DisplayTablesForInputData()
-        self.get_weight_and_tech_card()
+        self.get_func()
 
+    def get_func(self):
+        self.get_weight_and_tech_card()
+        self.get_clear_data_for_button()
+        self.get_data_with_line_edit()
 
     def DisplayTablesForInputData(self):
         self.DisplayExternalElementMaterials()
@@ -58,12 +62,85 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
         self.label_48.setText(str(value.get('Al', 'N/A')))
         self.label_46.setText(str(value.get('Ti', 'N/A')))
 
+    def get_clear_data_for_button(self):
+        self.pushButton_11.clicked.connect(self.clear_data_for_button)
+
+    def clear_data_for_button(self):
+        button = {
+            'W': self.lineEdit_68,
+            'C': self.lineEdit_1,
+            'Si': self.lineEdit_2,
+            'Mn': self.lineEdit_3,
+            'Cr': self.lineEdit_4,
+            'Ni': self.lineEdit_5,
+            'Cu': self.lineEdit_6,
+            'Mo': self.lineEdit_7,
+            'V': self.lineEdit_8,
+            'Nb': self.lineEdit_9,
+            'B': self.lineEdit_10,
+
+        }
+
+        for key, value in button.items():
+            value.clear()
+
     def get_weight_and_tech_card(self):
         self.lineEdit_67.setValidator(QIntValidator(0, 999))
         self.lineEdit_67.editingFinished.connect(self.update_label)
 
-        self.lineEdit_68.setValidator(QDoubleValidator(0, 200, 1))
-        self.lineEdit_68.editingFinished.connect(self.update_label)
+    def update_label(self):
+        try:
+            DataHolder.set_data(self.lineEdit_67.text(), None)
+            FuseData = GetDataCalculate()
+            Fuse = FuseData.get_data_fuse()
+            self.Processor_of_material_data_at_the_time_of_entry(Fuse)
+            self.update_border_for_error(self.lineEdit_67, None)
+            self.clear_data_for_button()
+            return self.data_tech_card(Fuse)
+        except AttributeError as e:
+            self.update_border_for_error(self.lineEdit_67, e)
+        finally:
+            self.lineEdit_67.setFocus()
+
+    def update_border_for_error(self, widget, error):
+        style = self.get_error_stylesheet(error)
+        widget.setStyleSheet(style)
+
+        if error:
+            widget.clear()
+            self.animate_vibrate(widget)
+
+    def get_error_stylesheet(self, error):
+        if isinstance(error, AttributeError):
+            return """
+                QLineEdit{
+                    background-color: rgb(255, 255, 255);
+                    border: none;
+                    border-bottom: 2px solid #FFA5A5;
+                }
+            """
+        return """
+            QLineEdit{
+                background-color: rgb(255, 255, 255);
+                border: none;
+                border-bottom: 2px solid #E0E0E0;
+            }
+        """
+
+    def animate_vibrate(self, widget):
+        self.animation = QPropertyAnimation(widget, b"geometry")
+        original_geometry = widget.geometry()
+        self.animation.setDuration(200)
+        self.animation.setKeyValueAt(0, original_geometry)
+        self.animation.setKeyValueAt(0.25,
+                                     QRect(original_geometry.x() - 10, original_geometry.y(), original_geometry.width(),
+                                           original_geometry.height()))
+        self.animation.setKeyValueAt(0.5, original_geometry)
+        self.animation.setKeyValueAt(0.75,
+                                     QRect(original_geometry.x() + 10, original_geometry.y(), original_geometry.width(),
+                                           original_geometry.height()))
+        self.animation.setKeyValueAt(1, original_geometry)
+        self.animation.start()
 
     def Processor_of_material_data_at_the_time_of_entry(self, DataMaterials: dict):
 
@@ -99,12 +176,8 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             if widget is not None:
                 widget.setVisible(visible)
 
-    def update_label(self):
-        DataHolder.set_data(self.lineEdit_67.text(), None)
-        FuseData = GetDataCalculate()
-        Fuse = FuseData.get_data_fuse()
-        self.Processor_of_material_data_at_the_time_of_entry(Fuse)
-        return self.data_tech_card(Fuse)
+
+
 
     @staticmethod
     def check_for_values(value, constant):
@@ -113,103 +186,3 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             constant.setText('ALARM')
         else:
             constant.setStyleSheet("border-bottom: 2px solid #34C759;")
-
-
-# переделать под чистый код
-class Window1(DisplayWindow):
-    def __init__(self, main_window):
-        super(Window1, self).__init__()
-        self.setWindowTitle('Calculate - Lrf1')
-        self.main_window = main_window
-        self.pushButton_2.clicked.connect(self.switch_to_window_2)
-
-    def switch_to_window_2(self):
-        self.hide()
-        self.main_window.show_window_2()
-
-
-class Window2(DisplayWindow):
-    def __init__(self, main_window):
-        super(Window2, self).__init__()
-        self.setWindowTitle('Calculate - Lrf2')
-        self.main_window = main_window
-        self.pushButton.clicked.connect(self.switch_to_window_1)
-
-    def switch_to_window_1(self):
-        self.hide()
-        self.main_window.show_window_1()
-
-
-class Window3(DisplayWindow):
-    def __init__(self, main_window):
-        super(Window3, self).__init__()
-        self.setWindowTitle('Calculate - Разбавление')
-        self.main_window = main_window
-        self.pushButton_3.clicked.connect(self.switch_to_window_3)
-
-    def switch_to_window_3(self):
-        self.hide()
-        self.main_window.show_window_3()
-
-
-class Window4(DisplayWindow):
-    def __init__(self, main_window):
-        super(Window4, self).__init__()
-        self.setWindowTitle('Calculate - Формулы')
-        self.main_window = main_window
-        self.pushButton_4.clicked.connect(self.switch_to_window_4)
-
-    def switch_to_window_4(self):
-        self.hide()
-        self.main_window.show_window_4()
-
-
-class Window5(DisplayWindow):
-    def __init__(self, main_window):
-        super(Window5, self).__init__()
-        self.setWindowTitle('Calculate - Заметки')
-        self.main_window = main_window
-        self.pushButton_5.clicked.connect(self.switch_to_window_5)
-
-    def switch_to_window_5(self):
-        self.hide()
-        self.main_window.show_window_5()
-
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        self.setWindowTitle('Main Window')
-
-        self.lrf1 = Window1(self)
-        self.lrf2 = Window2(self)
-        self.lrf3 = Window3(self)
-        self.lrf4 = Window4(self)
-        self.lrf5 = Window5(self)
-
-    def show_window_1(self):
-        self.lrf1.show()
-
-    def show_window_2(self):
-        self.lrf2.show()
-
-    def show_window_3(self):
-        self.lrf3.show()
-
-    def show_window_4(self):
-        self.lrf4.show()
-
-    def show_window_5(self):
-        self.lrf5.show()
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-
-    main_window = MainWindow()
-
-    main_window.show_window_1()
-
-    sys.exit(app.exec_())

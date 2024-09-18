@@ -151,3 +151,7 @@ class Calculate(GetDataCalculate):
 
     def _calculate_materials_nb(self):
         return round(self.__calculate_data(self.Data_fuse, 'Nb'),1)
+
+    def _calculate_materials_b(self):
+        return round(self.__calculate_data(self.Data_fuse, 'B'),1)
+
