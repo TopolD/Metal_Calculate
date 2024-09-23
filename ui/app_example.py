@@ -1,8 +1,9 @@
 from PyQt5.QtCore import QPropertyAnimation, QRect
 from PyQt5.QtWidgets import QWidget
-from PyQt5.QtGui import QDoubleValidator, QIntValidator
+from PyQt5.QtGui import QIntValidator, QDoubleValidator
 from Lrf1 import *
 from utils_calculate.Formuls_example import *
+
 
 
 class DisplayWindow(QWidget, Ui_LRF1_Widget):
@@ -16,7 +17,6 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
     def get_func(self):
         self.get_weight_and_tech_card()
         self.get_clear_data_for_button()
-        self.get_data_with_line_edit()
 
     def DisplayTablesForInputData(self):
         self.DisplayExternalElementMaterials()
@@ -63,7 +63,7 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
         self.label_46.setText(str(value.get('Ti', 'N/A')))
 
     def get_clear_data_for_button(self):
-        self.pushButton_11.clicked.connect(self.clear_data_for_button)
+        self.pushButton_9.clicked.connect(self.clear_data_for_button)
 
     def clear_data_for_button(self):
         button = {
@@ -88,19 +88,63 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
         self.lineEdit_67.setValidator(QIntValidator(0, 999))
         self.lineEdit_67.editingFinished.connect(self.update_label)
 
+        self.lineEdit_68.setValidator(QDoubleValidator(0.0, 200.0, 1))
+        self.lineEdit_68.editingFinished.connect(self.update_label_wight)
+
     def update_label(self):
         try:
+
             DataHolder.set_data(self.lineEdit_67.text(), None)
             FuseData = GetDataCalculate()
             Fuse = FuseData.get_data_fuse()
             self.Processor_of_material_data_at_the_time_of_entry(Fuse)
             self.update_border_for_error(self.lineEdit_67, None)
-            self.clear_data_for_button()
+
             return self.data_tech_card(Fuse)
         except AttributeError as e:
             self.update_border_for_error(self.lineEdit_67, e)
         finally:
             self.lineEdit_67.setFocus()
+
+    def update_label_wight(self):
+        Dict_Data = self.Dict_Data()
+        DataHolder.set_data(self.lineEdit_67.text(), Dict_Data)
+
+        self.calculate_materials()
+
+    def Dict_Data(self):
+        Dict_Data = {
+            'W': self.lineEdit_68.text(),
+            'samples': {
+                'C': 0,
+                'Si': 0,
+                'Mn': 0,
+                'Cr': 0,
+                'Ni': 0,
+                'Cu': 0,
+                'Mo': 0,
+                'V': 0,
+                'Nb': 0,
+                'B': 0,
+                'Other': 0,
+            },
+            'material': {
+                'C': self.getComboBoxValue(self.comboBox_1),
+                'Si': self.getComboBoxValue(self.comboBox_2),
+                'Mn': self.getComboBoxValue(self.comboBox_3),
+                'Cr': self.getComboBoxValue(self.comboBox_4),
+                'Ni': self.getComboBoxValue(self.comboBox_5),
+                'Cu': self.getComboBoxValue(self.comboBox_6),
+                'Mo': self.getComboBoxValue(self.comboBox_7),
+                'V': self.getComboBoxValue(self.comboBox_8),
+                'Nb': self.getComboBoxValue(self.comboBox_9),
+                'B': self.getComboBoxValue(self.comboBox_10),
+            }
+        }
+        return Dict_Data
+
+    def getComboBoxValue(self, comboBox):
+        return comboBox.currentText() or None
 
     def update_border_for_error(self, widget, error):
         style = self.get_error_stylesheet(error)
@@ -176,8 +220,12 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             if widget is not None:
                 widget.setVisible(visible)
 
-
-
+    def calculate_materials(self):
+        Calc = Calculate()
+        self.label_28.setText(str(Calc._calculate_materials_c()))
+        self.label_29.setText(str(Calc._calculate_materials_si()))
+        self.label_30.setText(str(Calc._calculate_materials_mn()))
+        self.label_37.setText(str(Calc._calculate_materials_b()))
 
     @staticmethod
     def check_for_values(value, constant):

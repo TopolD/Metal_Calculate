@@ -36,6 +36,7 @@ class GetDataCalculate:
 
     @db_session
     def get_material(self):
+
         Material_dict = self.Data.get('material')
         Material = {}
 
@@ -83,7 +84,7 @@ class Calculate(GetDataCalculate):
         fuse_element = data['Fuse'][element]
         samples_element = data['Samples'][element]
         materials_element = data['Materials'][element][element]
-        multiplied_w = data['W'] * 1000
+        multiplied_w = float(data['W']) * 1000
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
@@ -101,7 +102,7 @@ class Calculate(GetDataCalculate):
 
     @staticmethod
     def calculate_remainder_material(data: dict, material, element, residue):
-        multiplied_w = data['W'] * 1000
+        multiplied_w = float(data['W']) * 1000
         materials_element = data['Materials'][element][residue]
         value = data['Materials'][residue][residue]
         return (material / multiplied_w) * (materials_element / value) * multiplied_w
@@ -123,35 +124,34 @@ class Calculate(GetDataCalculate):
 
     def _calculate_materials_c(self):
         if self.Data_fuse['Materials']['Mn']['C']:
-            return round(self.remainder_material(),1)
+            return round(self.remainder_material(), 1)
         return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
 
     def _calculate_materials_si(self):
         if self.Data_fuse['Materials']['Mn']['Si']:
-            return round(self.remainder_material(),1)
-        return round(self.__calculate_data(self.Data_fuse, 'Si'),1)
+            return round(self.remainder_material(), 1)
+        return round(self.__calculate_data(self.Data_fuse, 'Si'), 1)
 
     def _calculate_materials_mn(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Mn'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Mn'), 1)
 
     def _calculate_materials_cr(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Cr'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Cr'), 1)
 
     def _calculate_materials_ni(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Ni'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Ni'), 1)
 
     def _calculate_materials_cu(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Cu'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Cu'), 1)
 
     def _calculate_materials_mo(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Mo'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Mo'), 1)
 
     def _calculate_materials_v(self):
-        return round(self.__calculate_data(self.Data_fuse, 'V'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'V'), 1)
 
     def _calculate_materials_nb(self):
-        return round(self.__calculate_data(self.Data_fuse, 'Nb'),1)
+        return round(self.__calculate_data(self.Data_fuse, 'Nb'), 1)
 
     def _calculate_materials_b(self):
-        return round(self.__calculate_data(self.Data_fuse, 'B'),1)
-
+        return round(self.__calculate_data(self.Data_fuse, 'B'), 1)
