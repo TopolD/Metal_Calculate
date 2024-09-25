@@ -1,9 +1,10 @@
+from xmlrpc.client import FastParser
+
 from PyQt5.QtCore import QPropertyAnimation, QRect
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QWidget, QPushButton
 from PyQt5.QtGui import QIntValidator, QDoubleValidator
 from Lrf1 import *
 from utils_calculate.Formuls_example import *
-
 
 
 class DisplayWindow(QWidget, Ui_LRF1_Widget):
@@ -11,41 +12,35 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
         super(DisplayWindow, self).__init__()
 
         self.setupUi(self)
-        self.DisplayTablesForInputData()
         self.get_func()
+        self.widget_2.setVisible(False)
+
+        self.hidden_widget = self.findChild(QWidget, 'widget_2')
+        self.show_button = self.findChild(QPushButton, 'pushButton_9')  # Кнопка показа
+        self.hide_button = self.findChild(QPushButton, 'pushButton_10')
+
+        self.original_size = self.size()
+
+        self.show_button.clicked.connect(self.show_widget)
+        self.hide_button.clicked.connect(self.hide_widget)
+
+    def show_widget(self):
+        self.hidden_widget.show()
+        self.adjustSize()
+
+    def hide_widget(self):
+        self.hidden_widget.hide()
+        self.resize(self.original_size)
 
     def get_func(self):
         self.get_weight_and_tech_card()
         self.get_clear_data_for_button()
 
-    def DisplayTablesForInputData(self):
-        self.DisplayExternalElementMaterials()
-        self.DisplayExternalDetailsCoreWire()
-
-    def DisplayExternalElementMaterials(self):
-        self.label_2.setText('C')
-        self.label_3.setText('Si')
-        self.label_4.setText('Mn')
-        self.label_5.setText('Cr')
-        self.label_6.setText('Ni')
-        self.label_7.setText('Cu')
-        self.label_8.setText('Mo')
-        self.label_9.setText('V')
-        self.label_10.setText('Nb')
-        self.label_11.setText('B')
-        self.label_12.setText('Другое')
-
-    def DisplayExternalDetailsCoreWire(self):
-        self.label_40.setText('C')
-        self.label_43.setText('Al')
-        self.label_41.setText('Ti')
-        self.label_42.setText('t,°C/S')
-
     def data_tech_card(self, value):
-        self.label_244.setText(value.get('FuseName'))
-        self.label_246.setText(value.get('TempVd'))
-        self.label_248.setText(value.get('Temp_ccm1'))
-        self.label_249.setText(value.get('Temp_ccm2'))
+        self.label_82.setText(value.get('FuseName'))
+        self.label_83.setText(value.get('TempVd'))
+        self.label_84.setText(value.get('Temp_ccm1'))
+        self.label_85.setText(value.get('Temp_ccm2'))
         self.label_14.setText(str(value.get('C', 'N/A')))
         self.label_15.setText(str(value.get('Si', 'N/A')))
         self.label_16.setText(str(value.get('Mn', 'N/A')))
@@ -67,7 +62,7 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
 
     def clear_data_for_button(self):
         button = {
-            'W': self.lineEdit_68,
+            'W': self.lineEdit_21,
             'C': self.lineEdit_1,
             'Si': self.lineEdit_2,
             'Mn': self.lineEdit_3,
@@ -85,66 +80,26 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             value.clear()
 
     def get_weight_and_tech_card(self):
-        self.lineEdit_67.setValidator(QIntValidator(0, 999))
-        self.lineEdit_67.editingFinished.connect(self.update_label)
+        self.lineEdit.setValidator(QIntValidator(0, 999))
+        self.lineEdit.editingFinished.connect(self.update_label)
 
-        self.lineEdit_68.setValidator(QDoubleValidator(0.0, 200.0, 1))
-        self.lineEdit_68.editingFinished.connect(self.update_label_wight)
+        self.lineEdit_21.setValidator(QDoubleValidator(0.0, 200.0, 1))
+        self.lineEdit_21.editingFinished.connect(self.update_label_wight)
 
     def update_label(self):
         try:
 
-            DataHolder.set_data(self.lineEdit_67.text(), None)
+            DataHolder.set_data(self.lineEdit.text(), None)
             FuseData = GetDataCalculate()
             Fuse = FuseData.get_data_fuse()
             self.Processor_of_material_data_at_the_time_of_entry(Fuse)
-            self.update_border_for_error(self.lineEdit_67, None)
+            self.update_border_for_error(self.lineEdit, None)
 
             return self.data_tech_card(Fuse)
         except AttributeError as e:
-            self.update_border_for_error(self.lineEdit_67, e)
+            self.update_border_for_error(self.lineEdit, e)
         finally:
-            self.lineEdit_67.setFocus()
-
-    def update_label_wight(self):
-        Dict_Data = self.Dict_Data()
-        DataHolder.set_data(self.lineEdit_67.text(), Dict_Data)
-
-        self.calculate_materials()
-
-    def Dict_Data(self):
-        Dict_Data = {
-            'W': self.lineEdit_68.text(),
-            'samples': {
-                'C': 0,
-                'Si': 0,
-                'Mn': 0,
-                'Cr': 0,
-                'Ni': 0,
-                'Cu': 0,
-                'Mo': 0,
-                'V': 0,
-                'Nb': 0,
-                'B': 0,
-                'Other': 0,
-            },
-            'material': {
-                'C': self.getComboBoxValue(self.comboBox_1),
-                'Si': self.getComboBoxValue(self.comboBox_2),
-                'Mn': self.getComboBoxValue(self.comboBox_3),
-                'Cr': self.getComboBoxValue(self.comboBox_4),
-                'Ni': self.getComboBoxValue(self.comboBox_5),
-                'Cu': self.getComboBoxValue(self.comboBox_6),
-                'Mo': self.getComboBoxValue(self.comboBox_7),
-                'V': self.getComboBoxValue(self.comboBox_8),
-                'Nb': self.getComboBoxValue(self.comboBox_9),
-                'B': self.getComboBoxValue(self.comboBox_10),
-            }
-        }
-        return Dict_Data
-
-    def getComboBoxValue(self, comboBox):
-        return comboBox.currentText() or None
+            self.lineEdit.setFocus()
 
     def update_border_for_error(self, widget, error):
         style = self.get_error_stylesheet(error)
@@ -220,17 +175,65 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             if widget is not None:
                 widget.setVisible(visible)
 
-    def calculate_materials(self):
-        Calc = Calculate()
-        self.label_28.setText(str(Calc._calculate_materials_c()))
-        self.label_29.setText(str(Calc._calculate_materials_si()))
-        self.label_30.setText(str(Calc._calculate_materials_mn()))
-        self.label_37.setText(str(Calc._calculate_materials_b()))
+    def update_label_wight(self):
+        Dict_Data = self.Dict_Data()
+        DataHolder.set_data(self.lineEdit.text(), Dict_Data)
+
+        self.update_materials()
+
+    def Dict_Data(self):
+        Dict_Data = {
+            'W': self.lineEdit_21.text(),
+            'samples': {
+                'C': 0,
+                'Si': 0,
+                'Mn': 0,
+                'Cr': 0,
+                'Ni': 0,
+                'Cu': 0,
+                'Mo': 0,
+                'V': 0,
+                'Nb': 0,
+                'B': 0,
+                'Other': 0,
+            },
+            'material': {
+                'C': self.getComboBoxValue(self.comboBox_1),
+                'Si': self.getComboBoxValue(self.comboBox_2),
+                'Mn': self.getComboBoxValue(self.comboBox_3),
+                'Cr': self.getComboBoxValue(self.comboBox_4),
+                'Ni': self.getComboBoxValue(self.comboBox_5),
+                'Cu': self.getComboBoxValue(self.comboBox_6),
+                'Mo': self.getComboBoxValue(self.comboBox_7),
+                'V': self.getComboBoxValue(self.comboBox_8),
+                'Nb': self.getComboBoxValue(self.comboBox_9),
+                'B': self.getComboBoxValue(self.comboBox_10),
+            }
+        }
+        return Dict_Data
+
+    def getComboBoxValue(self, comboBox):
+        return comboBox.currentText() or None
+
+    def update_materials(self):
+        materials = {
+            self.label_28: Calculate()._calculate_materials_c(),
+            self.label_29: Calculate()._calculate_materials_si(),
+            self.label_30: Calculate()._calculate_materials_mn(),
+            self.label_37: Calculate()._calculate_materials_b(),
+        }
+
+        for label, value in materials.items():
+            self.update_labels(label, value)
+
+    def update_labels(self, label, value):
+        label.setText(str(value))
+        self.update_label_style(label, value)
 
     @staticmethod
-    def check_for_values(value, constant):
+    def update_label_style(label, value):
         if value < 0:
-            constant.setStyleSheet("border-bottom: 2px solid #FF3B30;")
-            constant.setText('ALARM')
+            label.setStyleSheet("border-bottom: 2px solid #FF3B30;")
+            label.setText('ALARM')
         else:
-            constant.setStyleSheet("border-bottom: 2px solid #34C759;")
+            label.setStyleSheet("border-bottom: 2px solid #34C759;")

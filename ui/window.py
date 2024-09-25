@@ -8,7 +8,7 @@ class Window1(DisplayWindow):
         super(Window1, self).__init__()
         self.setWindowTitle('Calculate - Lrf1')
         self.main_window = main_window
-        self.pushButton_2.clicked.connect(self.switch_to_window_2)
+
 
     def switch_to_window_2(self):
         self.hide()

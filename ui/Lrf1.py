@@ -14,21 +14,353 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_LRF1_Widget(object):
     def setupUi(self, LRF1_Widget):
         LRF1_Widget.setObjectName("LRF1_Widget")
-        LRF1_Widget.resize(960, 727)
+        LRF1_Widget.setWindowModality(QtCore.Qt.WindowModal)
+        LRF1_Widget.setEnabled(True)
+        LRF1_Widget.resize(621, 515)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Ignored)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(LRF1_Widget.sizePolicy().hasHeightForWidth())
+        LRF1_Widget.setSizePolicy(sizePolicy)
+        LRF1_Widget.setMinimumSize(QtCore.QSize(0, 0))
+        LRF1_Widget.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        LRF1_Widget.setFocusPolicy(QtCore.Qt.NoFocus)
+        LRF1_Widget.setLayoutDirection(QtCore.Qt.LeftToRight)
+        LRF1_Widget.setStyleSheet("background-color: #F2F2F7;")
         self.widget = QtWidgets.QWidget(LRF1_Widget)
-        self.widget.setGeometry(QtCore.QRect(170, 70, 592, 361))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.widget.setGeometry(QtCore.QRect(0, 0, 621, 923))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
         self.widget.setSizePolicy(sizePolicy)
-        self.widget.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"outline: 2px solid rgba(0, 0, 0, 0.3); \n"
+        self.widget.setObjectName("widget")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout_5.setSizeConstraint(QtWidgets.QLayout.SetMinAndMaxSize)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.widget_4 = QtWidgets.QWidget(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_4.sizePolicy().hasHeightForWidth())
+        self.widget_4.setSizePolicy(sizePolicy)
+        self.widget_4.setStyleSheet("background-color: #9A9AB0")
+        self.widget_4.setObjectName("widget_4")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.widget_4)
+        self.gridLayout_3.setVerticalSpacing(0)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_12.setSpacing(6)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.pushButton = QtWidgets.QPushButton(self.widget_4)
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(False)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"    background-color: #B5B5CF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 0; \n"
+"    width: 110px; \n"
+"    height: 24px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b0b0b0;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.pushButton.setIcon(icon)
+        self.pushButton.setCheckable(False)
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout_12.addWidget(self.pushButton)
+        self.pushButton_2 = QtWidgets.QPushButton(self.widget_4)
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(False)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("QPushButton {\n"
+"    background-color: #B5B5CF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 0; \n"
+"    width: 110px; \n"
+"    height: 24px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b0b0b0;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_2.setIcon(icon1)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_12.addWidget(self.pushButton_2)
+        self.pushButton_3 = QtWidgets.QPushButton(self.widget_4)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(107, 0))
+        self.pushButton_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(False)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet("QPushButton {\n"
+"    background-color: #B5B5CF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 0; \n"
+"    width: 110px; \n"
+"    height: 24px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b0b0b0;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/vector-1.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_3.setIcon(icon2)
+        self.pushButton_3.setFlat(False)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_12.addWidget(self.pushButton_3)
+        self.pushButton_4 = QtWidgets.QPushButton(self.widget_4)
+        self.pushButton_4.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(False)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setStyleSheet("QPushButton {\n"
+"    background-color: #B5B5CF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 0; \n"
+"    width: 110px; \n"
+"    height: 24px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b0b0b0;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/vector-2.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_4.setIcon(icon3)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.horizontalLayout_12.addWidget(self.pushButton_4)
+        self.pushButton_5 = QtWidgets.QPushButton(self.widget_4)
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(False)
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setStyleSheet("QPushButton {\n"
+"    background-color: #B5B5CF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 0; \n"
+"    width: 110px; \n"
+"    height: 24px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b0b0b0;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("../../../Downloads/MetalCalculate (2)/note.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_5.setIcon(icon4)
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.horizontalLayout_12.addWidget(self.pushButton_5)
+        self.gridLayout_3.addLayout(self.horizontalLayout_12, 0, 0, 1, 1)
+        self.verticalLayout_5.addWidget(self.widget_4)
+        self.widget_9 = QtWidgets.QWidget(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_9.sizePolicy().hasHeightForWidth())
+        self.widget_9.setSizePolicy(sizePolicy)
+        self.widget_9.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"")
+        self.widget_9.setObjectName("widget_9")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.widget_9)
+        self.gridLayout_2.setHorizontalSpacing(6)
+        self.gridLayout_2.setVerticalSpacing(0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_30.setSpacing(0)
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.label_66 = QtWidgets.QLabel(self.widget_9)
+        self.label_66.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_66.setObjectName("label_66")
+        self.verticalLayout_7.addWidget(self.label_66)
+        self.lineEdit = QtWidgets.QLineEdit(self.widget_9)
+        self.lineEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.lineEdit.setStyleSheet("border: 1px solid gray;\n"
+"border-radius: 5%")
+        self.lineEdit.setObjectName("lineEdit")
+        self.verticalLayout_7.addWidget(self.lineEdit)
+        self.label_77 = QtWidgets.QLabel(self.widget_9)
+        self.label_77.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_77.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_77.setObjectName("label_77")
+        self.verticalLayout_7.addWidget(self.label_77)
+        self.lineEdit_21 = QtWidgets.QLineEdit(self.widget_9)
+        self.lineEdit_21.setMinimumSize(QtCore.QSize(0, 0))
+        self.lineEdit_21.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.lineEdit_21.setStyleSheet("border: 1px solid gray;\n"
+"border-radius: 5%")
+        self.lineEdit_21.setObjectName("lineEdit_21")
+        self.verticalLayout_7.addWidget(self.lineEdit_21)
+        self.horizontalLayout_30.addLayout(self.verticalLayout_7)
+        self.gridLayout_2.addLayout(self.horizontalLayout_30, 0, 0, 1, 1)
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_28.setSpacing(0)
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.label_79 = QtWidgets.QLabel(self.widget_9)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_79.setFont(font)
+        self.label_79.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_79.setObjectName("label_79")
+        self.horizontalLayout_28.addWidget(self.label_79)
+        self.label_82 = QtWidgets.QLabel(self.widget_9)
+        self.label_82.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_82.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_82.setObjectName("label_82")
+        self.horizontalLayout_28.addWidget(self.label_82)
+        self.verticalLayout_8.addLayout(self.horizontalLayout_28)
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_29.setSpacing(0)
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.label_80 = QtWidgets.QLabel(self.widget_9)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_80.setFont(font)
+        self.label_80.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_80.setObjectName("label_80")
+        self.horizontalLayout_29.addWidget(self.label_80)
+        self.label_83 = QtWidgets.QLabel(self.widget_9)
+        self.label_83.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_83.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_83.setObjectName("label_83")
+        self.horizontalLayout_29.addWidget(self.label_83)
+        self.verticalLayout_8.addLayout(self.horizontalLayout_29)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.label_81 = QtWidgets.QLabel(self.widget_9)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_81.setFont(font)
+        self.label_81.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_81.setObjectName("label_81")
+        self.horizontalLayout_14.addWidget(self.label_81)
+        self.label_84 = QtWidgets.QLabel(self.widget_9)
+        self.label_84.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_84.setObjectName("label_84")
+        self.horizontalLayout_14.addWidget(self.label_84)
+        self.line_2 = QtWidgets.QFrame(self.widget_9)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_2.setObjectName("line_2")
+        self.horizontalLayout_14.addWidget(self.line_2)
+        self.label_85 = QtWidgets.QLabel(self.widget_9)
+        self.label_85.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;")
+        self.label_85.setObjectName("label_85")
+        self.horizontalLayout_14.addWidget(self.label_85)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_14)
+        self.verticalLayout_8.addLayout(self.verticalLayout_9)
+        self.gridLayout_2.addLayout(self.verticalLayout_8, 0, 1, 1, 1)
+        self.verticalLayout_5.addWidget(self.widget_9)
+        self.widget1 = QtWidgets.QWidget(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget1.sizePolicy().hasHeightForWidth())
+        self.widget1.setSizePolicy(sizePolicy)
+        self.widget1.setMinimumSize(QtCore.QSize(0, 0))
+        self.widget1.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.widget1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
 "\n"
 "")
-        self.widget.setObjectName("widget")
-        self.gridLayout_8 = QtWidgets.QGridLayout(self.widget)
-        self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.widget1.setObjectName("widget1")
+        self.gridLayout_8 = QtWidgets.QGridLayout(self.widget1)
+        self.gridLayout_8.setSpacing(0)
         self.gridLayout_8.setObjectName("gridLayout_8")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setSpacing(0)
@@ -36,7 +368,7 @@ class Ui_LRF1_Widget(object):
         self._ = QtWidgets.QHBoxLayout()
         self._.setSpacing(0)
         self._.setObjectName("_")
-        self.label_1 = QtWidgets.QLabel(self.widget)
+        self.label_1 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -57,7 +389,7 @@ class Ui_LRF1_Widget(object):
         self.label_1.setAlignment(QtCore.Qt.AlignCenter)
         self.label_1.setObjectName("label_1")
         self._.addWidget(self.label_1)
-        self.label_13 = QtWidgets.QLabel(self.widget)
+        self.label_13 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -78,7 +410,7 @@ class Ui_LRF1_Widget(object):
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self._.addWidget(self.label_13)
-        self.label_25 = QtWidgets.QLabel(self.widget)
+        self.label_25 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -99,7 +431,7 @@ class Ui_LRF1_Widget(object):
         self.label_25.setAlignment(QtCore.Qt.AlignCenter)
         self.label_25.setObjectName("label_25")
         self._.addWidget(self.label_25)
-        self.label_26 = QtWidgets.QLabel(self.widget)
+        self.label_26 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -122,13 +454,13 @@ class Ui_LRF1_Widget(object):
         self.label_26.setAlignment(QtCore.Qt.AlignCenter)
         self.label_26.setObjectName("label_26")
         self._.addWidget(self.label_26)
-        self.label_27 = QtWidgets.QLabel(self.widget)
+        self.label_27 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_27.sizePolicy().hasHeightForWidth())
         self.label_27.setSizePolicy(sizePolicy)
-        self.label_27.setMinimumSize(QtCore.QSize(114, 28))
+        self.label_27.setMinimumSize(QtCore.QSize(101, 28))
         self.label_27.setMaximumSize(QtCore.QSize(114, 28))
         self.label_27.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
@@ -147,7 +479,7 @@ class Ui_LRF1_Widget(object):
         self._C = QtWidgets.QHBoxLayout()
         self._C.setSpacing(0)
         self._C.setObjectName("_C")
-        self.label_2 = QtWidgets.QLabel(self.widget)
+        self.label_2 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -166,7 +498,7 @@ class Ui_LRF1_Widget(object):
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self._C.addWidget(self.label_2)
-        self.label_14 = QtWidgets.QLabel(self.widget)
+        self.label_14 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -185,7 +517,7 @@ class Ui_LRF1_Widget(object):
         self.label_14.setAlignment(QtCore.Qt.AlignCenter)
         self.label_14.setObjectName("label_14")
         self._C.addWidget(self.label_14)
-        self.lineEdit_1 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_1 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_1.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_1.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -198,7 +530,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_1.setObjectName("lineEdit_1")
         self._C.addWidget(self.lineEdit_1)
-        self.comboBox_1 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_1 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_1.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_1.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -209,14 +541,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_1.setObjectName("comboBox_1")
         self.comboBox_1.addItem("")
         self._C.addWidget(self.comboBox_1)
-        self.label_28 = QtWidgets.QLabel(self.widget)
+        self.label_28 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
         self.label_28.setSizePolicy(sizePolicy)
-        self.label_28.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_28.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_28.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_28.setMaximumSize(QtCore.QSize(101, 28))
         self.label_28.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -232,7 +564,7 @@ class Ui_LRF1_Widget(object):
         self._Si = QtWidgets.QHBoxLayout()
         self._Si.setSpacing(0)
         self._Si.setObjectName("_Si")
-        self.label_3 = QtWidgets.QLabel(self.widget)
+        self.label_3 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -251,7 +583,7 @@ class Ui_LRF1_Widget(object):
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self._Si.addWidget(self.label_3)
-        self.label_15 = QtWidgets.QLabel(self.widget)
+        self.label_15 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -270,7 +602,7 @@ class Ui_LRF1_Widget(object):
         self.label_15.setAlignment(QtCore.Qt.AlignCenter)
         self.label_15.setObjectName("label_15")
         self._Si.addWidget(self.label_15)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_2.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_2.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -283,7 +615,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_2.setObjectName("lineEdit_2")
         self._Si.addWidget(self.lineEdit_2)
-        self.comboBox_2 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_2 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_2.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_2.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -295,14 +627,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self._Si.addWidget(self.comboBox_2)
-        self.label_29 = QtWidgets.QLabel(self.widget)
+        self.label_29 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
         self.label_29.setSizePolicy(sizePolicy)
-        self.label_29.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_29.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_29.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_29.setMaximumSize(QtCore.QSize(101, 28))
         self.label_29.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -318,7 +650,7 @@ class Ui_LRF1_Widget(object):
         self._Mn = QtWidgets.QHBoxLayout()
         self._Mn.setSpacing(0)
         self._Mn.setObjectName("_Mn")
-        self.label_4 = QtWidgets.QLabel(self.widget)
+        self.label_4 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -337,7 +669,7 @@ class Ui_LRF1_Widget(object):
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
         self._Mn.addWidget(self.label_4)
-        self.label_16 = QtWidgets.QLabel(self.widget)
+        self.label_16 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -356,7 +688,7 @@ class Ui_LRF1_Widget(object):
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self._Mn.addWidget(self.label_16)
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_3.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_3.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -369,7 +701,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_3.setObjectName("lineEdit_3")
         self._Mn.addWidget(self.lineEdit_3)
-        self.comboBox_3 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_3 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_3.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_3.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -383,14 +715,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_3.addItem("")
         self.comboBox_3.addItem("")
         self._Mn.addWidget(self.comboBox_3)
-        self.label_30 = QtWidgets.QLabel(self.widget)
+        self.label_30 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
         self.label_30.setSizePolicy(sizePolicy)
-        self.label_30.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_30.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_30.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_30.setMaximumSize(QtCore.QSize(101, 28))
         self.label_30.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -406,7 +738,7 @@ class Ui_LRF1_Widget(object):
         self._Cr = QtWidgets.QHBoxLayout()
         self._Cr.setSpacing(0)
         self._Cr.setObjectName("_Cr")
-        self.label_5 = QtWidgets.QLabel(self.widget)
+        self.label_5 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -425,7 +757,7 @@ class Ui_LRF1_Widget(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self._Cr.addWidget(self.label_5)
-        self.label_17 = QtWidgets.QLabel(self.widget)
+        self.label_17 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -444,7 +776,7 @@ class Ui_LRF1_Widget(object):
         self.label_17.setAlignment(QtCore.Qt.AlignCenter)
         self.label_17.setObjectName("label_17")
         self._Cr.addWidget(self.label_17)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_4.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_4.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -458,7 +790,7 @@ class Ui_LRF1_Widget(object):
         self.lineEdit_4.setText("")
         self.lineEdit_4.setObjectName("lineEdit_4")
         self._Cr.addWidget(self.lineEdit_4)
-        self.comboBox_4 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_4 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_4.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_4.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_4.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -470,14 +802,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self._Cr.addWidget(self.comboBox_4)
-        self.label_31 = QtWidgets.QLabel(self.widget)
+        self.label_31 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_31.sizePolicy().hasHeightForWidth())
         self.label_31.setSizePolicy(sizePolicy)
-        self.label_31.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_31.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_31.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_31.setMaximumSize(QtCore.QSize(101, 28))
         self.label_31.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -493,7 +825,7 @@ class Ui_LRF1_Widget(object):
         self._Ni = QtWidgets.QHBoxLayout()
         self._Ni.setSpacing(0)
         self._Ni.setObjectName("_Ni")
-        self.label_6 = QtWidgets.QLabel(self.widget)
+        self.label_6 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -512,7 +844,7 @@ class Ui_LRF1_Widget(object):
         self.label_6.setAlignment(QtCore.Qt.AlignCenter)
         self.label_6.setObjectName("label_6")
         self._Ni.addWidget(self.label_6)
-        self.label_18 = QtWidgets.QLabel(self.widget)
+        self.label_18 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -531,7 +863,7 @@ class Ui_LRF1_Widget(object):
         self.label_18.setAlignment(QtCore.Qt.AlignCenter)
         self.label_18.setObjectName("label_18")
         self._Ni.addWidget(self.label_18)
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_5.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_5.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -544,7 +876,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_5.setObjectName("lineEdit_5")
         self._Ni.addWidget(self.lineEdit_5)
-        self.comboBox_5 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_5 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_5.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_5.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_5.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -555,14 +887,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_5.setObjectName("comboBox_5")
         self.comboBox_5.addItem("")
         self._Ni.addWidget(self.comboBox_5)
-        self.label_32 = QtWidgets.QLabel(self.widget)
+        self.label_32 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
         self.label_32.setSizePolicy(sizePolicy)
-        self.label_32.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_32.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_32.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_32.setMaximumSize(QtCore.QSize(101, 28))
         self.label_32.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -578,7 +910,7 @@ class Ui_LRF1_Widget(object):
         self._Cu = QtWidgets.QHBoxLayout()
         self._Cu.setSpacing(0)
         self._Cu.setObjectName("_Cu")
-        self.label_7 = QtWidgets.QLabel(self.widget)
+        self.label_7 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -597,7 +929,7 @@ class Ui_LRF1_Widget(object):
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self._Cu.addWidget(self.label_7)
-        self.label_19 = QtWidgets.QLabel(self.widget)
+        self.label_19 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -616,7 +948,7 @@ class Ui_LRF1_Widget(object):
         self.label_19.setAlignment(QtCore.Qt.AlignCenter)
         self.label_19.setObjectName("label_19")
         self._Cu.addWidget(self.label_19)
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_6.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_6.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -629,7 +961,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_6.setObjectName("lineEdit_6")
         self._Cu.addWidget(self.lineEdit_6)
-        self.comboBox_6 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_6 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_6.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_6.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_6.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -640,14 +972,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_6.setObjectName("comboBox_6")
         self.comboBox_6.addItem("")
         self._Cu.addWidget(self.comboBox_6)
-        self.label_33 = QtWidgets.QLabel(self.widget)
+        self.label_33 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
         self.label_33.setSizePolicy(sizePolicy)
-        self.label_33.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_33.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_33.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_33.setMaximumSize(QtCore.QSize(101, 28))
         self.label_33.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -663,7 +995,7 @@ class Ui_LRF1_Widget(object):
         self._Mo = QtWidgets.QHBoxLayout()
         self._Mo.setSpacing(0)
         self._Mo.setObjectName("_Mo")
-        self.label_8 = QtWidgets.QLabel(self.widget)
+        self.label_8 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -682,7 +1014,7 @@ class Ui_LRF1_Widget(object):
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
         self._Mo.addWidget(self.label_8)
-        self.label_20 = QtWidgets.QLabel(self.widget)
+        self.label_20 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -701,7 +1033,7 @@ class Ui_LRF1_Widget(object):
         self.label_20.setAlignment(QtCore.Qt.AlignCenter)
         self.label_20.setObjectName("label_20")
         self._Mo.addWidget(self.label_20)
-        self.lineEdit_7 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_7.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_7.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -716,7 +1048,7 @@ class Ui_LRF1_Widget(object):
         self.lineEdit_7.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.lineEdit_7.setObjectName("lineEdit_7")
         self._Mo.addWidget(self.lineEdit_7)
-        self.comboBox_7 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_7 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_7.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_7.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_7.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -727,14 +1059,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_7.setObjectName("comboBox_7")
         self.comboBox_7.addItem("")
         self._Mo.addWidget(self.comboBox_7)
-        self.label_34 = QtWidgets.QLabel(self.widget)
+        self.label_34 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_34.sizePolicy().hasHeightForWidth())
         self.label_34.setSizePolicy(sizePolicy)
-        self.label_34.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_34.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_34.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_34.setMaximumSize(QtCore.QSize(101, 28))
         self.label_34.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -750,7 +1082,7 @@ class Ui_LRF1_Widget(object):
         self._V = QtWidgets.QHBoxLayout()
         self._V.setSpacing(0)
         self._V.setObjectName("_V")
-        self.label_9 = QtWidgets.QLabel(self.widget)
+        self.label_9 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -769,7 +1101,7 @@ class Ui_LRF1_Widget(object):
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
         self._V.addWidget(self.label_9)
-        self.label_21 = QtWidgets.QLabel(self.widget)
+        self.label_21 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -788,7 +1120,7 @@ class Ui_LRF1_Widget(object):
         self.label_21.setAlignment(QtCore.Qt.AlignCenter)
         self.label_21.setObjectName("label_21")
         self._V.addWidget(self.label_21)
-        self.lineEdit_8 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_8 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_8.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_8.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -801,7 +1133,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_8.setObjectName("lineEdit_8")
         self._V.addWidget(self.lineEdit_8)
-        self.comboBox_8 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_8 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_8.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_8.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_8.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -812,14 +1144,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_8.setObjectName("comboBox_8")
         self.comboBox_8.addItem("")
         self._V.addWidget(self.comboBox_8)
-        self.label_35 = QtWidgets.QLabel(self.widget)
+        self.label_35 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_35.sizePolicy().hasHeightForWidth())
         self.label_35.setSizePolicy(sizePolicy)
-        self.label_35.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_35.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_35.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_35.setMaximumSize(QtCore.QSize(101, 28))
         self.label_35.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -835,7 +1167,7 @@ class Ui_LRF1_Widget(object):
         self._Nb = QtWidgets.QHBoxLayout()
         self._Nb.setSpacing(0)
         self._Nb.setObjectName("_Nb")
-        self.label_10 = QtWidgets.QLabel(self.widget)
+        self.label_10 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -854,7 +1186,7 @@ class Ui_LRF1_Widget(object):
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
         self._Nb.addWidget(self.label_10)
-        self.label_22 = QtWidgets.QLabel(self.widget)
+        self.label_22 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -873,7 +1205,7 @@ class Ui_LRF1_Widget(object):
         self.label_22.setAlignment(QtCore.Qt.AlignCenter)
         self.label_22.setObjectName("label_22")
         self._Nb.addWidget(self.label_22)
-        self.lineEdit_9 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_9 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_9.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_9.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -886,7 +1218,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_9.setObjectName("lineEdit_9")
         self._Nb.addWidget(self.lineEdit_9)
-        self.comboBox_9 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_9 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_9.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_9.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_9.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -897,14 +1229,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_9.setObjectName("comboBox_9")
         self.comboBox_9.addItem("")
         self._Nb.addWidget(self.comboBox_9)
-        self.label_36 = QtWidgets.QLabel(self.widget)
+        self.label_36 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_36.sizePolicy().hasHeightForWidth())
         self.label_36.setSizePolicy(sizePolicy)
-        self.label_36.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_36.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_36.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_36.setMaximumSize(QtCore.QSize(101, 28))
         self.label_36.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -920,7 +1252,7 @@ class Ui_LRF1_Widget(object):
         self._B = QtWidgets.QHBoxLayout()
         self._B.setSpacing(0)
         self._B.setObjectName("_B")
-        self.label_11 = QtWidgets.QLabel(self.widget)
+        self.label_11 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -939,7 +1271,7 @@ class Ui_LRF1_Widget(object):
         self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
         self._B.addWidget(self.label_11)
-        self.label_23 = QtWidgets.QLabel(self.widget)
+        self.label_23 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -958,7 +1290,7 @@ class Ui_LRF1_Widget(object):
         self.label_23.setAlignment(QtCore.Qt.AlignCenter)
         self.label_23.setObjectName("label_23")
         self._B.addWidget(self.label_23)
-        self.lineEdit_10 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_10 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_10.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_10.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -971,7 +1303,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_10.setObjectName("lineEdit_10")
         self._B.addWidget(self.lineEdit_10)
-        self.comboBox_10 = QtWidgets.QComboBox(self.widget)
+        self.comboBox_10 = QtWidgets.QComboBox(self.widget1)
         self.comboBox_10.setMinimumSize(QtCore.QSize(114, 28))
         self.comboBox_10.setMaximumSize(QtCore.QSize(114, 28))
         self.comboBox_10.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -982,14 +1314,14 @@ class Ui_LRF1_Widget(object):
         self.comboBox_10.setObjectName("comboBox_10")
         self.comboBox_10.addItem("")
         self._B.addWidget(self.comboBox_10)
-        self.label_37 = QtWidgets.QLabel(self.widget)
+        self.label_37 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_37.sizePolicy().hasHeightForWidth())
         self.label_37.setSizePolicy(sizePolicy)
-        self.label_37.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_37.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_37.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_37.setMaximumSize(QtCore.QSize(101, 28))
         self.label_37.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1005,7 +1337,7 @@ class Ui_LRF1_Widget(object):
         self._other = QtWidgets.QHBoxLayout()
         self._other.setSpacing(0)
         self._other.setObjectName("_other")
-        self.label_12 = QtWidgets.QLabel(self.widget)
+        self.label_12 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1024,7 +1356,7 @@ class Ui_LRF1_Widget(object):
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
         self._other.addWidget(self.label_12)
-        self.label_24 = QtWidgets.QLabel(self.widget)
+        self.label_24 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1043,7 +1375,7 @@ class Ui_LRF1_Widget(object):
         self.label_24.setAlignment(QtCore.Qt.AlignCenter)
         self.label_24.setObjectName("label_24")
         self._other.addWidget(self.label_24)
-        self.lineEdit_11 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_11 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_11.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_11.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -1056,7 +1388,7 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_11.setObjectName("lineEdit_11")
         self._other.addWidget(self.lineEdit_11)
-        self.lineEdit_12 = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit_12 = QtWidgets.QLineEdit(self.widget1)
         self.lineEdit_12.setMinimumSize(QtCore.QSize(114, 28))
         self.lineEdit_12.setMaximumSize(QtCore.QSize(114, 28))
         font = QtGui.QFont()
@@ -1069,14 +1401,14 @@ class Ui_LRF1_Widget(object):
 "")
         self.lineEdit_12.setObjectName("lineEdit_12")
         self._other.addWidget(self.lineEdit_12)
-        self.label_38 = QtWidgets.QLabel(self.widget)
+        self.label_38 = QtWidgets.QLabel(self.widget1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_38.sizePolicy().hasHeightForWidth())
         self.label_38.setSizePolicy(sizePolicy)
-        self.label_38.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_38.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_38.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_38.setMaximumSize(QtCore.QSize(101, 28))
         self.label_38.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1090,428 +1422,70 @@ class Ui_LRF1_Widget(object):
         self._other.addWidget(self.label_38)
         self.verticalLayout.addLayout(self._other)
         self.gridLayout_8.addLayout(self.verticalLayout, 0, 0, 1, 1)
-        self.widget_6 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_6.setGeometry(QtCore.QRect(10, 200, 151, 151))
-        self.widget_6.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.widget_6.setObjectName("widget_6")
-        self.layoutWidget = QtWidgets.QWidget(self.widget_6)
-        self.layoutWidget.setGeometry(QtCore.QRect(9, 9, 131, 131))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.verticalLayout_28 = QtWidgets.QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_28.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_28.setObjectName("verticalLayout_28")
-        self.horizontalLayout_27 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
-        self.label_250 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_250.setFont(font)
-        self.label_250.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_250.setObjectName("label_250")
-        self.horizontalLayout_27.addWidget(self.label_250)
-        self.label_244 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_244.setFont(font)
-        self.label_244.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.label_244.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_244.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_244.setObjectName("label_244")
-        self.horizontalLayout_27.addWidget(self.label_244)
-        self.verticalLayout_28.addLayout(self.horizontalLayout_27)
-        self.horizontalLayout_28 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
-        self.label_252 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_252.setFont(font)
-        self.label_252.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_252.setObjectName("label_252")
-        self.horizontalLayout_28.addWidget(self.label_252)
-        self.label_246 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_246.setFont(font)
-        self.label_246.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_246.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_246.setObjectName("label_246")
-        self.horizontalLayout_28.addWidget(self.label_246)
-        self.verticalLayout_28.addLayout(self.horizontalLayout_28)
-        self.label_254 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_254.setFont(font)
-        self.label_254.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_254.setObjectName("label_254")
-        self.verticalLayout_28.addWidget(self.label_254)
-        self.horizontalLayout_29 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
-        self.label_248 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_248.setFont(font)
-        self.label_248.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_248.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_248.setObjectName("label_248")
-        self.horizontalLayout_29.addWidget(self.label_248)
-        self.label_249 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_249.setFont(font)
-        self.label_249.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_249.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_249.setObjectName("label_249")
-        self.horizontalLayout_29.addWidget(self.label_249)
-        self.verticalLayout_28.addLayout(self.horizontalLayout_29)
-        self.widget_4 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_4.setGeometry(QtCore.QRect(170, 10, 591, 51))
-        self.widget_4.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
-        self.widget_4.setObjectName("widget_4")
-        self.layoutWidget1 = QtWidgets.QWidget(self.widget_4)
-        self.layoutWidget1.setGeometry(QtCore.QRect(9, 9, 571, 31))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.pushButton = QtWidgets.QPushButton(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 110px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Downloads/fire.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_12.addWidget(self.pushButton)
-        self.pushButton_2 = QtWidgets.QPushButton(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; \n"
-"    border-radius: 5px; \n"
-"    padding: 0; \n"
-"    width: 110px; \n"
-"    height: 24px; \n"
-"    font-size: 12px; \n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        self.pushButton_2.setIcon(icon)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_12.addWidget(self.pushButton_2)
-        self.pushButton_3 = QtWidgets.QPushButton(self.layoutWidget1)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(107, 0))
-        self.pushButton_3.setMaximumSize(QtCore.QSize(107, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 110px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../Downloads/bucket.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon1)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_12.addWidget(self.pushButton_3)
-        self.pushButton_4 = QtWidgets.QPushButton(self.layoutWidget1)
-        self.pushButton_4.setMaximumSize(QtCore.QSize(107, 40))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_4.setFont(font)
-        self.pushButton_4.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 110px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../../Downloads/atom.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_4.setIcon(icon2)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_12.addWidget(self.pushButton_4)
-        self.pushButton_5 = QtWidgets.QPushButton(self.layoutWidget1)
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_5.setFont(font)
-        self.pushButton_5.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 110px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../../../Downloads/note.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_5.setIcon(icon3)
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_12.addWidget(self.pushButton_5)
-        self.widget_3 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_3.setGeometry(QtCore.QRect(770, 70, 181, 331))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addWidget(self.widget1)
+        self.pushButton_9 = QtWidgets.QPushButton(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
-        self.widget_3.setSizePolicy(sizePolicy)
-        self.widget_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
-        self.widget_3.setObjectName("widget_3")
-        self.layoutWidget2 = QtWidgets.QWidget(self.widget_3)
-        self.layoutWidget2.setGeometry(QtCore.QRect(9, 9, 163, 311))
-        self.layoutWidget2.setObjectName("layoutWidget2")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.layoutWidget2)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.horizontalLayout_13 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_13.setSpacing(0)
-        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        self.label = QtWidgets.QLabel(self.layoutWidget2)
-        self.label.setMinimumSize(QtCore.QSize(0, 28))
-        self.label.setMaximumSize(QtCore.QSize(16777215, 28))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.horizontalLayout_13.addWidget(self.label)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_13)
-        self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_16.setSpacing(0)
-        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.label_67 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_67.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_67.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_67.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_67.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_67.setObjectName("label_67")
-        self.horizontalLayout_16.addWidget(self.label_67)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_16)
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_19.setSpacing(0)
-        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
-        self.label_70 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_70.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_70.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_70.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_70.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_70.setObjectName("label_70")
-        self.horizontalLayout_19.addWidget(self.label_70)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_19)
-        self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_20.setSpacing(0)
-        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
-        self.label_71 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_71.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_71.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_71.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_71.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_71.setObjectName("label_71")
-        self.horizontalLayout_20.addWidget(self.label_71)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_20)
-        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_22.setSpacing(0)
-        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
-        self.label_73 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_73.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_73.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_73.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_73.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_73.setObjectName("label_73")
-        self.horizontalLayout_22.addWidget(self.label_73)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_22)
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_18.setSpacing(0)
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_69 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_69.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_69.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_69.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_69.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_69.setObjectName("label_69")
-        self.horizontalLayout_18.addWidget(self.label_69)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_18)
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.label_68 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_68.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_68.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_68.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_68.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_68.setObjectName("label_68")
-        self.horizontalLayout_17.addWidget(self.label_68)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_17)
-        self.horizontalLayout_21 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_21.setSpacing(0)
-        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
-        self.label_72 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_72.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_72.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_72.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_72.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_72.setObjectName("label_72")
-        self.horizontalLayout_21.addWidget(self.label_72)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_21)
-        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_23.setSpacing(0)
-        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
-        self.label_74 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_74.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_74.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_74.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_74.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_74.setObjectName("label_74")
-        self.horizontalLayout_23.addWidget(self.label_74)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_23)
-        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_24.setSpacing(0)
-        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
-        self.label_75 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_75.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_75.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_75.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_75.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_75.setObjectName("label_75")
-        self.horizontalLayout_24.addWidget(self.label_75)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_24)
-        self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_25.setSpacing(0)
-        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
-        self.label_76 = QtWidgets.QLabel(self.layoutWidget2)
-        self.label_76.setMinimumSize(QtCore.QSize(0, 28))
-        self.label_76.setMaximumSize(QtCore.QSize(16777215, 28))
-        self.label_76.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.label_76.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_76.setObjectName("label_76")
-        self.horizontalLayout_25.addWidget(self.label_76)
-        self.verticalLayout_5.addLayout(self.horizontalLayout_25)
-        self.widget_2 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_2.setGeometry(QtCore.QRect(10, 440, 946, 172))
+        sizePolicy.setHeightForWidth(self.pushButton_9.sizePolicy().hasHeightForWidth())
+        self.pushButton_9.setSizePolicy(sizePolicy)
+        self.pushButton_9.setMaximumSize(QtCore.QSize(650, 16777215))
+        self.pushButton_9.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.pushButton_9.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border:None;")
+        self.pushButton_9.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("../../../Downloads/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_9.setIcon(icon5)
+        self.pushButton_9.setDefault(False)
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.verticalLayout_5.addWidget(self.pushButton_9)
+        self.widget_2 = QtWidgets.QWidget(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
+        self.widget_2.setSizePolicy(sizePolicy)
         self.widget_2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "")
         self.widget_2.setObjectName("widget_2")
-        self.gridLayout_5 = QtWidgets.QGridLayout(self.widget_2)
-        self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_5.setObjectName("gridLayout_5")
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.widget_2)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.pushButton_10 = QtWidgets.QPushButton(self.widget_2)
+        self.pushButton_10.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.pushButton_10.setStyleSheet("Color:#A3A3C0;\n"
+"border:None\n"
+"")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("../../../Downloads/vector (1).svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_10.setIcon(icon6)
+        self.pushButton_10.setShortcut("")
+        self.pushButton_10.setCheckable(True)
+        self.pushButton_10.setAutoDefault(False)
+        self.pushButton_10.setDefault(False)
+        self.pushButton_10.setFlat(False)
+        self.pushButton_10.setObjectName("pushButton_10")
+        self.gridLayout_4.addWidget(self.pushButton_10, 0, 1, 1, 1)
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label_90 = QtWidgets.QLabel(self.widget_2)
+        self.label_90.setMinimumSize(QtCore.QSize(0, 24))
+        self.label_90.setMaximumSize(QtCore.QSize(16777215, 24))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_90.setFont(font)
+        self.label_90.setStyleSheet("Color: #A3A3C0;\n"
+"")
+        self.label_90.setObjectName("label_90")
+        self.verticalLayout_2.addWidget(self.label_90)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -1605,8 +1579,8 @@ class Ui_LRF1_Widget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_52.sizePolicy().hasHeightForWidth())
         self.label_52.setSizePolicy(sizePolicy)
-        self.label_52.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_52.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_52.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_52.setMaximumSize(QtCore.QSize(101, 28))
         self.label_52.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1700,8 +1674,8 @@ class Ui_LRF1_Widget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_53.sizePolicy().hasHeightForWidth())
         self.label_53.setSizePolicy(sizePolicy)
-        self.label_53.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_53.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_53.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_53.setMaximumSize(QtCore.QSize(101, 28))
         self.label_53.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1794,8 +1768,8 @@ class Ui_LRF1_Widget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_54.sizePolicy().hasHeightForWidth())
         self.label_54.setSizePolicy(sizePolicy)
-        self.label_54.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_54.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_54.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_54.setMaximumSize(QtCore.QSize(101, 28))
         self.label_54.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1884,8 +1858,8 @@ class Ui_LRF1_Widget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_55.sizePolicy().hasHeightForWidth())
         self.label_55.setSizePolicy(sizePolicy)
-        self.label_55.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_55.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_55.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_55.setMaximumSize(QtCore.QSize(101, 28))
         self.label_55.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1968,8 +1942,8 @@ class Ui_LRF1_Widget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_56.sizePolicy().hasHeightForWidth())
         self.label_56.setSizePolicy(sizePolicy)
-        self.label_56.setMinimumSize(QtCore.QSize(114, 28))
-        self.label_56.setMaximumSize(QtCore.QSize(114, 28))
+        self.label_56.setMinimumSize(QtCore.QSize(101, 28))
+        self.label_56.setMaximumSize(QtCore.QSize(101, 28))
         self.label_56.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -1982,23 +1956,40 @@ class Ui_LRF1_Widget(object):
         self.label_56.setObjectName("label_56")
         self.horizontalLayout_6.addWidget(self.label_56)
         self.verticalLayout_2.addLayout(self.horizontalLayout_6)
-        self.horizontalLayout.addLayout(self.verticalLayout_2)
-        self.line_5 = QtWidgets.QFrame(self.widget_2)
+        self.verticalLayout_4.addLayout(self.verticalLayout_2)
+        self.verticalLayout_10.addLayout(self.verticalLayout_4)
+        self.gridLayout_4.addLayout(self.verticalLayout_10, 1, 0, 1, 2)
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.label_91 = QtWidgets.QLabel(self.widget_2)
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.line_5.setFont(font)
-        self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_5.setLineWidth(1)
-        self.line_5.setMidLineWidth(10)
-        self.line_5.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_5.setObjectName("line_5")
-        self.horizontalLayout.addWidget(self.line_5)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_91.setFont(font)
+        self.label_91.setStyleSheet("Color: #A3A3C0;")
+        self.label_91.setObjectName("label_91")
+        self.verticalLayout_11.addWidget(self.label_91)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.label_87 = QtWidgets.QLabel(self.widget_2)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_87.setFont(font)
+        self.label_87.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.label_87.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_87.setObjectName("label_87")
+        self.horizontalLayout_7.addWidget(self.label_87)
         self.label_57 = QtWidgets.QLabel(self.widget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2066,6 +2057,13 @@ class Ui_LRF1_Widget(object):
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.label_86 = QtWidgets.QLabel(self.widget_2)
+        self.label_86.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.label_86.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_86.setObjectName("label_86")
+        self.horizontalLayout_8.addWidget(self.label_86)
         self.label_58 = QtWidgets.QLabel(self.widget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2121,6 +2119,17 @@ class Ui_LRF1_Widget(object):
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setSpacing(0)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.label_88 = QtWidgets.QLabel(self.widget_2)
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_88.setFont(font)
+        self.label_88.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.label_88.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_88.setObjectName("label_88")
+        self.horizontalLayout_9.addWidget(self.label_88)
         self.label_59 = QtWidgets.QLabel(self.widget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2176,6 +2185,17 @@ class Ui_LRF1_Widget(object):
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.label_89 = QtWidgets.QLabel(self.widget_2)
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_89.setFont(font)
+        self.label_89.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.label_89.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_89.setObjectName("label_89")
+        self.horizontalLayout_10.addWidget(self.label_89)
         self.label_60 = QtWidgets.QLabel(self.widget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2255,236 +2275,92 @@ class Ui_LRF1_Widget(object):
         self.line_8.setObjectName("line_8")
         self.horizontalLayout_11.addWidget(self.line_8)
         self.verticalLayout_3.addLayout(self.horizontalLayout_11)
-        self.horizontalLayout.addLayout(self.verticalLayout_3)
-        self.gridLayout_5.addLayout(self.horizontalLayout, 0, 0, 1, 1)
-        self.widget_5 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_5.setGeometry(QtCore.QRect(10, 70, 151, 121))
-        self.widget_5.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.widget_5.setObjectName("widget_5")
-        self.layoutWidget_2 = QtWidgets.QWidget(self.widget_5)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(9, 9, 131, 108))
-        self.layoutWidget_2.setObjectName("layoutWidget_2")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.label_257 = QtWidgets.QLabel(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_257.setFont(font)
-        self.label_257.setObjectName("label_257")
-        self.verticalLayout_4.addWidget(self.label_257)
-        self.lineEdit_67 = QtWidgets.QLineEdit(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.lineEdit_67.setFont(font)
-        self.lineEdit_67.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;")
-        self.lineEdit_67.setObjectName("lineEdit_67")
-        self.verticalLayout_4.addWidget(self.lineEdit_67)
-        self.label_258 = QtWidgets.QLabel(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_258.setFont(font)
-        self.label_258.setObjectName("label_258")
-        self.verticalLayout_4.addWidget(self.label_258)
-        self.lineEdit_68 = QtWidgets.QLineEdit(self.layoutWidget_2)
-        self.lineEdit_68.setEnabled(True)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.lineEdit_68.setFont(font)
-        self.lineEdit_68.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;")
-        self.lineEdit_68.setObjectName("lineEdit_68")
-        self.verticalLayout_4.addWidget(self.lineEdit_68)
-        self.widget_7 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_7.setGeometry(QtCore.QRect(10, 10, 151, 51))
-        self.widget_7.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
-        self.widget_7.setObjectName("widget_7")
-        self.layoutWidget3 = QtWidgets.QWidget(self.widget_7)
-        self.layoutWidget3.setGeometry(QtCore.QRect(10, 10, 131, 31))
-        self.layoutWidget3.setObjectName("layoutWidget3")
-        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.layoutWidget3)
-        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
-        self.pushButton_9 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.pushButton_9.setMaximumSize(QtCore.QSize(16777215, 24))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_9.setFont(font)
-        self.pushButton_9.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 110px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../../../Downloads/history.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_9.setIcon(icon4)
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.horizontalLayout_14.addWidget(self.pushButton_9)
-        self.widget_8 = QtWidgets.QWidget(LRF1_Widget)
-        self.widget_8.setGeometry(QtCore.QRect(10, 360, 151, 71))
-        self.widget_8.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.widget_8.setObjectName("widget_8")
-        self.layoutWidget4 = QtWidgets.QWidget(self.widget_8)
-        self.layoutWidget4.setGeometry(QtCore.QRect(9, 9, 131, 51))
-        self.layoutWidget4.setObjectName("layoutWidget4")
-        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.layoutWidget4)
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_6.setSpacing(0)
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.horizontalLayout_32 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
-        self.label_78 = QtWidgets.QLabel(self.layoutWidget4)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_78.setFont(font)
-        self.label_78.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_78.setObjectName("label_78")
-        self.horizontalLayout_32.addWidget(self.label_78)
-        self.verticalLayout_6.addLayout(self.horizontalLayout_32)
-        self.horizontalLayout_31 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_31.setSpacing(0)
-        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
-        self.pushButton_6 = QtWidgets.QPushButton(self.layoutWidget4)
-        self.pushButton_6.setMinimumSize(QtCore.QSize(39, 0))
-        self.pushButton_6.setMaximumSize(QtCore.QSize(39, 24))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 39px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        self.pushButton_6.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../../../Downloads/add.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_6.setIcon(icon5)
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.horizontalLayout_31.addWidget(self.pushButton_6)
-        self.pushButton_7 = QtWidgets.QPushButton(self.layoutWidget4)
-        self.pushButton_7.setMaximumSize(QtCore.QSize(39, 24))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_7.setFont(font)
-        self.pushButton_7.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 39px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        self.pushButton_7.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("../../../Downloads/cancel.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_7.setIcon(icon6)
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.horizontalLayout_31.addWidget(self.pushButton_7)
-        self.pushButton_8 = QtWidgets.QPushButton(self.layoutWidget4)
-        self.pushButton_8.setMinimumSize(QtCore.QSize(39, 0))
-        self.pushButton_8.setMaximumSize(QtCore.QSize(39, 24))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.pushButton_8.setFont(font)
-        self.pushButton_8.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    border: none; /* Убираем обводку */\n"
-"    border-radius: 5px; /* Оставляем закругление углов */\n"
-"    padding: 0; /* Убираем паддинг, чтобы текст помещался */\n"
-"    width: 39px; /* Задаем фиксированную ширину */\n"
-"    height: 24px; /* Задаем фиксированную высоту */\n"
-"    font-size: 12px; /* Устанавливаем размер шрифта для текста */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b0b0b0;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"}")
-        self.pushButton_8.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("../../../Downloads/ok.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_8.setIcon(icon7)
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.horizontalLayout_31.addWidget(self.pushButton_8)
-        self.verticalLayout_6.addLayout(self.horizontalLayout_31)
+        self.verticalLayout_11.addLayout(self.verticalLayout_3)
+        self.verticalLayout_12.addLayout(self.verticalLayout_11)
+        self.gridLayout_4.addLayout(self.verticalLayout_12, 2, 0, 1, 1)
+        self.verticalLayout_5.addWidget(self.widget_2)
+        self.widget_9.raise_()
+        self.widget_4.raise_()
+        self.widget.raise_()
 
         self.retranslateUi(LRF1_Widget)
+        self.pushButton_9.clicked.connect(self.widget_2.show) # type: ignore
+        self.pushButton_10.clicked.connect(self.widget_2.hide) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(LRF1_Widget)
+        LRF1_Widget.setTabOrder(self.lineEdit, self.lineEdit_21)
+        LRF1_Widget.setTabOrder(self.lineEdit_21, self.lineEdit_1)
+        LRF1_Widget.setTabOrder(self.lineEdit_1, self.lineEdit_2)
+        LRF1_Widget.setTabOrder(self.lineEdit_2, self.lineEdit_3)
+        LRF1_Widget.setTabOrder(self.lineEdit_3, self.lineEdit_4)
+        LRF1_Widget.setTabOrder(self.lineEdit_4, self.lineEdit_5)
+        LRF1_Widget.setTabOrder(self.lineEdit_5, self.lineEdit_6)
+        LRF1_Widget.setTabOrder(self.lineEdit_6, self.lineEdit_7)
+        LRF1_Widget.setTabOrder(self.lineEdit_7, self.lineEdit_8)
+        LRF1_Widget.setTabOrder(self.lineEdit_8, self.lineEdit_9)
+        LRF1_Widget.setTabOrder(self.lineEdit_9, self.lineEdit_10)
+        LRF1_Widget.setTabOrder(self.lineEdit_10, self.lineEdit_11)
+        LRF1_Widget.setTabOrder(self.lineEdit_11, self.lineEdit_14)
+        LRF1_Widget.setTabOrder(self.lineEdit_14, self.lineEdit_15)
+        LRF1_Widget.setTabOrder(self.lineEdit_15, self.lineEdit_16)
+        LRF1_Widget.setTabOrder(self.lineEdit_16, self.lineEdit_17)
+        LRF1_Widget.setTabOrder(self.lineEdit_17, self.lineEdit_18)
+        LRF1_Widget.setTabOrder(self.lineEdit_18, self.lineEdit_19)
+        LRF1_Widget.setTabOrder(self.lineEdit_19, self.lineEdit_20)
+        LRF1_Widget.setTabOrder(self.lineEdit_20, self.comboBox_5)
+        LRF1_Widget.setTabOrder(self.comboBox_5, self.comboBox_10)
+        LRF1_Widget.setTabOrder(self.comboBox_10, self.comboBox_3)
+        LRF1_Widget.setTabOrder(self.comboBox_3, self.lineEdit_12)
+        LRF1_Widget.setTabOrder(self.lineEdit_12, self.pushButton)
+        LRF1_Widget.setTabOrder(self.pushButton, self.pushButton_2)
+        LRF1_Widget.setTabOrder(self.pushButton_2, self.pushButton_3)
+        LRF1_Widget.setTabOrder(self.pushButton_3, self.pushButton_4)
+        LRF1_Widget.setTabOrder(self.pushButton_4, self.pushButton_5)
+        LRF1_Widget.setTabOrder(self.pushButton_5, self.comboBox_6)
+        LRF1_Widget.setTabOrder(self.comboBox_6, self.comboBox_2)
+        LRF1_Widget.setTabOrder(self.comboBox_2, self.comboBox_7)
+        LRF1_Widget.setTabOrder(self.comboBox_7, self.comboBox_11)
+        LRF1_Widget.setTabOrder(self.comboBox_11, self.lineEdit_13)
+        LRF1_Widget.setTabOrder(self.lineEdit_13, self.comboBox_4)
+        LRF1_Widget.setTabOrder(self.comboBox_4, self.comboBox_12)
+        LRF1_Widget.setTabOrder(self.comboBox_12, self.comboBox_8)
+        LRF1_Widget.setTabOrder(self.comboBox_8, self.comboBox_1)
+        LRF1_Widget.setTabOrder(self.comboBox_1, self.comboBox_9)
+        LRF1_Widget.setTabOrder(self.comboBox_9, self.pushButton_10)
 
     def retranslateUi(self, LRF1_Widget):
         _translate = QtCore.QCoreApplication.translate
         LRF1_Widget.setWindowTitle(_translate("LRF1_Widget", "Form"))
+        self.pushButton.setText(_translate("LRF1_Widget", "LRF-1"))
+        self.pushButton_2.setText(_translate("LRF1_Widget", "LRF-2"))
+        self.pushButton_3.setText(_translate("LRF1_Widget", "Разбавление"))
+        self.pushButton_4.setText(_translate("LRF1_Widget", "Формулы"))
+        self.pushButton_5.setText(_translate("LRF1_Widget", "Заметки"))
+        self.label_66.setText(_translate("LRF1_Widget", "Тех. карта"))
+        self.label_77.setText(_translate("LRF1_Widget", "Масса стали, Тонн"))
+        self.label_79.setText(_translate("LRF1_Widget", "Мс:"))
+        self.label_82.setText(_translate("LRF1_Widget", "-"))
+        self.label_80.setText(_translate("LRF1_Widget", "Вд:"))
+        self.label_83.setText(_translate("LRF1_Widget", "-"))
+        self.label_81.setText(_translate("LRF1_Widget", "МНЛЗ:"))
+        self.label_84.setText(_translate("LRF1_Widget", "-"))
+        self.label_85.setText(_translate("LRF1_Widget", "-"))
         self.label_1.setText(_translate("LRF1_Widget", "Элементы"))
         self.label_13.setText(_translate("LRF1_Widget", "Цель, %"))
         self.label_25.setText(_translate("LRF1_Widget", "Проба, %"))
         self.label_26.setText(_translate("LRF1_Widget", "Материалы"))
         self.label_27.setText(_translate("LRF1_Widget", "К-во, кг"))
-        self.label_2.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_2.setText(_translate("LRF1_Widget", "C"))
         self.label_14.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_1.setPlaceholderText(_translate("LRF1_Widget", "Проба С"))
         self.comboBox_1.setItemText(0, _translate("LRF1_Widget", "GKA"))
         self.label_28.setText(_translate("LRF1_Widget", "0"))
-        self.label_3.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_3.setText(_translate("LRF1_Widget", "Si"))
         self.label_15.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_2.setPlaceholderText(_translate("LRF1_Widget", "Проба Si"))
         self.comboBox_2.setItemText(0, _translate("LRF1_Widget", "FeSi65"))
         self.comboBox_2.setItemText(1, _translate("LRF1_Widget", "FeSi75"))
         self.label_29.setText(_translate("LRF1_Widget", "0"))
-        self.label_4.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_4.setText(_translate("LRF1_Widget", "Mn"))
         self.label_16.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_3.setPlaceholderText(_translate("LRF1_Widget", "Проба Mn"))
         self.comboBox_3.setItemText(0, _translate("LRF1_Widget", "SiMn17"))
@@ -2492,114 +2368,92 @@ class Ui_LRF1_Widget(object):
         self.comboBox_3.setItemText(2, _translate("LRF1_Widget", "FeMn78P70"))
         self.comboBox_3.setItemText(3, _translate("LRF1_Widget", "FeMn78P25"))
         self.label_30.setText(_translate("LRF1_Widget", "0"))
-        self.label_5.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_5.setText(_translate("LRF1_Widget", "Cr"))
         self.label_17.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_4.setPlaceholderText(_translate("LRF1_Widget", "Проба Cr"))
         self.comboBox_4.setItemText(0, _translate("LRF1_Widget", "FeCr800"))
         self.comboBox_4.setItemText(1, _translate("LRF1_Widget", "FeCr050"))
         self.label_31.setText(_translate("LRF1_Widget", "0"))
-        self.label_6.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_6.setText(_translate("LRF1_Widget", "Ni"))
         self.label_18.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_5.setPlaceholderText(_translate("LRF1_Widget", "Проба Ni"))
         self.comboBox_5.setItemText(0, _translate("LRF1_Widget", "Ni"))
         self.label_32.setText(_translate("LRF1_Widget", "0"))
-        self.label_7.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_7.setText(_translate("LRF1_Widget", "Cu"))
         self.label_19.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_6.setPlaceholderText(_translate("LRF1_Widget", "Проба Cu"))
         self.comboBox_6.setItemText(0, _translate("LRF1_Widget", "Cu"))
         self.label_33.setText(_translate("LRF1_Widget", "0"))
-        self.label_8.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_8.setText(_translate("LRF1_Widget", "Mo"))
         self.label_20.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_7.setPlaceholderText(_translate("LRF1_Widget", "Проба Mo"))
         self.comboBox_7.setItemText(0, _translate("LRF1_Widget", "FeMo60"))
         self.label_34.setText(_translate("LRF1_Widget", "0"))
-        self.label_9.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_9.setText(_translate("LRF1_Widget", "V"))
         self.label_21.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_8.setPlaceholderText(_translate("LRF1_Widget", "Проба V"))
         self.comboBox_8.setItemText(0, _translate("LRF1_Widget", "FeV80"))
         self.label_35.setText(_translate("LRF1_Widget", "0"))
-        self.label_10.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_10.setText(_translate("LRF1_Widget", "Nb"))
         self.label_22.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_9.setPlaceholderText(_translate("LRF1_Widget", "Проба Nb"))
         self.comboBox_9.setItemText(0, _translate("LRF1_Widget", "FeNb60"))
         self.label_36.setText(_translate("LRF1_Widget", "0"))
-        self.label_11.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_11.setText(_translate("LRF1_Widget", "B"))
         self.label_23.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_10.setPlaceholderText(_translate("LRF1_Widget", "Проба B"))
         self.comboBox_10.setItemText(0, _translate("LRF1_Widget", "FeB20"))
         self.label_37.setText(_translate("LRF1_Widget", "0"))
-        self.label_12.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_12.setText(_translate("LRF1_Widget", "Other"))
         self.label_24.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_11.setPlaceholderText(_translate("LRF1_Widget", "Проба"))
         self.lineEdit_12.setPlaceholderText(_translate("LRF1_Widget", "Назва. Матер"))
         self.label_38.setText(_translate("LRF1_Widget", "0"))
-        self.label_250.setText(_translate("LRF1_Widget", "Мс "))
-        self.label_244.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_252.setText(_translate("LRF1_Widget", "ВД"))
-        self.label_246.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_254.setText(_translate("LRF1_Widget", "МНЛЗ"))
-        self.label_248.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_249.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.pushButton.setText(_translate("LRF1_Widget", "LRF-1"))
-        self.pushButton_2.setText(_translate("LRF1_Widget", "LRF-2"))
-        self.pushButton_3.setText(_translate("LRF1_Widget", "Разбавление"))
-        self.pushButton_4.setText(_translate("LRF1_Widget", "Формулы"))
-        self.pushButton_5.setText(_translate("LRF1_Widget", "Заметки"))
-        self.label.setText(_translate("LRF1_Widget", "Расчёт Коэф"))
-        self.label_67.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_70.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_71.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_73.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_69.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_68.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_72.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_74.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_75.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_76.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.pushButton_10.setText(_translate("LRF1_Widget", "Закрыть"))
+        self.label_90.setText(_translate("LRF1_Widget", "Микролегированиие проволокой"))
         self.label_39.setText(_translate("LRF1_Widget", "Элементы"))
         self.label_44.setText(_translate("LRF1_Widget", "Цель, %"))
         self.label_48.setText(_translate("LRF1_Widget", "Проба, %"))
         self.label_49.setText(_translate("LRF1_Widget", "Материалы"))
         self.label_52.setText(_translate("LRF1_Widget", "Длина, м "))
-        self.label_40.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_40.setText(_translate("LRF1_Widget", "C"))
         self.label_45.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_14.setPlaceholderText(_translate("LRF1_Widget", "Проба С"))
         self.label_50.setText(_translate("LRF1_Widget", "C"))
-        self.label_53.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_41.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_53.setText(_translate("LRF1_Widget", "0"))
+        self.label_41.setText(_translate("LRF1_Widget", "Al"))
         self.label_46.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_15.setPlaceholderText(_translate("LRF1_Widget", "Проба Al"))
         self.label_51.setText(_translate("LRF1_Widget", "Al"))
-        self.label_54.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_42.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_54.setText(_translate("LRF1_Widget", "0"))
+        self.label_42.setText(_translate("LRF1_Widget", "Ti"))
         self.label_47.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_16.setPlaceholderText(_translate("LRF1_Widget", "Проба Ti"))
         self.comboBox_11.setItemText(0, _translate("LRF1_Widget", "FeTi50"))
         self.comboBox_11.setItemText(1, _translate("LRF1_Widget", "FeTi70"))
-        self.label_55.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_43.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.lineEdit_13.setPlaceholderText(_translate("LRF1_Widget", "Темп"))
+        self.label_55.setText(_translate("LRF1_Widget", "0"))
+        self.label_43.setText(_translate("LRF1_Widget", "t,°C/S"))
+        self.lineEdit_13.setPlaceholderText(_translate("LRF1_Widget", "°C"))
         self.lineEdit_17.setPlaceholderText(_translate("LRF1_Widget", "Проба S"))
         self.comboBox_12.setItemText(0, _translate("LRF1_Widget", "FeCa(DAR)"))
-        self.label_56.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_56.setText(_translate("LRF1_Widget", "0"))
+        self.label_91.setText(_translate("LRF1_Widget", "Коэфициент Усвоение"))
+        self.label_87.setText(_translate("LRF1_Widget", "Элементы"))
         self.label_57.setText(_translate("LRF1_Widget", "Кусв"))
         self.label_61.setText(_translate("LRF1_Widget", "Факт,м"))
         self.label_62.setText(_translate("LRF1_Widget", "ФКусв"))
-        self.label_58.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_86.setText(_translate("LRF1_Widget", "С"))
+        self.label_58.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_18.setPlaceholderText(_translate("LRF1_Widget", "Проба С"))
-        self.label_63.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_59.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_63.setText(_translate("LRF1_Widget", "0"))
+        self.label_88.setText(_translate("LRF1_Widget", "Al"))
+        self.label_59.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_19.setPlaceholderText(_translate("LRF1_Widget", "Проба Al"))
-        self.label_64.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_60.setText(_translate("LRF1_Widget", "TextLabel"))
+        self.label_64.setText(_translate("LRF1_Widget", "0"))
+        self.label_89.setText(_translate("LRF1_Widget", "Ti"))
+        self.label_60.setText(_translate("LRF1_Widget", "0"))
         self.lineEdit_20.setPlaceholderText(_translate("LRF1_Widget", "Проба Ti"))
-        self.label_65.setText(_translate("LRF1_Widget", "TextLabel"))
-        self.label_257.setText(_translate("LRF1_Widget", "Тех. карта"))
-        self.lineEdit_67.setPlaceholderText(_translate("LRF1_Widget", "Тех карта"))
-        self.label_258.setText(_translate("LRF1_Widget", "Масса стали , тонн"))
-        self.lineEdit_68.setPlaceholderText(_translate("LRF1_Widget", "Масса стали"))
-        self.pushButton_9.setText(_translate("LRF1_Widget", "Очистка"))
-        self.label_78.setText(_translate("LRF1_Widget", "База Данных"))
+        self.label_65.setText(_translate("LRF1_Widget", "0"))
 
 
 if __name__ == "__main__":
