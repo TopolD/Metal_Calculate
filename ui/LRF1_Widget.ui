@@ -12,7 +12,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>662</width>
+    <width>633</width>
     <height>923</height>
    </rect>
   </property>
@@ -119,8 +119,8 @@ QPushButton:pressed {
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../../Downloads/MetalCalculate (2)/vector.svg</normaloff>
-             <normalon>../../../Downloads/MetalCalculate (2)/vector.svg</normalon>../../../Downloads/MetalCalculate (2)/vector.svg</iconset>
+             <normaloff>MetalCalculate (2)/vector.svg</normaloff>
+             <normalon>../../../Downloads/MetalCalculate (2)/vector.svg</normalon>MetalCalculate (2)/vector.svg</iconset>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -3194,7 +3194,7 @@ border:None;</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../Downloads/vector.svg</normaloff>../../../Downloads/vector.svg</iconset>
+        <normaloff>../../../Downloads/211614_down_b_arrow_icon.svg</normaloff>../../../Downloads/211614_down_b_arrow_icon.svg</iconset>
       </property>
       <property name="default">
        <bool>false</bool>
@@ -3229,7 +3229,7 @@ border:None
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Downloads/vector (1).svg</normaloff>../../../Downloads/vector (1).svg</iconset>
+           <normaloff>../../../Downloads/211623_b_up_arrow_icon.svg</normaloff>../../../Downloads/211623_b_up_arrow_icon.svg</iconset>
          </property>
          <property name="shortcut">
           <string/>

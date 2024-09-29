@@ -1,5 +1,3 @@
-from xmlrpc.client import FastParser
-
 from PyQt5.QtCore import QPropertyAnimation, QRect
 from PyQt5.QtWidgets import QWidget, QPushButton
 from PyQt5.QtGui import QIntValidator, QDoubleValidator
@@ -16,7 +14,7 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
         self.widget_2.setVisible(False)
 
         self.hidden_widget = self.findChild(QWidget, 'widget_2')
-        self.show_button = self.findChild(QPushButton, 'pushButton_9')  # Кнопка показа
+        self.show_button = self.findChild(QPushButton, 'pushButton_9')
         self.hide_button = self.findChild(QPushButton, 'pushButton_10')
 
         self.original_size = self.size()
@@ -88,10 +86,8 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
 
     def update_label(self):
         try:
-
             DataHolder.set_data(self.lineEdit.text(), None)
-            FuseData = GetDataCalculate()
-            Fuse = FuseData.get_data_fuse()
+            Fuse = GetDataCalculate().get_data_fuse()
             self.Processor_of_material_data_at_the_time_of_entry(Fuse)
             self.update_border_for_error(self.lineEdit, None)
 
@@ -174,66 +170,3 @@ class DisplayWindow(QWidget, Ui_LRF1_Widget):
             widget = item.widget()
             if widget is not None:
                 widget.setVisible(visible)
-
-    def update_label_wight(self):
-        Dict_Data = self.Dict_Data()
-        DataHolder.set_data(self.lineEdit.text(), Dict_Data)
-
-        self.update_materials()
-
-    def Dict_Data(self):
-        Dict_Data = {
-            'W': self.lineEdit_21.text(),
-            'samples': {
-                'C': 0,
-                'Si': 0,
-                'Mn': 0,
-                'Cr': 0,
-                'Ni': 0,
-                'Cu': 0,
-                'Mo': 0,
-                'V': 0,
-                'Nb': 0,
-                'B': 0,
-                'Other': 0,
-            },
-            'material': {
-                'C': self.getComboBoxValue(self.comboBox_1),
-                'Si': self.getComboBoxValue(self.comboBox_2),
-                'Mn': self.getComboBoxValue(self.comboBox_3),
-                'Cr': self.getComboBoxValue(self.comboBox_4),
-                'Ni': self.getComboBoxValue(self.comboBox_5),
-                'Cu': self.getComboBoxValue(self.comboBox_6),
-                'Mo': self.getComboBoxValue(self.comboBox_7),
-                'V': self.getComboBoxValue(self.comboBox_8),
-                'Nb': self.getComboBoxValue(self.comboBox_9),
-                'B': self.getComboBoxValue(self.comboBox_10),
-            }
-        }
-        return Dict_Data
-
-    def getComboBoxValue(self, comboBox):
-        return comboBox.currentText() or None
-
-    def update_materials(self):
-        materials = {
-            self.label_28: Calculate()._calculate_materials_c(),
-            self.label_29: Calculate()._calculate_materials_si(),
-            self.label_30: Calculate()._calculate_materials_mn(),
-            self.label_37: Calculate()._calculate_materials_b(),
-        }
-
-        for label, value in materials.items():
-            self.update_labels(label, value)
-
-    def update_labels(self, label, value):
-        label.setText(str(value))
-        self.update_label_style(label, value)
-
-    @staticmethod
-    def update_label_style(label, value):
-        if value < 0:
-            label.setStyleSheet("border-bottom: 2px solid #FF3B30;")
-            label.setText('ALARM')
-        else:
-            label.setStyleSheet("border-bottom: 2px solid #34C759;")
