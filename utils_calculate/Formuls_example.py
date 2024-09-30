@@ -88,17 +88,18 @@ class Calculate(GetDataCalculate):
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
-    def remainder_material(self):
+    def remainder_material(self,value):
         instance = self.Data_fuse['Materials'].items()
         for attr_key, attr_value in instance:
             material_type = self.Data_fuse['Materials'][attr_key]
             for element_key, element_value in material_type.items():
                 if element_key != attr_key:
-                    if element_key == 'C':
-                        return self.remainder_materials_all(attr_key, element_key)
+                    if element_key == value:
+                        if element_key == 'C':
+                            return self.remainder_materials_all(attr_key, element_key)
 
-                    if element_key == 'Si':
-                        return self.remainder_materials_all(attr_key, element_key)
+                        if element_key == 'Si':
+                            return self.remainder_materials_all(attr_key, element_key)
 
     @staticmethod
     def calculate_remainder_material(data: dict, material, element, residue):
@@ -124,12 +125,12 @@ class Calculate(GetDataCalculate):
 
     def _calculate_materials_c(self):
         if self.Data_fuse['Materials']['Mn']['C']:
-            return round(self.remainder_material(), 1)
+            return round(self.remainder_material('C'), 1)
         return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
 
     def _calculate_materials_si(self):
         if self.Data_fuse['Materials']['Mn']['Si']:
-            return round(self.remainder_material(), 1)
+            return round(self.remainder_material('Si'), 1)
         return round(self.__calculate_data(self.Data_fuse, 'Si'), 1)
 
     def _calculate_materials_mn(self):
