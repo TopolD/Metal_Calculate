@@ -1,5 +1,5 @@
-from pony.orm import *
 from utils_db.Db_models import ConnDb
+from pony.orm import db_session
 
 
 class DataHolder:
@@ -12,12 +12,7 @@ class DataHolder:
         cls.Data = Data
 
 
-class GetDataCalculate:
-
-    def __init__(self):
-        self.db = ConnDb()
-        self.Tcn = DataHolder.Tcn
-        self.Data = DataHolder.Data
+class HandlerCleanData:
 
     def clean_data(self, DataDb):
         try:
@@ -29,51 +24,61 @@ class GetDataCalculate:
                 return Clean_Data
         except Exception as e:
             print(e)
+        self.clean_data(DataDb)
+
+
+class GetDataCalculateWithDb:
+
+    def __init__(self):
+
+        self.db = ConnDb()
+        self.Tcn = DataHolder.Tcn
+        self.Data = DataHolder.Data
 
     @db_session
     def get_data_fuse(self):
-        return self.clean_data(self.db.Fuse.get(Tcn=self.Tcn))
+        return HandlerCleanData().clean_data(self.db.Fuse.get(Tcn=self.Tcn))
 
     @db_session
     def get_material(self):
 
-        Material_dict = self.Data.get('material')
+        Material_dict = self.Data['material']
         Material = {}
 
         if Material_dict:
             for value_atr, value_name in Material_dict.items():
                 raw_result = self.db.ChemicalComposition.get(MaterialName=value_name)
                 if raw_result:
-                    result = self.clean_data(raw_result)
+                    result = HandlerCleanData().clean_data(raw_result)
                     filtered_result = {k: v for k, v in result.items() if k not in ('ID', 'MaterialName')}
                     Material[value_atr] = filtered_result
             return Material
 
-    def get_samples(self):
-        Samples = self.Data['samples']
 
-        if Samples:
-            return Samples
-        else:
-            return 'No samples'
+class DataForCalculate(GetDataCalculateWithDb):
+
+    def __init__(self):
+        super().__init__()
 
     def gather_materials(self):
         data_for_fuse = {}
 
         Fuse = self.get_data_fuse()
-        Samples = self.get_samples()
+        Samples = self.Data['samples']
         Materials = self.get_material()
+        CoreWire = self.Data['corewire']
 
         data_for_fuse.update({
             'W': self.Data.get('W'),
             "Fuse": Fuse,
             'Samples': Samples,
-            'Materials': Materials
+            'Materials': Materials,
+            'corewire': CoreWire,
         })
         return data_for_fuse
 
 
-class Calculate(GetDataCalculate):
+class CalculateRemainderMaterial(DataForCalculate):
 
     def __init__(self):
         super().__init__()
@@ -88,7 +93,7 @@ class Calculate(GetDataCalculate):
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
-    def remainder_material(self,value):
+    def remainder_material(self, value):
         instance = self.Data_fuse['Materials'].items()
         for attr_key, attr_value in instance:
             material_type = self.Data_fuse['Materials'][attr_key]
@@ -156,3 +161,25 @@ class Calculate(GetDataCalculate):
 
     def _calculate_materials_b(self):
         return round(self.__calculate_data(self.Data_fuse, 'B'), 1)
+
+
+class CalculateCoreWire(DataForCalculate):
+
+    def __init__(self):
+        super().__init__()
+        self.Data_fuse = self.gather_materials()
+
+    def calculate_core_wire(self, material):
+        target_value = float(self.Data_fuse['Fuse'][material])
+        W = float(self.Data_fuse['W'])
+        coef = self.calculate_coef()
+        samples_core_wire = float(self.Data_fuse['corewire'][material])
+        return (target_value - samples_core_wire) * W / float(coef[material])
+
+    def calculate_coef(self):
+        material_core_coef = {
+            'Al': 24,
+            'Ti': 20.8,
+            'C': 16
+        }
+        return material_core_coef

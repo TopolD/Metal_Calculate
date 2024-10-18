@@ -1,14 +1,14 @@
-from ui.app_example import *
-from utils_calculate.Formuls_example import *
+
+from utils_calculate.formuls_for_calculate import *
 
 
-class CalculationHandler(DisplayWindow):
+class CalculationHandler:
 
     def __init__(self, Tcn):
         super().__init__()
-        self.Calc = Calculate()
+        self.Calc = CalculateRemainderMaterial()
         DataHolder.set_data(Tcn, None)
-        self.Fuse = GetDataCalculate().get_data_fuse()
+        self.Fuse = GetDataCalculateWithDb().get_data_fuse()
 
 
         self.material_handlers = {

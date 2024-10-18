@@ -1,4 +1,4 @@
-from Formuls_example import Calculate, DataHolder
+from formuls_for_calculate import CalculateRemainderMaterial, DataHolder
 
 Tcn = ('222'
        '')
@@ -10,6 +10,12 @@ Data = {
         'Mn': 0,
 
     },
+    'corewire':{
+        'C':0,
+        'Al':0.007,
+        'Ti':0,
+
+    },
     'material': {
         'C': 'GKA',
         'Si': 'FeSi75',
@@ -19,6 +25,6 @@ Data = {
 
 }
 DataHolder.set_data(Tcn, Data)
-result = Calculate()
-example_result = result._calculate_materials_si()
+result = CalculateRemainderMaterial()
+example_result = result._calculate_materials_c()
 print(example_result)

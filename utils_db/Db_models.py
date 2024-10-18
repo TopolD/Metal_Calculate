@@ -15,6 +15,7 @@ class ConnDb:
     def ModelsData(self):
         self.ChemicalData()
         self.FuseData()
+        self.FuseDataTarget()
         self.AbsorptionRateData()
         self.CoredWireData()
 
@@ -66,12 +67,20 @@ class ConnDb:
 
     def FuseData(self):
         class Fuse(self.db.Entity):
-            ID = PrimaryKey(int, auto=True)
+
             Tcn = Required(str)
             FuseName = Required(str)
             TempVd = Required(str)
             Temp_ccm1 = Required(str)
             Temp_ccm2 = Required(str)
+            TargetForFuse= Optional('FuseTarget')
+
+        self.Fuse = Fuse
+
+    def FuseDataTarget(self):
+        class FuseTarget(self.db.Entity):
+            Fuse = Required('Fuse')
+            Tcn = PrimaryKey(str)
             C = Optional(float)
             Mn = Optional(float)
             Si = Optional(float)
@@ -88,7 +97,7 @@ class ConnDb:
             Ca = Optional(float)
             Cpr = Optional(float)
 
-        self.Fuse = Fuse
+        self.FuseTarget = FuseTarget
 
     def CoredWireData(self):
         class CoredWire(self.db.Entity):
