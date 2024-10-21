@@ -27,7 +27,7 @@ class HandlerCleanData:
         self.clean_data(DataDb)
 
 
-class GetDataCalculateWithDb:
+class get_data_calculate_with_db:
 
     def __init__(self):
 
@@ -38,6 +38,20 @@ class GetDataCalculateWithDb:
     @db_session
     def get_data_fuse(self):
         return HandlerCleanData().clean_data(self.db.Fuse.get(Tcn=self.Tcn))
+
+    @db_session
+    def get_data_target_for_fuse(self):
+        Target_Data = HandlerCleanData().clean_data(self.db.FuseTarget.get(Tcn=self.Tcn))
+        stark_key = 'C'
+        Sliced_Dict = {}
+        take = False
+        for attrkey, attrvalue in Target_Data.items():
+            if attrkey == stark_key:
+                take = True
+            if take:
+                Sliced_Dict[attrkey] = attrvalue
+        return Sliced_Dict
+
 
     @db_session
     def get_material(self):
@@ -55,7 +69,7 @@ class GetDataCalculateWithDb:
             return Material
 
 
-class DataForCalculate(GetDataCalculateWithDb):
+class data_for_calculate(get_data_calculate_with_db):
 
     def __init__(self):
         super().__init__()
@@ -78,7 +92,7 @@ class DataForCalculate(GetDataCalculateWithDb):
         return data_for_fuse
 
 
-class CalculateRemainderMaterial(DataForCalculate):
+class calculate_remainder_material(data_for_calculate):
 
     def __init__(self):
         super().__init__()
@@ -163,7 +177,7 @@ class CalculateRemainderMaterial(DataForCalculate):
         return round(self.__calculate_data(self.Data_fuse, 'B'), 1)
 
 
-class CalculateCoreWire(DataForCalculate):
+class calculate_core_wire(data_for_calculate):
 
     def __init__(self):
         super().__init__()

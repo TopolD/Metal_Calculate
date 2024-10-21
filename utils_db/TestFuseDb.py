@@ -20,7 +20,7 @@ class TestFuseDb(unittest.TestCase):
             TempV='1',
             Temp_ccm1='1',
             Temp_ccm2='1',
-            Tar
+
         )
         commit()
         self.assertIsNotNone(NewFuse.ID)

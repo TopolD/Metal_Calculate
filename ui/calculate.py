@@ -6,9 +6,9 @@ class CalculationHandler:
 
     def __init__(self, Tcn):
         super().__init__()
-        self.Calc = CalculateRemainderMaterial()
+        self.Calc = calculate_remainder_material()
         DataHolder.set_data(Tcn, None)
-        self.Fuse = GetDataCalculateWithDb().get_data_fuse()
+        self.Fuse = get_data_calculate_with_db().get_data_fuse()
 
 
         self.material_handlers = {
