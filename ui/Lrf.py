@@ -16,7 +16,7 @@ class Ui_LRF1_Widget(object):
         LRF1_Widget.setObjectName("LRF1_Widget")
         LRF1_Widget.setWindowModality(QtCore.Qt.WindowModal)
         LRF1_Widget.setEnabled(True)
-        LRF1_Widget.resize(650, 912)
+        LRF1_Widget.resize(749, 912)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -555,7 +555,6 @@ class Ui_LRF1_Widget(object):
         font.setPointSize(10)
         self.LabelSamplesForNi.setFont(font)
         self.LabelSamplesForNi.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
 "border: none;\n"
 "border-bottom: 2px solid #E0E0E0;\n"
 "")
@@ -565,7 +564,6 @@ class Ui_LRF1_Widget(object):
         self.MaterialForNi.setMinimumSize(QtCore.QSize(114, 28))
         self.MaterialForNi.setMaximumSize(QtCore.QSize(114, 28))
         self.MaterialForNi.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
 "border: none;\n"
 "border-bottom: 2px solid #F5F5F5;\n"
 "")
@@ -2026,19 +2024,18 @@ class Ui_LRF1_Widget(object):
         LRF1_Widget.setTabOrder(self.LabelSamplesForCr, self.LabelSamplesForNi)
         LRF1_Widget.setTabOrder(self.LabelSamplesForNi, self.LabelSamplesForCu)
         LRF1_Widget.setTabOrder(self.LabelSamplesForCu, self.LabelSamplesForMo)
-        LRF1_Widget.setTabOrder(self.LabelSamplesForMo, self.LabelSamplesForNb)
+        LRF1_Widget.setTabOrder(self.LabelSamplesForMo, self.LabelSamplesForV)
+        LRF1_Widget.setTabOrder(self.LabelSamplesForV, self.LabelSamplesForNb)
         LRF1_Widget.setTabOrder(self.LabelSamplesForNb, self.LabelSamplesForB)
         LRF1_Widget.setTabOrder(self.LabelSamplesForB, self.lineEdit_14)
-        LRF1_Widget.setTabOrder(self.lineEdit_14, self.lineEdit_15)
-        LRF1_Widget.setTabOrder(self.lineEdit_15, self.lineEdit_16)
+        LRF1_Widget.setTabOrder(self.lineEdit_14, self.lineEdit_16)
         LRF1_Widget.setTabOrder(self.lineEdit_16, self.lineEdit_17)
         LRF1_Widget.setTabOrder(self.lineEdit_17, self.lineEdit_18)
         LRF1_Widget.setTabOrder(self.lineEdit_18, self.lineEdit_19)
         LRF1_Widget.setTabOrder(self.lineEdit_19, self.lineEdit_20)
         LRF1_Widget.setTabOrder(self.lineEdit_20, self.MaterialForNi)
         LRF1_Widget.setTabOrder(self.MaterialForNi, self.MaterialForB)
-        LRF1_Widget.setTabOrder(self.MaterialForB, self.MaterialForMn)
-        LRF1_Widget.setTabOrder(self.MaterialForMn, self.MaterialForCu)
+        LRF1_Widget.setTabOrder(self.MaterialForB, self.MaterialForCu)
         LRF1_Widget.setTabOrder(self.MaterialForCu, self.MaterialForSi)
         LRF1_Widget.setTabOrder(self.MaterialForSi, self.MaterialForMo)
         LRF1_Widget.setTabOrder(self.MaterialForMo, self.comboBox_11)
@@ -2048,6 +2045,10 @@ class Ui_LRF1_Widget(object):
         LRF1_Widget.setTabOrder(self.comboBox_12, self.MaterialForV)
         LRF1_Widget.setTabOrder(self.MaterialForV, self.MaterialForC)
         LRF1_Widget.setTabOrder(self.MaterialForC, self.MaterialForNb)
+        LRF1_Widget.setTabOrder(self.MaterialForNb, self.pushButton_6)
+        LRF1_Widget.setTabOrder(self.pushButton_6, self.pushButton_7)
+        LRF1_Widget.setTabOrder(self.pushButton_7, self.lineEdit_15)
+        LRF1_Widget.setTabOrder(self.lineEdit_15, self.MaterialForMn)
 
     def retranslateUi(self, LRF1_Widget):
         _translate = QtCore.QCoreApplication.translate

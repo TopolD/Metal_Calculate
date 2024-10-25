@@ -1,5 +1,3 @@
-from types import NoneType
-
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
@@ -21,7 +19,6 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
 
         self.button_handler_for_display()
         self.line_edit_handler_for_display()
-        self.line_edit_initialize_for_calculate()
 
     def button_handler_for_display(self):
         pass
@@ -31,46 +28,16 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         self.InputTechCard.editingFinished.connect(self.InputClass.handle_input)
 
         self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 2))
-        self.InputWeight.editingFinished.connect(self.CalculateClass.initialize_data_from_Weight)
+        self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate)
 
-    def line_edit_initialize_for_calculate(self, Right_Change=False):
-        Initialize_Dict = {
-            'C': self.LabelTargetForC,
-            'Si': self.LabelTargetForSi,
-            'Mn': self.LabelTargetForMn,
-            'Cr': self.LabelTargetForCr,
-            'Ni': self.LabelTargetForNi,
-            'Cu': self.LabelTargetForCu,
-            'Mo': self.LabelTargetForMo,
-            'V': self.LabelTargetForV,
-            'Nb': self.LabelTargetForNb,
-            'B': self.LabelTargetForB
-        }
-        if Right_Change == False:
-            self.LabelTargetForC.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForSi.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForMn.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForCr.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForNi.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForCu.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForMo.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForV.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForNb.setValidator(QDoubleValidator(0.0, 0, 3))
-            self.LabelTargetForB.setValidator(QDoubleValidator(0.0, 0, 3))
-        else:
-            for attr_key, attr_value in Initialize_Dict.items():
-                DataHolder.set_data(self.InputTechCard.text(), None)
-                Fuse_Data = get_data_calculate_with_db().get_data_target_for_fuse()
-                if attr_key in Fuse_Data:
-                    Initialize_Dict[attr_key].setValidator(QDoubleValidator(0.0, Fuse_Data[attr_key], 3))
-                    Initialize_Dict[attr_key].editingFinished.connect(
-                        self.CalculateClass.InputDataForCalculate(attr_key))
-                    self.setFocus(Initialize_Dict[attr_key])
-                    break
-                else:
-                    yield
-
-
+    def line_edit_handler_for_calculate(self):
+        material_list = changing_field_values(self).elements_hiding_list
+        for material in material_list:
+            InputLineEditName = f'LabelSamplesFor{material}'
+            InitialLineEdit = getattr(self, InputLineEditName, None)
+            if InitialLineEdit:
+                InitialLineEdit.setValidator(QDoubleValidator(0.0, 4.0, 3))
+                InitialLineEdit.editingFinished.connect(lambda : self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict.update({material: InitialLineEdit.text()})))
 class input_data_handler:
 
     def __init__(self, parent):
@@ -87,14 +54,31 @@ class input_data_handler:
         self.parent.OutputClass.output_label_for_fuse()
         self.parent.OutputClass.output_label_for_target_fuse()
 
-    def initialize_samples_for_fuse(self):
-        DisplayHandler().line_edit_initialize_for_calculate(Right_Change=True)
-
 
 class changing_field_values:
 
     def __init__(self, parent):
         self.parent = parent
+        self.samples_dict = {
+            'W': self.parent.InputWeight.text(),
+            'samples': {
+            },
+            'material': {
+                'C': self.parent.MaterialForC.currentText(),
+                'Si': self.parent.MaterialForSi.currentText(),
+                'Mn': self.parent.MaterialForMn.currentText(),
+                'Cr': self.parent.MaterialForCr.currentText(),
+                'Ni': self.parent.MaterialForNi.currentText(),
+                'Cu': self.parent.MaterialForCu.currentText(),
+                'Mo': self.parent.MaterialForMo.currentText(),
+                'V': self.parent.MaterialForV.currentText(),
+                'Nb': self.parent.MaterialForNb.currentText(),
+                'B': self.parent.MaterialForB.currentText(),
+            },
+            'corewire': {}
+        }
+
+        self.elements_hiding_list = []
 
     def get_fuse_data(self):
         return input_data_handler(self.parent).handle_input()
@@ -127,6 +111,7 @@ class changing_field_values:
                 elements_clean_dict[AttrKeyDict].setText(str(FuseData[AttrKeyDict]))
                 self.handler_visible_for_fuse_material_target(AttrKeyDict)
             else:
+                self.elements_hiding_list.append(AttrKeyDict)
                 self.handler_hiding_for_fuse_material_target(AttrKeyDict)
 
     def handle_widget_visibility_for_fuse_material_target(self, key, visible):
@@ -151,65 +136,26 @@ class changing_field_values:
     def get_fuse_data_target_with_db(self):
         return get_data_calculate_with_db().get_data_target_for_fuse()
 
+    def flight_check_materials(self, handler, value):
+        if value < 0:
+            return handler.setStyleSheet("""
+                border-bottom: 2px solid #FFA5A5;
+
+            """)
+        else:
+            return handler.setStyleSheet("""
+                border-bottom: 2p solid #BCFBA7
+            """)
+
 
 class handler_data:
     def __init__(self, parent):
         self.parent = parent
-        self.data_for_calculate = {
-            'W': self.parent.InputWeight.text(),
-            'samples': {},
-            'material': {
-                'C': self.parent.MaterialForC.currentText(),
-                'Si': self.parent.MaterialForSi.currentText(),
-                'Mn': self.parent.MaterialForMn.currentText(),
-                'Cr': self.parent.MaterialForCr.currentText(),
-                'Ni': self.parent.MaterialForNi.currentText(),
-                'Cu': self.parent.MaterialForCu.currentText(),
-                'Mo': self.parent.MaterialForMo.currentText(),
-                'V': self.parent.MaterialForV.currentText(),
-                'Nb': self.parent.MaterialForNb.currentText(),
-                'B': self.parent.MaterialForB.currentText(),
-            },
-            'corewire':{}
-        }
 
-    def initialize_data_from_Weight(self):
-        input_data_handler(self.parent).initialize_samples_for_fuse()
-        if self.data_for_calculate is not None:
-            self.initialize_data()
-        else:
-            raise NoneType
-
-    def InputDataForCalculate(self, value):
-        input_dict_data = {
-            'C': self.parent.LabelTargetForC,
-            'Si': self.parent.LabelTargetForSi,
-            'Mn': self.parent.LabelTargetForMn,
-            'Cr': self.parent.LabelTargetForCr,
-            'Ni': self.parent.LabelTargetForNi,
-            'Cu': self.parent.LabelTargetForCu,
-            'Mo': self.parent.LabelTargetForMo,
-            'V': self.parent.LabelTargetForV,
-            'Nb': self.parent.LabelTargetForNb,
-            'B': self.parent.LabelTargetForB
-        }
-
-        for attr_key, attr_value in input_dict_data.items():
-
-            if attr_key == value:
-                self.data_for_calculate['samples'].update({attr_key: float(attr_value.text())})
-
-            else:
-                yield
-        return self.data_for_calculate
-
-    def initialize_data(self):
-        DataHolder.set_data(self.parent.InputTechCard.text(), self.data_for_calculate)
-        result = CalculationHandler(self.parent.InputTechCard.text())
-        if result is not None:
-            return result
-        else:
-            raise NoneType
+    def Handler_for_calculate(self, Data):
+        DataHolder.set_data(self.parent.InputTechCard.text(),
+                            Data)
+        result = CalculationHandler(self.parent.InputTechCard.text()).HandlerSamples()
 
 
 if __name__ == "__main__":

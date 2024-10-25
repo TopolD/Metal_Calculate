@@ -52,7 +52,6 @@ class get_data_calculate_with_db:
                 Sliced_Dict[attrkey] = attrvalue
         return Sliced_Dict
 
-
     @db_session
     def get_material(self):
 
@@ -92,11 +91,11 @@ class data_for_calculate(get_data_calculate_with_db):
         return data_for_fuse
 
 
-class calculate_remainder_material(data_for_calculate):
+class calculate_remainder_material:
 
     def __init__(self):
         super().__init__()
-        self.Data_fuse = self.gather_materials()
+        self.Data_fuse = data_for_calculate().gather_materials()
 
     @staticmethod
     def __calculate_data(data: dict, element):
@@ -177,17 +176,17 @@ class calculate_remainder_material(data_for_calculate):
         return round(self.__calculate_data(self.Data_fuse, 'B'), 1)
 
 
-class calculate_core_wire(data_for_calculate):
+class calculate_core_wire():
 
     def __init__(self):
         super().__init__()
-        self.Data_fuse = self.gather_materials()
+        self.Data_fuse_for_cire = data_for_calculate().gather_materials()
 
     def calculate_core_wire(self, material):
-        target_value = float(self.Data_fuse['Fuse'][material])
-        W = float(self.Data_fuse['W'])
+        target_value = float(self.Data_fuse_for_cire['Fuse'][material])
+        W = float(self.Data_fuse_for_cire['W'])
         coef = self.calculate_coef()
-        samples_core_wire = float(self.Data_fuse['corewire'][material])
+        samples_core_wire = float(self.Data_fuse_for_cire['corewire'][material])
         return (target_value - samples_core_wire) * W / float(coef[material])
 
     def calculate_coef(self):
