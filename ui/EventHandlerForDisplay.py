@@ -31,13 +31,29 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate)
 
     def line_edit_handler_for_calculate(self):
-        material_list = changing_field_values(self).elements_hiding_list
+        material_list = self.OutputClass.elements_visible_list
         for material in material_list:
             InputLineEditName = f'LabelSamplesFor{material}'
-            InitialLineEdit = getattr(self, InputLineEditName, None)
-            if InitialLineEdit:
-                InitialLineEdit.setValidator(QDoubleValidator(0.0, 4.0, 3))
-                InitialLineEdit.editingFinished.connect(lambda : self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict.update({material: InitialLineEdit.text()})))
+            initial_line_edit = getattr(self, InputLineEditName, None)
+            if initial_line_edit:
+                initial_line_edit.setValidator(QDoubleValidator(0.0, 4.0, 3))
+                initial_line_edit.editingFinished.connect(
+                    lambda line_edit=initial_line_edit, mat=material: self.handle_input(line_edit, mat))
+
+    def handle_input(self, line_edit, material):
+        self.OutputClass.samples_dict.update({'W': self.InputWeight.text()})
+        Material_Box = f'MaterialFor{material}'
+        Material_Box_edit = getattr(self, Material_Box, None)
+        material_box_value = Material_Box_edit.currentText()
+
+        input_value = line_edit.text()
+        if input_value:
+            self.OutputClass.samples_dict['samples'][material] = input_value
+            self.OutputClass.samples_dict['material'][material] = material_box_value
+            print(self.OutputClass.samples_dict)
+
+
+
 class input_data_handler:
 
     def __init__(self, parent):
@@ -61,24 +77,12 @@ class changing_field_values:
         self.parent = parent
         self.samples_dict = {
             'W': self.parent.InputWeight.text(),
-            'samples': {
-            },
-            'material': {
-                'C': self.parent.MaterialForC.currentText(),
-                'Si': self.parent.MaterialForSi.currentText(),
-                'Mn': self.parent.MaterialForMn.currentText(),
-                'Cr': self.parent.MaterialForCr.currentText(),
-                'Ni': self.parent.MaterialForNi.currentText(),
-                'Cu': self.parent.MaterialForCu.currentText(),
-                'Mo': self.parent.MaterialForMo.currentText(),
-                'V': self.parent.MaterialForV.currentText(),
-                'Nb': self.parent.MaterialForNb.currentText(),
-                'B': self.parent.MaterialForB.currentText(),
-            },
+            'samples': {},
+            'material': {},
             'corewire': {}
         }
 
-        self.elements_hiding_list = []
+        self.elements_visible_list = []
 
     def get_fuse_data(self):
         return input_data_handler(self.parent).handle_input()
@@ -105,13 +109,13 @@ class changing_field_values:
             'Nb': self.parent.LabelTargetForNb,
             'B': self.parent.LabelTargetForB,
         }
-
+        self.elements_visible_list.clear()
         for AttrKeyDict, AttrValueDict in elements_clean_dict.items():
             if AttrKeyDict in FuseData:
                 elements_clean_dict[AttrKeyDict].setText(str(FuseData[AttrKeyDict]))
+                self.elements_visible_list.append(AttrKeyDict)
                 self.handler_visible_for_fuse_material_target(AttrKeyDict)
             else:
-                self.elements_hiding_list.append(AttrKeyDict)
                 self.handler_hiding_for_fuse_material_target(AttrKeyDict)
 
     def handle_widget_visibility_for_fuse_material_target(self, key, visible):
@@ -136,6 +140,16 @@ class changing_field_values:
     def get_fuse_data_target_with_db(self):
         return get_data_calculate_with_db().get_data_target_for_fuse()
 
+    def output_of_calculated_data(self, value):
+        for element in self.elements_visible_list:
+            for attr_key, attr_value in value.items():
+                if element == attr_key:
+                    OutputCalculateName = f'LabelKiloFor{element}'
+                    Initialcalculate = getattr(self, OutputCalculateName, None)
+                    if Initialcalculate:
+                        Initialcalculate.setText(str(attr_value))
+                        self.flight_check_materials(Initialcalculate, attr_value)
+
     def flight_check_materials(self, handler, value):
         if value < 0:
             return handler.setStyleSheet("""
@@ -155,7 +169,6 @@ class handler_data:
     def Handler_for_calculate(self, Data):
         DataHolder.set_data(self.parent.InputTechCard.text(),
                             Data)
-        result = CalculationHandler(self.parent.InputTechCard.text()).HandlerSamples()
 
 
 if __name__ == "__main__":
