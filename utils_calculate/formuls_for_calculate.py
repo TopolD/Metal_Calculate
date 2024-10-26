@@ -76,14 +76,14 @@ class data_for_calculate(get_data_calculate_with_db):
     def gather_materials(self):
         data_for_fuse = {}
 
-        Fuse = self.get_data_fuse()
+        Fuse_Elements = self.get_data_target_for_fuse()
         Samples = self.Data['samples']
         Materials = self.get_material()
         CoreWire = self.Data['corewire']
 
         data_for_fuse.update({
             'W': self.Data.get('W'),
-            "Fuse": Fuse,
+            "Fuse": Fuse_Elements,
             'Samples': Samples,
             'Materials': Materials,
             'corewire': CoreWire,
@@ -100,7 +100,7 @@ class calculate_remainder_material:
     @staticmethod
     def __calculate_data(data: dict, element):
         fuse_element = data['Fuse'][element]
-        samples_element = data['Samples'][element]
+        samples_element = float(data['Samples'][element].replace(',','.'))
         materials_element = data['Materials'][element][element]
         multiplied_w = float(data['W']) * 1000
 
@@ -142,14 +142,18 @@ class calculate_remainder_material:
                 return result
 
     def _calculate_materials_c(self):
-        if self.Data_fuse['Materials']['Mn']['C']:
-            return round(self.remainder_material('C'), 1)
-        return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
+        try:
+            if self.Data_fuse['Materials']['Mn']['C']:
+                return round(self.remainder_material('C'), 1)
+        except:
+            return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
 
     def _calculate_materials_si(self):
-        if self.Data_fuse['Materials']['Mn']['Si']:
-            return round(self.remainder_material('Si'), 1)
-        return round(self.__calculate_data(self.Data_fuse, 'Si'), 1)
+        try:
+            if self.Data_fuse['Materials']['Mn']['Si']:
+                return round(self.remainder_material('Si'), 1)
+        except:
+            return round(self.__calculate_data(self.Data_fuse, 'Si'), 1)
 
     def _calculate_materials_mn(self):
         return round(self.__calculate_data(self.Data_fuse, 'Mn'), 1)

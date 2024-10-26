@@ -4,12 +4,12 @@ from utils_calculate.formuls_for_calculate import *
 
 class CalculationHandler:
 
-    def __init__(self, Tcn):
+    def __init__(self, Tcn,Data):
         super().__init__()
         self.Calc = calculate_remainder_material()
-        DataHolder.set_data(Tcn, None)
-        self.Fuse = get_data_calculate_with_db().get_data_fuse()
-
+        DataHolder.set_data(Tcn, Data)
+        self.Fuse = get_data_calculate_with_db().get_data_target_for_fuse()
+        self.Material_Fuse= Data
 
         self.material_handlers = {
             'C': self.Calc._calculate_materials_c,
@@ -42,8 +42,8 @@ class CalculationHandler:
     def HandlerSamples(self):
         Dict_Samples = {}
         instance = self.DataForSamples()
-        for value in instance[6:]:
-            handler = self.checkvaluehandler(value)
+        for value in instance:
+            handler = self.check_value_handler(value)
             if handler:
                 Dict_Samples.update({value: handler})
         return Dict_Samples
@@ -51,9 +51,12 @@ class CalculationHandler:
     def get_matching_value(self):
         return [data for data in self.DictionaryUnpacker(self.material_handlers, 'key')]
 
-    def checkvaluehandler(self, value):
+    def check_value_handler(self, value):
         instance = self.get_matching_value()
         for key in instance:
 
             if key == value:
-                return self.material_handlers.get(key)()
+                if self.Material_Fuse['samples'].get(value)==None:
+                    pass
+                else:
+                    return self.material_handlers.get(key)()

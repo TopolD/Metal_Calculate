@@ -50,8 +50,8 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         if input_value:
             self.OutputClass.samples_dict['samples'][material] = input_value
             self.OutputClass.samples_dict['material'][material] = material_box_value
+            self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
             print(self.OutputClass.samples_dict)
-
 
 
 class input_data_handler:
@@ -140,35 +140,34 @@ class changing_field_values:
     def get_fuse_data_target_with_db(self):
         return get_data_calculate_with_db().get_data_target_for_fuse()
 
-    def output_of_calculated_data(self, value):
-        for element in self.elements_visible_list:
-            for attr_key, attr_value in value.items():
-                if element == attr_key:
-                    OutputCalculateName = f'LabelKiloFor{element}'
-                    Initialcalculate = getattr(self, OutputCalculateName, None)
-                    if Initialcalculate:
-                        Initialcalculate.setText(str(attr_value))
-                        self.flight_check_materials(Initialcalculate, attr_value)
-
-    def flight_check_materials(self, handler, value):
-        if value < 0:
-            return handler.setStyleSheet("""
-                border-bottom: 2px solid #FFA5A5;
-
-            """)
-        else:
-            return handler.setStyleSheet("""
-                border-bottom: 2p solid #BCFBA7
-            """)
-
 
 class handler_data:
     def __init__(self, parent):
         self.parent = parent
 
     def Handler_for_calculate(self, Data):
+
         DataHolder.set_data(self.parent.InputTechCard.text(),
                             Data)
+        result = CalculationHandler(self.parent.InputTechCard.text(),Data).HandlerSamples()
+        for attr_key, attr_value in result.items():
+            LabelKiloInit = f'LabelKiloFor{attr_key}'
+            LabelKiloName = getattr(self.parent, LabelKiloInit, None)
+            if LabelKiloName:
+                self.flight_check_materials(LabelKiloName, attr_value)
+
+
+    def flight_check_materials(self, handler, value):
+        if value < 0:
+            handler.setStyleSheet("""
+                     border-bottom: 2px solid #FFA5A5;
+    
+                 """)
+        else:
+            handler.setText(str(value))
+            handler.setStyleSheet("""
+                     border-bottom: 2px solid #BCFBA7;
+                 """)
 
 
 if __name__ == "__main__":
