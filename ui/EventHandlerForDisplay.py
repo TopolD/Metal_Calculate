@@ -39,9 +39,17 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
                 initial_line_edit.setValidator(QDoubleValidator(0.0, 4.0, 3))
                 initial_line_edit.editingFinished.connect(
                     lambda line_edit=initial_line_edit, mat=material: self.handle_input(line_edit, mat))
+            Material_Box = f'MaterialFor{material}'
+            Material_Box_edit = getattr(self, Material_Box, None)
+            if Material_Box_edit:
+                Material_Box_edit.currentIndexChanged.connect(
+                    lambda _, mat=material, box=Material_Box_edit: self.handle_material_change(mat, box)
+                )
+        self.OutputClass.samples_dict['W'] = self.InputWeight.text()
+        self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
 
     def handle_input(self, line_edit, material):
-        self.OutputClass.samples_dict.update({'W': self.InputWeight.text()})
+
         Material_Box = f'MaterialFor{material}'
         Material_Box_edit = getattr(self, Material_Box, None)
         material_box_value = Material_Box_edit.currentText()
@@ -50,8 +58,13 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         if input_value:
             self.OutputClass.samples_dict['samples'][material] = input_value
             self.OutputClass.samples_dict['material'][material] = material_box_value
+            self.OutputClass.samples_dict['W'] = self.InputWeight.text()
             self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
             print(self.OutputClass.samples_dict)
+
+    def handle_material_change(self, material, material_box):
+        self.OutputClass.samples_dict['material'][material] = material_box.currentText()
+        self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
 
 
 class input_data_handler:
@@ -149,13 +162,12 @@ class handler_data:
 
         DataHolder.set_data(self.parent.InputTechCard.text(),
                             Data)
-        result = CalculationHandler(self.parent.InputTechCard.text(),Data).HandlerSamples()
+        result = CalculationHandler(self.parent.InputTechCard.text(), Data).HandlerSamples()
         for attr_key, attr_value in result.items():
             LabelKiloInit = f'LabelKiloFor{attr_key}'
             LabelKiloName = getattr(self.parent, LabelKiloInit, None)
             if LabelKiloName:
                 self.flight_check_materials(LabelKiloName, attr_value)
-
 
     def flight_check_materials(self, handler, value):
         if value < 0:
