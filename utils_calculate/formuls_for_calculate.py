@@ -133,7 +133,15 @@ class calculate_remainder_material:
             if element == 'Mn':
                 result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
                 result = instance - result_mn
+                if self.Data_fuse['Materials']['Cr']:
+                    Cr = self.__calculate_data(self.Data_fuse, 'Cr')
+                    result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
+                    result_cr = self.calculate_remainder_material(self.Data_fuse, Cr, element, material)
+                    result = instance - (result_mn + result_cr)
+                    return result
                 return result
+
+
             if element == 'Cr':
                 Cr = self.__calculate_data(self.Data_fuse, 'Cr')
                 result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
