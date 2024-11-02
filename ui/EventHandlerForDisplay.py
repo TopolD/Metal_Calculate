@@ -1,5 +1,5 @@
-from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QRect
-from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QRect, QTimer
+from PyQt5.QtWidgets import QWidget, QApplication, QRadioButton
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
 from ui.Lrf import Ui_LRF1_Widget
@@ -20,60 +20,57 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         self.line_edit_handler_for_display()
         self.animation_buttons()
 
-        # Убедимся, что виджет с кнопками изначально скрыт
         self.Widget_for_maint_button.setVisible(False)
 
-        # Обработка событий для кнопки
         self.pushButton_6.enterEvent = self.show_buttons
-        self.pushButton_6.leaveEvent = self.hide_buttons
+        self.pushButton_6.leaveEvent = self.check_hide_buttons
+        self.Widget_for_maint_button.enterEvent = self.show_buttons
+        self.Widget_for_maint_button.leaveEvent = self.check_hide_buttons
 
-        self.is_animating = False  # Флаг для отслеживания состояния анимации
+        self.is_animating = False
+        self.keep_visible = False
 
     def animation_buttons(self):
-        """Настройка анимации для контейнера с кнопками."""
+
         self.container_animation = QPropertyAnimation(self.Widget_for_maint_button, b'geometry')
-        self.container_animation.setDuration(300)  # Длительность анимации
-        self.container_animation.setEasingCurve(QEasingCurve.OutCubic)  # Эффект анимации
+        self.container_animation.setDuration(300)
+        self.container_animation.setEasingCurve(QEasingCurve.OutCubic)
 
     def show_buttons(self, event):
-        """Плавно показывает контейнер с кнопками при наведении на pushButton_6."""
-        if not self.Widget_for_maint_button.isVisible():  # Проверяем, виден ли контейнер
-            self.Widget_for_maint_button.setVisible(True)  # Показываем контейнер
-            self.container_animation.stop()  # Останавливаем анимацию перед началом
-            # Устанавливаем начальную и конечную геометрию для анимации
-            self.container_animation.setStartValue(QRect(self.pushButton_6.x() + self.pushButton_6.width(),
-                                                         self.pushButton_6.y(),
-                                                         0,
-                                                         self.Widget_for_maint_button.height()))
-            self.container_animation.setEndValue(QRect(self.pushButton_6.x() + self.pushButton_6.width(),
-                                                       self.pushButton_6.y(),
-                                                       200,  # конечная ширина
-                                                       self.Widget_for_maint_button.height()))
-            self.container_animation.start()  # Запускаем анимацию
-            self.is_animating = True  # Устанавливаем флаг анимации
 
-    def hide_buttons(self, event):
-        """Плавно скрывает контейнер с кнопками при уходе курсора с pushButton_6."""
-        if self.Widget_for_maint_button.isVisible():  # Проверяем, виден ли контейнер
-            self.container_animation.stop()  # Останавливаем предыдущую анимацию, если есть
-            # Устанавливаем начальные и конечные значения для анимации скрытия
+        self.keep_visible = True
+        if not self.Widget_for_maint_button.isVisible():
+            self.Widget_for_maint_button.setVisible(True)
+            self.container_animation.stop()
+
+            x_pos = self.pushButton_6.x() + self.pushButton_6.width()
+            y_pos = self.pushButton_6.y()
+
+            self.container_animation.setStartValue(QRect(x_pos, y_pos, 0, self.Widget_for_maint_button.height()))
+            self.container_animation.setEndValue(QRect(x_pos, y_pos, 350, self.Widget_for_maint_button.height()))
+            self.container_animation.start()
+            self.is_animating = True
+
+    def check_hide_buttons(self, event):
+        self.keep_visible = False
+        QTimer.singleShot(100, self.hide_buttons)
+
+    def hide_buttons(self):
+        if not self.keep_visible and self.Widget_for_maint_button.isVisible():
+            self.container_animation.stop()
+            x_pos = self.pushButton_6.x() + self.pushButton_6.width()
+            y_pos = self.pushButton_6.y()
+
             self.container_animation.setStartValue(self.Widget_for_maint_button.geometry())
-            self.container_animation.setEndValue(QRect(self.pushButton_6.x() + self.pushButton_6.width(),
-                                                       self.pushButton_6.y(),
-                                                       0,  # конечная ширина для скрытия
-                                                       self.Widget_for_maint_button.height()))
-            self.container_animation.start()  # Запускаем анимацию
-            self.is_animating = True  # Устанавливаем флаг анимации
-            self.container_animation.finished.connect(self.hide_widget)  # Скрываем виджет после завершения анимации
+            self.container_animation.setEndValue(QRect(x_pos, y_pos, 0, self.Widget_for_maint_button.height()))
+            self.container_animation.start()
+            self.is_animating = True
+            self.container_animation.finished.connect(self.hide_widget)
 
     def hide_widget(self):
-        """Скрывает виджет после завершения анимации."""
-        self.Widget_for_maint_button.setVisible(False)  # Скрываем контейнер
-        self.is_animating = False  # Сбрасываем флаг анимации
-        self.container_animation.finished.disconnect()  # Отключаем сигн
-
-
-
+        self.Widget_for_maint_button.setVisible(False)
+        self.is_animating = False
+        self.container_animation.finished.disconnect()
 
     def line_edit_handler_for_display(self):
         self.InputTechCard.setValidator(QIntValidator(0, 999))
@@ -81,6 +78,10 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
 
         self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 2))
         self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate)
+        self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_corewire)
+
+    def line_edit_handler_for_calculate_corewire(self):
+        material_list_corewire = ['C', 'Al', 'Ti']
 
     def line_edit_handler_for_calculate(self):
         material_list = self.OutputClass.elements_visible_list
@@ -177,6 +178,10 @@ class changing_field_values:
             'V': self.parent.LabelTargetForV,
             'Nb': self.parent.LabelTargetForNb,
             'B': self.parent.LabelTargetForB,
+
+            'Al':self.parent.LabelTargetCoreForAl,
+            'Ti':self.parent.LabelTargetCoreForTi
+
         }
         self.elements_visible_list.clear()
         for AttrKeyDict, AttrValueDict in elements_clean_dict.items():

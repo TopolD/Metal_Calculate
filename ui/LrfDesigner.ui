@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>790</height>
+    <width>660</width>
+    <height>793</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -376,38 +376,6 @@ border-radius: 5%</string>
       <property name="icon">
        <iconset>
         <normaloff>../../../Downloads/vector (3).svg</normaloff>../../../Downloads/vector (3).svg</iconset>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>41</width>
-        <height>21</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>41</width>
-        <height>21</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: None</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../../../Downloads/vector (2).svg</normaloff>../../../Downloads/vector (2).svg</iconset>
       </property>
      </widget>
     </item>
@@ -2836,7 +2804,7 @@ border-bottom: 2px solid #F5F5F5;
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_90">
+              <widget class="QLabel" name="NameWireMicrtoalloying">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -2871,7 +2839,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_39">
+                <widget class="QLabel" name="NameForCoreWire">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -2920,7 +2888,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_44">
+                <widget class="QLabel" name="TargetForCoreWire">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -2969,7 +2937,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_48">
+                <widget class="QLabel" name="SamplesForCoreWIre">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3018,7 +2986,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_49">
+                <widget class="QLabel" name="MaterialForCoreWIre">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3067,7 +3035,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_52">
+                <widget class="QLabel" name="LeightForCoreWire">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3123,7 +3091,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_40">
+                <widget class="QLabel" name="LabelCoreC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3170,7 +3138,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_45">
+                <widget class="QLabel" name="LabelTargetCoreForC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3217,7 +3185,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_14">
+                <widget class="QLineEdit" name="InputSamplesCoreForC">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3248,7 +3216,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_50">
+                <widget class="QLabel" name="LabelCoreMaterialForC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3295,7 +3263,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_53">
+                <widget class="QLabel" name="LabelMetersCoreForC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3349,7 +3317,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_41">
+                <widget class="QLabel" name="LabelCoreAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3396,7 +3364,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_46">
+                <widget class="QLabel" name="LabelTargetCoreForAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3443,7 +3411,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_15">
+                <widget class="QLineEdit" name="InputSamplesCoreForAl">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3474,7 +3442,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_51">
+                <widget class="QLabel" name="LabelCoreMaterialForAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3524,7 +3492,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_54">
+                <widget class="QLabel" name="LabelMetersCoreForAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3578,7 +3546,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_42">
+                <widget class="QLabel" name="LabelCoreTi">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3625,7 +3593,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_47">
+                <widget class="QLabel" name="LabelTargetCoreForTi">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3672,7 +3640,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_16">
+                <widget class="QLineEdit" name="InputSamplesCoreForTi">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3709,7 +3677,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="comboBox_11">
+                <widget class="QComboBox" name="BoxCoreMaterialForTi">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3748,7 +3716,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_55">
+                <widget class="QLabel" name="LabelMetersCoreForTi">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3802,7 +3770,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_43">
+                <widget class="QLabel" name="Temp">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3849,7 +3817,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_13">
+                <widget class="QLineEdit" name="InputLineForTemp">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3889,7 +3857,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_17">
+                <widget class="QLineEdit" name="InputSamplesCoreForS">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3920,7 +3888,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="comboBox_12">
+                <widget class="QComboBox" name="BoxCoreMaterialForCa">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3954,7 +3922,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_56">
+                <widget class="QLabel" name="LabelMetersCoreForCa">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4016,7 +3984,7 @@ border-bottom: 2px solid #F5F5F5;
             <number>0</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_91">
+            <widget class="QLabel" name="NameCoefficientAssimilation">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -4043,7 +4011,7 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_87">
+                <widget class="QLabel" name="LabelNameElementForCoef">
                  <property name="font">
                   <font>
                    <weight>75</weight>
@@ -4064,7 +4032,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_57">
+                <widget class="QLabel" name="LabelCoef">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4113,7 +4081,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_61">
+                <widget class="QLabel" name="LabelFact">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4162,7 +4130,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_62">
+                <widget class="QLabel" name="LabelFactCoef">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4218,7 +4186,12 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_86">
+                <widget class="QLabel" name="LabelNameCoefForC">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgb(255, 255, 255);
 border-bottom: 2px solid #F5F5F5;
@@ -4233,7 +4206,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_58">
+                <widget class="QLabel" name="LabelCoefC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4280,7 +4253,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_18">
+                <widget class="QLineEdit" name="InputFactForC">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -4311,7 +4284,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_63">
+                <widget class="QLabel" name="LabelFactCoefC">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4365,9 +4338,10 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_88">
+                <widget class="QLabel" name="LabelNameCoefForAl">
                  <property name="font">
                   <font>
+                   <pointsize>10</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -4386,7 +4360,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_59">
+                <widget class="QLabel" name="LabelCoefAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4433,7 +4407,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_19">
+                <widget class="QLineEdit" name="InputFactForAl">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -4464,7 +4438,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_64">
+                <widget class="QLabel" name="LabelFactCoefAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4518,9 +4492,10 @@ border-bottom: 2px solid #F5F5F5;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_89">
+                <widget class="QLabel" name="LabelNameCoefForTi">
                  <property name="font">
                   <font>
+                   <pointsize>10</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -4539,7 +4514,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_60">
+                <widget class="QLabel" name="LabelCoefTi">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4586,7 +4561,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_20">
+                <widget class="QLineEdit" name="InputFactForTi">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -4623,7 +4598,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_65">
+                <widget class="QLabel" name="LabelFactCoefTi">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -4735,14 +4710,46 @@ border-bottom: 2px solid #F5F5F5;
       </layout>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>41</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>41</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: None</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../Downloads/vector (2).svg</normaloff>../../../Downloads/vector (2).svg</iconset>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="Widget_for_maint_button" native="true">
    <property name="geometry">
     <rect>
-     <x>1060</x>
-     <y>450</y>
-     <width>191</width>
+     <x>720</x>
+     <y>390</y>
+     <width>391</width>
      <height>41</height>
     </rect>
    </property>
@@ -4750,72 +4757,106 @@ border-bottom: 2px solid #F5F5F5;
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="layout_for_main_button">
       <item>
-       <widget class="QPushButton" name="formuls_button">
+       <widget class="QRadioButton" name="Lrf1_button_radio">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border:None;</string>
+         <string notr="true"> QRadioButton::indicator {
+        width: 0px;  
+        height: 0px; 
+        background: transparent; 
+    }
+
+</string>
         </property>
         <property name="text">
-         <string> </string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../Downloads/project/vector-1.svg</normaloff>../../../Downloads/project/vector-1.svg</iconset>
+         <string notr="true">LRF1</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="Lrf1_button">
+       <widget class="QRadioButton" name="Lrf2_button_radio">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border:None;</string>
+         <string notr="true"> QRadioButton::indicator {
+        width: 0px;  
+        height: 0px; 
+        background: transparent; 
+    }</string>
         </property>
         <property name="text">
-         <string> </string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../Downloads/project/fire.svg</normaloff>../../../Downloads/project/fire.svg</iconset>
+         <string>LRF 2</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="Lrf2_button">
+       <widget class="QRadioButton" name="dilution_button_radio">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border:None;</string>
+         <string notr="true"> QRadioButton::indicator {
+        width: 0px;  
+        height: 0px; 
+        background: transparent; 
+    }</string>
         </property>
         <property name="text">
-         <string> </string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../Downloads/project/fire.svg</normaloff>../../../Downloads/project/fire.svg</iconset>
+         <string>Dilution</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="dilution_button">
+       <widget class="QRadioButton" name="formuls_button_radio">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border:None;</string>
+         <string notr="true"> QRadioButton::indicator {
+        width: 0px;  
+        height: 0px; 
+        background: transparent; 
+    }</string>
         </property>
         <property name="text">
-         <string> </string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../Downloads/project/vector.svg</normaloff>../../../Downloads/project/vector.svg</iconset>
+         <string>Formuls</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="note_button">
+       <widget class="QRadioButton" name="note_button_radio">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">border:None;</string>
+         <string notr="true"> QRadioButton::indicator {
+        width: 0px;  
+        height: 0px; 
+        background: transparent; 
+    }</string>
         </property>
         <property name="text">
-         <string> </string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../Downloads/project/note.svg</normaloff>../../../Downloads/project/note.svg</iconset>
+         <string>Note</string>
         </property>
        </widget>
       </item>
@@ -4837,27 +4878,27 @@ border-bottom: 2px solid #F5F5F5;
   <tabstop>LabelSamplesForV</tabstop>
   <tabstop>LabelSamplesForNb</tabstop>
   <tabstop>LabelSamplesForB</tabstop>
-  <tabstop>lineEdit_14</tabstop>
-  <tabstop>lineEdit_16</tabstop>
-  <tabstop>lineEdit_17</tabstop>
-  <tabstop>lineEdit_18</tabstop>
-  <tabstop>lineEdit_19</tabstop>
-  <tabstop>lineEdit_20</tabstop>
+  <tabstop>InputSamplesCoreForC</tabstop>
+  <tabstop>InputSamplesCoreForTi</tabstop>
+  <tabstop>InputSamplesCoreForS</tabstop>
+  <tabstop>InputFactForC</tabstop>
+  <tabstop>InputFactForAl</tabstop>
+  <tabstop>InputFactForTi</tabstop>
   <tabstop>MaterialForNi</tabstop>
   <tabstop>MaterialForB</tabstop>
   <tabstop>MaterialForCu</tabstop>
   <tabstop>MaterialForSi</tabstop>
   <tabstop>MaterialForMo</tabstop>
-  <tabstop>comboBox_11</tabstop>
-  <tabstop>lineEdit_13</tabstop>
+  <tabstop>BoxCoreMaterialForTi</tabstop>
+  <tabstop>InputLineForTemp</tabstop>
   <tabstop>MaterialForCr</tabstop>
-  <tabstop>comboBox_12</tabstop>
+  <tabstop>BoxCoreMaterialForCa</tabstop>
   <tabstop>MaterialForV</tabstop>
   <tabstop>MaterialForC</tabstop>
   <tabstop>MaterialForNb</tabstop>
   <tabstop>pushButton_6</tabstop>
   <tabstop>pushButton_7</tabstop>
-  <tabstop>lineEdit_15</tabstop>
+  <tabstop>InputSamplesCoreForAl</tabstop>
   <tabstop>MaterialForMn</tabstop>
  </tabstops>
  <resources/>
