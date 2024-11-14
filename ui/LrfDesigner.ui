@@ -17,7 +17,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -2725,7 +2725,7 @@ border-bottom: 2px solid #F5F5F5;
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="LabelKiloForNb_2">
+            <widget class="QLabel" name="LabelKiloForB">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -2834,7 +2834,7 @@ border-bottom: 2px solid #F5F5F5;
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <layout class="QHBoxLayout" name="LayoutCoreWire">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -3086,7 +3086,7 @@ border-bottom: 2px solid #F5F5F5;
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <layout class="QHBoxLayout" name="LayoutCpr">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -3185,7 +3185,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="InputSamplesCoreForC">
+                <widget class="QLineEdit" name="LabelSamplesForCpr">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3216,7 +3216,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="LabelCoreMaterialForC">
+                <widget class="QLabel" name="MaterialForCpr">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3263,7 +3263,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="LabelMetersCoreForC">
+                <widget class="QLabel" name="LabelMetersCoreForCpr">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3312,7 +3312,7 @@ border-bottom: 2px solid #F5F5F5;
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <layout class="QHBoxLayout" name="LayoutAl">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -3411,7 +3411,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="InputSamplesCoreForAl">
+                <widget class="QLineEdit" name="LabelSamplesForAl">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3442,7 +3442,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="LabelCoreMaterialForAl">
+                <widget class="QLabel" name="MaterialForAl">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3541,7 +3541,7 @@ border-bottom: 2px solid #F5F5F5;
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <layout class="QHBoxLayout" name="LayoutTi">
                <property name="spacing">
                 <number>0</number>
                </property>
@@ -3640,7 +3640,7 @@ border-bottom: 2px solid #F5F5F5;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="InputSamplesCoreForTi">
+                <widget class="QLineEdit" name="LabelSamplesForTi">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3677,7 +3677,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="BoxCoreMaterialForTi">
+                <widget class="QComboBox" name="MaterialForTi">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3857,7 +3857,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="InputSamplesCoreForS">
+                <widget class="QLineEdit" name="LabelSamplesForCa">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -3888,7 +3888,7 @@ border-bottom: 2px solid #E0E0E0;
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="BoxCoreMaterialForCa">
+                <widget class="QComboBox" name="MaterialForCa">
                  <property name="minimumSize">
                   <size>
                    <width>114</width>
@@ -4878,9 +4878,9 @@ border-bottom: 2px solid #F5F5F5;
   <tabstop>LabelSamplesForV</tabstop>
   <tabstop>LabelSamplesForNb</tabstop>
   <tabstop>LabelSamplesForB</tabstop>
-  <tabstop>InputSamplesCoreForC</tabstop>
-  <tabstop>InputSamplesCoreForTi</tabstop>
-  <tabstop>InputSamplesCoreForS</tabstop>
+  <tabstop>LabelSamplesForCpr</tabstop>
+  <tabstop>LabelSamplesForTi</tabstop>
+  <tabstop>LabelSamplesForCa</tabstop>
   <tabstop>InputFactForC</tabstop>
   <tabstop>InputFactForAl</tabstop>
   <tabstop>InputFactForTi</tabstop>
@@ -4889,16 +4889,16 @@ border-bottom: 2px solid #F5F5F5;
   <tabstop>MaterialForCu</tabstop>
   <tabstop>MaterialForSi</tabstop>
   <tabstop>MaterialForMo</tabstop>
-  <tabstop>BoxCoreMaterialForTi</tabstop>
+  <tabstop>MaterialForTi</tabstop>
   <tabstop>InputLineForTemp</tabstop>
   <tabstop>MaterialForCr</tabstop>
-  <tabstop>BoxCoreMaterialForCa</tabstop>
+  <tabstop>MaterialForCa</tabstop>
   <tabstop>MaterialForV</tabstop>
   <tabstop>MaterialForC</tabstop>
   <tabstop>MaterialForNb</tabstop>
   <tabstop>pushButton_6</tabstop>
   <tabstop>pushButton_7</tabstop>
-  <tabstop>InputSamplesCoreForAl</tabstop>
+  <tabstop>LabelSamplesForAl</tabstop>
   <tabstop>MaterialForMn</tabstop>
  </tabstops>
  <resources/>

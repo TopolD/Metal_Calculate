@@ -100,7 +100,7 @@ class calculate_remainder_material:
     @staticmethod
     def __calculate_data(data: dict, element):
         fuse_element = data['Fuse'][element]
-        samples_element = float(data['Samples'][element].replace(',','.'))
+        samples_element = float(data['Samples'][element].replace(',', '.'))
         materials_element = data['Materials'][element][element]
         multiplied_w = float(data['W']) * 1000
 
@@ -140,7 +140,6 @@ class calculate_remainder_material:
                     result = instance - (result_mn + result_cr)
                     return result
                 return result
-
 
             if element == 'Cr':
                 Cr = self.__calculate_data(self.Data_fuse, 'Cr')
@@ -192,19 +191,28 @@ class calculate_core_wire():
 
     def __init__(self):
         super().__init__()
-        self.Data_fuse_for_cire = data_for_calculate().gather_materials()
+        self.Data_fuse_for_core = data_for_calculate().gather_materials()
 
     def calculate_core_wire(self, material):
-        target_value = float(self.Data_fuse_for_cire['Fuse'][material])
-        W = float(self.Data_fuse_for_cire['W'])
+        target_value = float(self.Data_fuse_for_core['Fuse'][material])
+        W = float(self.Data_fuse_for_core['W'])
         coef = self.calculate_coef()
-        samples_core_wire = float(self.Data_fuse_for_cire['corewire'][material])
-        return (target_value - samples_core_wire) * W / float(coef[material])
+        samples_core_wire = float(self.Data_fuse_for_core['corewire'][material].replace(',','.'))
+        return (((target_value - samples_core_wire)/ float(coef[material])) * (W*1000/(160*1000)))*100
 
     def calculate_coef(self):
         material_core_coef = {
-            'Al': 24,
-            'Ti': 20.8,
-            'C': 16
+            'Al': 0.015,
+            'Ti': 0.013,
+            'Cpr': 0.01
         }
         return material_core_coef
+
+    def _calculate_core_wire_c(self):
+        return round(self.calculate_core_wire('Cpr'),1)
+
+    def _calculate_core_wire_al(self):
+        return round(self.calculate_core_wire('Al'),1)
+
+    def _calculate_core_wire_ti(self):
+        return round(self.calculate_core_wire('Ti'),1)

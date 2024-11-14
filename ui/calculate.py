@@ -1,15 +1,15 @@
-
 from utils_calculate.formuls_for_calculate import *
 
 
 class CalculationHandler:
 
-    def __init__(self, Tcn,Data):
+    def __init__(self, Tcn, Data):
         super().__init__()
         self.Calc = calculate_remainder_material()
+        self.Core = calculate_core_wire()
         DataHolder.set_data(Tcn, Data)
         self.Fuse = get_data_calculate_with_db().get_data_target_for_fuse()
-        self.Material_Fuse= Data
+        self.Material_Fuse = Data
 
         self.material_handlers = {
             'C': self.Calc._calculate_materials_c,
@@ -22,6 +22,10 @@ class CalculationHandler:
             'V': self.Calc._calculate_materials_v,
             'Nb': self.Calc._calculate_materials_nb,
             'B': self.Calc._calculate_materials_b,
+
+            'Cpr': self.Core._calculate_core_wire_c,
+            'Al': self.Core._calculate_core_wire_al,
+            'Ti': self.Core._calculate_core_wire_ti,
         }
 
     @staticmethod
@@ -56,7 +60,7 @@ class CalculationHandler:
         for key in instance:
 
             if key == value:
-                if self.Material_Fuse['samples'].get(value)==None:
-                    pass
-                else:
+                if self.Material_Fuse['corewire'].get(value) or self.Material_Fuse['samples'].get(value):
                     return self.material_handlers.get(key)()
+                else:
+                    pass

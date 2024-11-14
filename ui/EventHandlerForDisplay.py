@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QRect, QTimer
-from PyQt5.QtWidgets import QWidget, QApplication, QRadioButton
+from PyQt5.QtWidgets import QWidget, QApplication, QComboBox, QLabel
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
 from ui.Lrf import Ui_LRF1_Widget
@@ -77,40 +77,50 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         self.InputTechCard.editingFinished.connect(self.InputClass.handle_input)
 
         self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 2))
-        self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate)
-        self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_corewire)
+        self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_material)
 
-    def line_edit_handler_for_calculate_corewire(self):
-        material_list_corewire = ['C', 'Al', 'Ti']
+    def line_edit_handler_for_calculate_material(self):
+        self.setup_handlers( self.OutputClass.elements_visible_list)
 
-    def line_edit_handler_for_calculate(self):
-        material_list = self.OutputClass.elements_visible_list
+
+    def setup_material_handlers(self, material_list, prefix_input, prefix_box):
         for material in material_list:
-            InputLineEditName = f'LabelSamplesFor{material}'
-            initial_line_edit = getattr(self, InputLineEditName, None)
-            if initial_line_edit:
-                initial_line_edit.setValidator(QDoubleValidator(0.0, 4.0, 3))
-                initial_line_edit.editingFinished.connect(
-                    lambda line_edit=initial_line_edit, mat=material: self.handle_input(line_edit, mat))
-            Material_Box = f'MaterialFor{material}'
-            Material_Box_edit = getattr(self, Material_Box, None)
-            if Material_Box_edit:
-                Material_Box_edit.currentIndexChanged.connect(
-                    lambda _, mat=material, box=Material_Box_edit: self.handle_material_change(mat, box)
+            input_name = f'{prefix_input}{material}'
+            input_field = getattr(self, input_name, None)
+            if input_field:
+                input_field.setValidator(QDoubleValidator(0.0, 4.0, 3))
+                input_field.editingFinished.connect(
+                    lambda line_edit=input_field, mat=material: self.handler_input(line_edit, mat)
                 )
-        self.OutputClass.samples_dict['W'] = self.InputWeight.text()
-        self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
 
-    def handle_input(self, line_edit, material):
+            box_name = f'{prefix_box}{material}'
+            material_box = getattr(self, box_name, None)
+            if isinstance(material_box, QComboBox ):
+                material_box.currentIndexChanged.connect(
+                    lambda _, mat=material, box=material_box: self.handle_material_change(mat, box)
+                )
+
+    def setup_handlers(self, material_list):
+        self.setup_material_handlers(material_list, 'LabelSamplesFor', 'MaterialFor')
+
+    def handler_input(self, line_edit, material):
 
         Material_Box = f'MaterialFor{material}'
         Material_Box_edit = getattr(self, Material_Box, None)
-        material_box_value = Material_Box_edit.currentText()
+        if isinstance(Material_Box_edit, QComboBox):
+            material_box_value = Material_Box_edit.currentText()
+        else:
+            material_box_value = Material_Box_edit.text()
 
         input_value = line_edit.text()
         if input_value:
-            self.OutputClass.samples_dict['samples'][material] = input_value
-            self.OutputClass.samples_dict['material'][material] = material_box_value
+            if material in ['Cpr','Al','Ti']:
+                self.OutputClass.samples_dict['corewire'][material]=input_value
+                self.OutputClass.samples_dict['material'][material] = material_box_value
+            else:
+                self.OutputClass.samples_dict['samples'][material] = input_value
+                self.OutputClass.samples_dict['material'][material] = material_box_value
+
             self.OutputClass.samples_dict['W'] = self.InputWeight.text()
             self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
             print(self.OutputClass.samples_dict)
@@ -118,6 +128,9 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
     def handle_material_change(self, material, material_box):
         self.OutputClass.samples_dict['material'][material] = material_box.currentText()
         self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
+
+
+
 
 
 class input_data_handler:
@@ -139,17 +152,15 @@ class input_data_handler:
 
 class changing_field_values:
 
+    elements_visible_list = None
+
     def __init__(self, parent):
         self.parent = parent
         self.samples_dict = {
             'W': self.parent.InputWeight.text(),
             'samples': {},
             'material': {},
-            'corewire': {
-                'C': 0,
-                'Al': 0,
-                'Ti': 0
-            }
+            'corewire': {}
         }
 
         self.elements_visible_list = []
@@ -179,8 +190,9 @@ class changing_field_values:
             'Nb': self.parent.LabelTargetForNb,
             'B': self.parent.LabelTargetForB,
 
-            'Al':self.parent.LabelTargetCoreForAl,
-            'Ti':self.parent.LabelTargetCoreForTi
+            'Cpr': self.parent.LabelTargetCoreForC,
+            'Al': self.parent.LabelTargetCoreForAl,
+            'Ti': self.parent.LabelTargetCoreForTi
 
         }
         self.elements_visible_list.clear()
@@ -193,6 +205,7 @@ class changing_field_values:
                 self.handler_hiding_for_fuse_material_target(AttrKeyDict)
 
     def handle_widget_visibility_for_fuse_material_target(self, key, visible):
+
         layout_name = f'Layout{key}'
         layout = getattr(self.parent, layout_name, None)
 
@@ -225,6 +238,12 @@ class handler_data:
                             Data)
         result = CalculationHandler(self.parent.InputTechCard.text(), Data).HandlerSamples()
         for attr_key, attr_value in result.items():
+            if attr_key in ['Cpr','Al','Ti']:
+                LabelMetersCoreInit= f'LabelMetersCoreFor{attr_key}'
+                LabelMetersCoreName = getattr(self.parent, LabelMetersCoreInit, None)
+                if LabelMetersCoreName:
+                    self.flight_check_materials(LabelMetersCoreName, attr_value)
+
             LabelKiloInit = f'LabelKiloFor{attr_key}'
             LabelKiloName = getattr(self.parent, LabelKiloInit, None)
             if LabelKiloName:
