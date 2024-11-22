@@ -5,7 +5,7 @@ class CalculationHandler:
 
     def __init__(self, Tcn, Data):
         super().__init__()
-        self.Calc = calculate_remainder_material()
+        self.Calc = calculate_material()
         self.Core = calculate_core_wire()
         DataHolder.set_data(Tcn, Data)
         self.Fuse = get_data_calculate_with_db().get_data_target_for_fuse()

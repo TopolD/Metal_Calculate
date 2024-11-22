@@ -91,7 +91,42 @@ class data_for_calculate(get_data_calculate_with_db):
         return data_for_fuse
 
 
-class calculate_remainder_material:
+class remainder_calculata_material:
+
+    def __init__(self):
+        self.Data_Fuse = data_for_calculate().gather_materials()
+
+    def handler_remainder_material(self):
+        remainder_dict_value = {}
+
+        materials = self.Data_Fuse['Materials']
+        for attr_key, attr_value in materials.items():
+            for attr_key_value, attr_value_key in attr_value.items():
+                if attr_key != attr_key_value:
+                    if attr_key not in remainder_dict_value:
+                        remainder_dict_value[attr_key] = {}
+
+                    remainder_dict_value[attr_key][attr_key_value] = attr_value_key
+
+        return remainder_dict_value
+
+    def calculate_remainder_material(self, material, calculate_materials):
+        instance = self.handler_remainder_material()
+
+        result = calculate_materials
+
+        for attr_key, attr_value in instance.items():
+
+            if attr_value.get(material):
+                init_material_attr_key = f'_calculate_materials_{attr_key.lower()}'
+                func_material_attr_key = getattr(calculate_material(), init_material_attr_key)()
+
+                result -= (((func_material_attr_key * attr_value[material]) / float(self.Data_Fuse.get('W'))) * float(
+                    self.Data_Fuse.get('W'))) / float(self.Data_Fuse.get('Materials').get(material).get(material))
+        return result
+
+
+class calculate_material:
 
     def __init__(self):
         super().__init__()
@@ -106,61 +141,13 @@ class calculate_remainder_material:
 
         return (fuse_element - samples_element) * (multiplied_w / materials_element)
 
-    def remainder_material(self, value):
-        instance = self.Data_fuse['Materials'].items()
-        for attr_key, attr_value in instance:
-            material_type = self.Data_fuse['Materials'][attr_key]
-            for element_key, element_value in material_type.items():
-                if element_key != attr_key:
-                    if element_key == value:
-                        if element_key == 'C':
-                            return self.remainder_materials_all(attr_key, element_key)
-
-                        if element_key == 'Si':
-                            return self.remainder_materials_all(attr_key, element_key)
-
-    @staticmethod
-    def calculate_remainder_material(data: dict, material, element, residue):
-        multiplied_w = float(data['W']) * 1000
-        materials_element = data['Materials'][element][residue]
-        value = data['Materials'][residue][residue]
-        return (material / multiplied_w) * (materials_element / value) * multiplied_w
-
-    def remainder_materials_all(self, element, material):
-        instance = self.__calculate_data(self.Data_fuse, material)
-        Mn = self._calculate_materials_mn()
-        if element:
-            if element == 'Mn':
-                result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
-                result = instance - result_mn
-                if self.Data_fuse['Materials']['Cr']:
-                    Cr = self.__calculate_data(self.Data_fuse, 'Cr')
-                    result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
-                    result_cr = self.calculate_remainder_material(self.Data_fuse, Cr, element, material)
-                    result = instance - (result_mn + result_cr)
-                    return result
-                return result
-
-            if element == 'Cr':
-                Cr = self.__calculate_data(self.Data_fuse, 'Cr')
-                result_mn = self.calculate_remainder_material(self.Data_fuse, Mn, element, material)
-                result_cr = self.calculate_remainder_material(self.Data_fuse, Cr, element, material)
-                result = instance - (result_mn + result_cr)
-                return result
-
     def _calculate_materials_c(self):
-        try:
-            if self.Data_fuse['Materials']['Mn']['C']:
-                return round(self.remainder_material('C'), 1)
-        except:
-            return round(self.__calculate_data(self.Data_fuse, 'C'), 1)
+        return round(remainder_calculata_material().calculate_remainder_material('C', round(
+            self.__calculate_data(self.Data_fuse, 'C'), 1)), 1)
 
     def _calculate_materials_si(self):
-        try:
-            if self.Data_fuse['Materials']['Mn']['Si']:
-                return round(self.remainder_material('Si'), 1)
-        except:
-            return round(self.__calculate_data(self.Data_fuse, 'Si'), 1)
+        return round(remainder_calculata_material().calculate_remainder_material('Si', round(
+            self.__calculate_data(self.Data_fuse, 'Si'), 1)), 1)
 
     def _calculate_materials_mn(self):
         return round(self.__calculate_data(self.Data_fuse, 'Mn'), 1)
@@ -192,13 +179,14 @@ class calculate_core_wire():
     def __init__(self):
         super().__init__()
         self.Data_fuse_for_core = data_for_calculate().gather_materials()
+        self.Data = DataHolder.Data
 
     def calculate_core_wire(self, material):
         target_value = float(self.Data_fuse_for_core['Fuse'][material])
         W = float(self.Data_fuse_for_core['W'])
         coef = self.calculate_coef()
-        samples_core_wire = float(self.Data_fuse_for_core['corewire'][material].replace(',','.'))
-        return (((target_value - samples_core_wire)/ float(coef[material])) * (W*1000/(160*1000)))*100
+        samples_core_wire = float(self.Data_fuse_for_core['corewire'][material].replace(',', '.'))
+        return (((target_value - samples_core_wire) / float(coef[material])) * (W * 1000 / (160 * 1000))) * 100
 
     def calculate_coef(self):
         material_core_coef = {
@@ -209,10 +197,12 @@ class calculate_core_wire():
         return material_core_coef
 
     def _calculate_core_wire_c(self):
-        return round(self.calculate_core_wire('Cpr'),1)
+        return round(self.calculate_core_wire('Cpr'), 1)
 
     def _calculate_core_wire_al(self):
-        return round(self.calculate_core_wire('Al'),1)
+        if self.Data.get('material').get('Ti') == 'FeTi50':
+            return round(self.calculate_core_wire('Al') - self._calculate_core_wire_ti() * 0.12, 1)
+        return round(self.calculate_core_wire('Al'), 1)
 
     def _calculate_core_wire_ti(self):
-        return round(self.calculate_core_wire('Ti'),1)
+        return round(self.calculate_core_wire('Ti'), 1)

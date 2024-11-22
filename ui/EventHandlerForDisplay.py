@@ -80,6 +80,7 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
         self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_material)
 
     def line_edit_handler_for_calculate_material(self):
+        self.reset_samples_dict()
         self.setup_handlers( self.OutputClass.elements_visible_list)
 
 
@@ -101,6 +102,7 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
                 )
 
     def setup_handlers(self, material_list):
+
         self.setup_material_handlers(material_list, 'LabelSamplesFor', 'MaterialFor')
 
     def handler_input(self, line_edit, material):
@@ -124,6 +126,16 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
             self.OutputClass.samples_dict['W'] = self.InputWeight.text()
             self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
             print(self.OutputClass.samples_dict)
+
+
+
+    def reset_samples_dict(self):
+        self.OutputClass.samples_dict = {
+            'W': self.InputWeight.text(),
+            'samples': {},
+            'material': {},
+            'corewire': {}
+        }
 
     def handle_material_change(self, material, material_box):
         self.OutputClass.samples_dict['material'][material] = material_box.currentText()
