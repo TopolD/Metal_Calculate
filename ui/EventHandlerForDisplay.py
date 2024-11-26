@@ -81,8 +81,7 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
 
     def line_edit_handler_for_calculate_material(self):
         self.reset_samples_dict()
-        self.setup_handlers( self.OutputClass.elements_visible_list)
-
+        self.setup_handlers(self.OutputClass.elements_visible_list)
 
     def setup_material_handlers(self, material_list, prefix_input, prefix_box):
         for material in material_list:
@@ -96,7 +95,7 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
 
             box_name = f'{prefix_box}{material}'
             material_box = getattr(self, box_name, None)
-            if isinstance(material_box, QComboBox ):
+            if isinstance(material_box, QComboBox):
                 material_box.currentIndexChanged.connect(
                     lambda _, mat=material, box=material_box: self.handle_material_change(mat, box)
                 )
@@ -116,33 +115,30 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
 
         input_value = line_edit.text()
         if input_value:
-            if material in ['Cpr','Al','Ti']:
-                self.OutputClass.samples_dict['corewire'][material]=input_value
+            if material in ['Cpr', 'Al', 'Ti', 'Ca']:
+                self.OutputClass.samples_dict['corewire'][material] = input_value
                 self.OutputClass.samples_dict['material'][material] = material_box_value
             else:
                 self.OutputClass.samples_dict['samples'][material] = input_value
                 self.OutputClass.samples_dict['material'][material] = material_box_value
 
             self.OutputClass.samples_dict['W'] = self.InputWeight.text()
+            self.OutputClass.samples_dict['temp'] = self.LabelTargetCoreForCa.text()
             self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
             print(self.OutputClass.samples_dict)
-
-
 
     def reset_samples_dict(self):
         self.OutputClass.samples_dict = {
             'W': self.InputWeight.text(),
             'samples': {},
             'material': {},
-            'corewire': {}
+            'corewire': {},
+            'temp':self.LabelTargetCoreForCa.text()
         }
 
     def handle_material_change(self, material, material_box):
         self.OutputClass.samples_dict['material'][material] = material_box.currentText()
         self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
-
-
-
 
 
 class input_data_handler:
@@ -163,7 +159,6 @@ class input_data_handler:
 
 
 class changing_field_values:
-
     elements_visible_list = None
 
     def __init__(self, parent):
@@ -172,7 +167,8 @@ class changing_field_values:
             'W': self.parent.InputWeight.text(),
             'samples': {},
             'material': {},
-            'corewire': {}
+            'corewire': {},
+            'temp':{}
         }
 
         self.elements_visible_list = []
@@ -204,8 +200,8 @@ class changing_field_values:
 
             'Cpr': self.parent.LabelTargetCoreForC,
             'Al': self.parent.LabelTargetCoreForAl,
-            'Ti': self.parent.LabelTargetCoreForTi
-
+            'Ti': self.parent.LabelTargetCoreForTi,
+            'Ca': self.parent.LabelTargetCoreForCa,
         }
         self.elements_visible_list.clear()
         for AttrKeyDict, AttrValueDict in elements_clean_dict.items():
@@ -250,8 +246,8 @@ class handler_data:
                             Data)
         result = CalculationHandler(self.parent.InputTechCard.text(), Data).HandlerSamples()
         for attr_key, attr_value in result.items():
-            if attr_key in ['Cpr','Al','Ti']:
-                LabelMetersCoreInit= f'LabelMetersCoreFor{attr_key}'
+            if attr_key in ['Cpr', 'Al', 'Ti','Ca']:
+                LabelMetersCoreInit = f'LabelMetersCoreFor{attr_key}'
                 LabelMetersCoreName = getattr(self.parent, LabelMetersCoreInit, None)
                 if LabelMetersCoreName:
                     self.flight_check_materials(LabelMetersCoreName, attr_value)

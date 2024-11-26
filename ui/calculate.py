@@ -26,6 +26,7 @@ class CalculationHandler:
             'Cpr': self.Core._calculate_core_wire_c,
             'Al': self.Core._calculate_core_wire_al,
             'Ti': self.Core._calculate_core_wire_ti,
+            'Ca':self.Core._calculate_core_wire_ca
         }
 
     @staticmethod

@@ -80,6 +80,7 @@ class data_for_calculate(get_data_calculate_with_db):
         Samples = self.Data['samples']
         Materials = self.get_material()
         CoreWire = self.Data['corewire']
+        Temp = self.Data['temp']
 
         data_for_fuse.update({
             'W': self.Data.get('W'),
@@ -87,6 +88,7 @@ class data_for_calculate(get_data_calculate_with_db):
             'Samples': Samples,
             'Materials': Materials,
             'corewire': CoreWire,
+            'temp': Temp
         })
         return data_for_fuse
 
@@ -206,3 +208,11 @@ class calculate_core_wire():
 
     def _calculate_core_wire_ti(self):
         return round(self.calculate_core_wire('Ti'), 1)
+
+    def _calculate_core_wire_ca(self):
+        S=0.01442 * float(self.Data_fuse_for_core.get('corewire').get('Ca').replace(',', '.'))
+        Al =0.00686 * float(self.Data_fuse_for_core.get('Fuse').get('Al'))
+        Temp = 0.000012 * (float(self.Data_fuse_for_core.get('temp')))
+        W =   float(self.Data_fuse_for_core['W'])*1000
+        coef = (0.25 / 0.32 / 0.4)
+        return ((S+Al+Temp-0.01675)*W)/coef
