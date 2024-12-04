@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'LRfDesigner.ui'
+# Form implementation generated from reading ui file 'LrfDesigner.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -16,7 +16,7 @@ class Ui_LRF1_Widget(object):
         LRF1_Widget.setObjectName("LRF1_Widget")
         LRF1_Widget.setWindowModality(QtCore.Qt.WindowModal)
         LRF1_Widget.setEnabled(True)
-        LRF1_Widget.resize(655, 860)
+        LRF1_Widget.resize(655, 885)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1783,24 +1783,29 @@ class Ui_LRF1_Widget(object):
         LRF1_Widget.setTabOrder(self.LabelSamplesForV, self.LabelSamplesForNb)
         LRF1_Widget.setTabOrder(self.LabelSamplesForNb, self.LabelSamplesForB)
         LRF1_Widget.setTabOrder(self.LabelSamplesForB, self.LabelSamplesForCpr)
-        LRF1_Widget.setTabOrder(self.LabelSamplesForCpr, self.LabelSamplesForTi)
+        LRF1_Widget.setTabOrder(self.LabelSamplesForCpr, self.LabelSamplesForAl)
+        LRF1_Widget.setTabOrder(self.LabelSamplesForAl, self.LabelSamplesForTi)
         LRF1_Widget.setTabOrder(self.LabelSamplesForTi, self.LabelSamplesForCa)
-        LRF1_Widget.setTabOrder(self.LabelSamplesForCa, self.MaterialForNi)
-        LRF1_Widget.setTabOrder(self.MaterialForNi, self.MaterialForB)
-        LRF1_Widget.setTabOrder(self.MaterialForB, self.MaterialForCu)
-        LRF1_Widget.setTabOrder(self.MaterialForCu, self.MaterialForSi)
-        LRF1_Widget.setTabOrder(self.MaterialForSi, self.MaterialForMo)
-        LRF1_Widget.setTabOrder(self.MaterialForMo, self.MaterialForTi)
-        LRF1_Widget.setTabOrder(self.MaterialForTi, self.LabelTargetCoreForCa)
-        LRF1_Widget.setTabOrder(self.LabelTargetCoreForCa, self.MaterialForCr)
-        LRF1_Widget.setTabOrder(self.MaterialForCr, self.MaterialForCa)
-        LRF1_Widget.setTabOrder(self.MaterialForCa, self.MaterialForV)
-        LRF1_Widget.setTabOrder(self.MaterialForV, self.MaterialForC)
-        LRF1_Widget.setTabOrder(self.MaterialForC, self.MaterialForNb)
-        LRF1_Widget.setTabOrder(self.MaterialForNb, self.pushButton_6)
+        LRF1_Widget.setTabOrder(self.LabelSamplesForCa, self.LabelTargetCoreForCa)
+        LRF1_Widget.setTabOrder(self.LabelTargetCoreForCa, self.MaterialForC)
+        LRF1_Widget.setTabOrder(self.MaterialForC, self.MaterialForSi)
+        LRF1_Widget.setTabOrder(self.MaterialForSi, self.MaterialForMn)
+        LRF1_Widget.setTabOrder(self.MaterialForMn, self.MaterialForCr)
+        LRF1_Widget.setTabOrder(self.MaterialForCr, self.MaterialForNi)
+        LRF1_Widget.setTabOrder(self.MaterialForNi, self.MaterialForCu)
+        LRF1_Widget.setTabOrder(self.MaterialForCu, self.MaterialForMo)
+        LRF1_Widget.setTabOrder(self.MaterialForMo, self.MaterialForV)
+        LRF1_Widget.setTabOrder(self.MaterialForV, self.MaterialForNb)
+        LRF1_Widget.setTabOrder(self.MaterialForNb, self.MaterialForB)
+        LRF1_Widget.setTabOrder(self.MaterialForB, self.MaterialForTi)
+        LRF1_Widget.setTabOrder(self.MaterialForTi, self.MaterialForCa)
+        LRF1_Widget.setTabOrder(self.MaterialForCa, self.pushButton_6)
         LRF1_Widget.setTabOrder(self.pushButton_6, self.pushButton_7)
-        LRF1_Widget.setTabOrder(self.pushButton_7, self.LabelSamplesForAl)
-        LRF1_Widget.setTabOrder(self.LabelSamplesForAl, self.MaterialForMn)
+        LRF1_Widget.setTabOrder(self.pushButton_7, self.Lrf1_button_radio)
+        LRF1_Widget.setTabOrder(self.Lrf1_button_radio, self.Lrf2_button_radio)
+        LRF1_Widget.setTabOrder(self.Lrf2_button_radio, self.dilution_button_radio)
+        LRF1_Widget.setTabOrder(self.dilution_button_radio, self.formuls_button_radio)
+        LRF1_Widget.setTabOrder(self.formuls_button_radio, self.note_button_radio)
 
     def retranslateUi(self, LRF1_Widget):
         _translate = QtCore.QCoreApplication.translate

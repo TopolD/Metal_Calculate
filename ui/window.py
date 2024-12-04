@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 
-from ui.EventHandlerForDisplay import DisplayHandler
+from ui.EventHandleWindow.EventHandlerForLrf import DisplayHandler
 
 
 class Window1(DisplayHandler):

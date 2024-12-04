@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Dilution_Widget</class>
+ <widget class="QWidget" name="Dilution_Widget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>433</width>
-    <height>465</height>
+    <width>432</width>
+    <height>470</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>107</y>
+     <y>110</y>
      <width>411</width>
      <height>350</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="maximumSize">
     <size>
@@ -36,6 +42,12 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
        <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
       </property>
       <item>
        <layout class="QHBoxLayout" name="Label_for_dilution">
@@ -243,8 +255,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -355,8 +367,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -375,7 +387,7 @@ border-bottom: 2px solid #E0E0E0;
          <number>0</number>
         </property>
         <item>
-         <widget class="QLabel" name="Dil_Mo_Label">
+         <widget class="QLabel" name="Dil_Mn_Label">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -389,12 +401,12 @@ border-bottom: 2px solid #F5F5F5;
 </string>
           </property>
           <property name="text">
-           <string>Mo</string>
+           <string>Mn</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N1">
+         <widget class="QLineEdit" name="Ladel_Mn_N1">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -411,7 +423,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N2">
+         <widget class="QLineEdit" name="Ladel_Mn_N2">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -428,7 +440,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N3">
+         <widget class="QLineEdit" name="Ladel_Mn_N3">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -445,7 +457,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="Dil_Mo_Label_Calc">
+         <widget class="QLabel" name="Dil_Mn_Label_Calc">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -455,8 +467,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -555,8 +567,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -655,8 +667,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -755,8 +767,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -861,8 +873,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -961,8 +973,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1061,8 +1073,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1081,7 +1093,7 @@ border-bottom: 2px solid #E0E0E0;
          <number>0</number>
         </property>
         <item>
-         <widget class="QLabel" name="Dil_Mn_Label">
+         <widget class="QLabel" name="Dil_Mo_Label">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -1095,12 +1107,12 @@ border-bottom: 2px solid #F5F5F5;
 </string>
           </property>
           <property name="text">
-           <string>Mn</string>
+           <string>Mo</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N1">
+         <widget class="QLineEdit" name="Ladel_Mo_N1">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -1117,7 +1129,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N2">
+         <widget class="QLineEdit" name="Ladel_Mo_N2">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -1134,7 +1146,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N3">
+         <widget class="QLineEdit" name="Ladel_Mo_N3">
           <property name="maximumSize">
            <size>
             <width>79</width>
@@ -1151,7 +1163,7 @@ border-bottom: 2px solid #E0E0E0;
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="Dil_Mn_Label_Calc">
+         <widget class="QLabel" name="Dil_Mo_Label_Calc">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -1161,8 +1173,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1261,8 +1273,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1361,8 +1373,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1461,8 +1473,8 @@ border-bottom: 2px solid #E0E0E0;
           <property name="font">
            <font>
             <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1501,6 +1513,15 @@ background-color: rgb(255, 255, 255);n</string>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="Layout_for_button_with_LadleButton">
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="Layout_Ladel_1">
         <property name="spacing">
@@ -1520,7 +1541,7 @@ background-color: rgb(255, 255, 255);n</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="Ladel_1">
+         <widget class="QLabel" name="Ladle_1">
           <property name="text">
            <string>Ковш №1</string>
           </property>
@@ -1530,7 +1551,7 @@ background-color: rgb(255, 255, 255);n</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladel_1">
+         <widget class="QLineEdit" name="Input_Weight_Ladle_1">
           <property name="styleSheet">
            <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
           </property>
@@ -1557,7 +1578,7 @@ background-color: rgb(255, 255, 255);n</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="Ladel_2">
+         <widget class="QLabel" name="Ladle_2">
           <property name="text">
            <string>Ковш №2</string>
           </property>
@@ -1567,7 +1588,7 @@ background-color: rgb(255, 255, 255);n</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladel_2">
+         <widget class="QLineEdit" name="Input_Weight_Ladle_2">
           <property name="styleSheet">
            <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
           </property>
@@ -1594,7 +1615,7 @@ background-color: rgb(255, 255, 255);n</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="Ladel_3">
+         <widget class="QLabel" name="Ladle_3">
           <property name="text">
            <string>Ковш №3</string>
           </property>
@@ -1604,7 +1625,7 @@ background-color: rgb(255, 255, 255);n</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladel_3">
+         <widget class="QLineEdit" name="Input_Weight_Ladle_3">
           <property name="styleSheet">
            <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
           </property>
@@ -1638,8 +1659,15 @@ background-color: rgb(255, 255, 255);n</string>
             <height>16</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>TextLabel</string>
+           <string>0</string>
           </property>
          </widget>
         </item>
@@ -1726,6 +1754,52 @@ background-color: rgb(255, 255, 255);n</string>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>Input_Weight_Ladle_1</tabstop>
+  <tabstop>Input_Weight_Ladle_2</tabstop>
+  <tabstop>Input_Weight_Ladle_3</tabstop>
+  <tabstop>Ladel_C_N1</tabstop>
+  <tabstop>Ladel_C_N2</tabstop>
+  <tabstop>Ladel_C_N3</tabstop>
+  <tabstop>Ladel_Si_N1</tabstop>
+  <tabstop>Ladel_Si_N2</tabstop>
+  <tabstop>Ladel_Si_N3</tabstop>
+  <tabstop>Ladel_Mn_N1</tabstop>
+  <tabstop>Ladel_Mn_N2</tabstop>
+  <tabstop>Ladel_Mn_N3</tabstop>
+  <tabstop>Ladel_Cu_N1</tabstop>
+  <tabstop>Ladel_Cu_N2</tabstop>
+  <tabstop>Ladel_Cu_N3</tabstop>
+  <tabstop>Ladel_Cr_N1</tabstop>
+  <tabstop>Ladel_Cr_N2</tabstop>
+  <tabstop>Ladel_Cr_N3</tabstop>
+  <tabstop>Ladel_Ti_N1</tabstop>
+  <tabstop>Ladel_Ti_N2</tabstop>
+  <tabstop>Ladel_Ti_N3</tabstop>
+  <tabstop>Ladel_Ni_N1</tabstop>
+  <tabstop>Ladel_Ni_N2</tabstop>
+  <tabstop>Ladel_Ni_N3</tabstop>
+  <tabstop>Ladel_Sn_N1</tabstop>
+  <tabstop>Ladel_Sn_N2</tabstop>
+  <tabstop>Ladel_Sn_N3</tabstop>
+  <tabstop>Ladel_V_N1</tabstop>
+  <tabstop>Ladel_V_N2</tabstop>
+  <tabstop>Ladel_V_N3</tabstop>
+  <tabstop>Ladel_Mo_N1</tabstop>
+  <tabstop>Ladel_Mo_N2</tabstop>
+  <tabstop>Ladel_Mo_N3</tabstop>
+  <tabstop>Ladel_Nb_N1</tabstop>
+  <tabstop>Ladel_Nb_N2</tabstop>
+  <tabstop>Ladel_Nb_N3</tabstop>
+  <tabstop>Ladel_Al_N1</tabstop>
+  <tabstop>Ladel_Al_N2</tabstop>
+  <tabstop>Ladel_Al_N3</tabstop>
+  <tabstop>Ladel_P_N1</tabstop>
+  <tabstop>Ladel_P_N2</tabstop>
+  <tabstop>Ladel_P_N3</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

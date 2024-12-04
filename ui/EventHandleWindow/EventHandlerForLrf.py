@@ -1,16 +1,16 @@
 from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QRect, QTimer
-from PyQt5.QtWidgets import QWidget, QApplication, QComboBox, QLabel
+from PyQt5.QtWidgets import QWidget, QApplication, QComboBox
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
-from ui.Lrf import Ui_LRF1_Widget
+from ui.Designe.Lrf import Ui_LRF1_Widget
 from ui.calculate import CalculationHandler
 from utils_calculate.formuls_for_calculate import DataHolder, get_data_calculate_with_db
 
 
-class DisplayHandler(QWidget, Ui_LRF1_Widget):
+class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
 
     def __init__(self):
-        super(DisplayHandler, self).__init__()
+        super(DisplayHandlerLrf, self).__init__()
         self.setupUi(self)
 
         self.CalculateClass = handler_data(self)
@@ -125,7 +125,7 @@ class DisplayHandler(QWidget, Ui_LRF1_Widget):
             self.OutputClass.samples_dict['W'] = self.InputWeight.text()
             self.OutputClass.samples_dict['temp'] = self.LabelTargetCoreForCa.text()
             self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
-            print(self.OutputClass.samples_dict)
+            # print(self.OutputClass.samples_dict)
 
     def reset_samples_dict(self):
         self.OutputClass.samples_dict = {
@@ -275,7 +275,7 @@ if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
-    main_window = DisplayHandler()
+    main_window = DisplayHandlerLrf()
     main_window.show()
 
     sys.exit(app.exec_())

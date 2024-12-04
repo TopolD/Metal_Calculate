@@ -13,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>655</width>
-    <height>860</height>
+    <height>885</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -4148,24 +4148,29 @@ border-bottom: 2px solid #F5F5F5;
   <tabstop>LabelSamplesForNb</tabstop>
   <tabstop>LabelSamplesForB</tabstop>
   <tabstop>LabelSamplesForCpr</tabstop>
+  <tabstop>LabelSamplesForAl</tabstop>
   <tabstop>LabelSamplesForTi</tabstop>
   <tabstop>LabelSamplesForCa</tabstop>
-  <tabstop>MaterialForNi</tabstop>
-  <tabstop>MaterialForB</tabstop>
-  <tabstop>MaterialForCu</tabstop>
-  <tabstop>MaterialForSi</tabstop>
-  <tabstop>MaterialForMo</tabstop>
-  <tabstop>MaterialForTi</tabstop>
   <tabstop>LabelTargetCoreForCa</tabstop>
-  <tabstop>MaterialForCr</tabstop>
-  <tabstop>MaterialForCa</tabstop>
-  <tabstop>MaterialForV</tabstop>
   <tabstop>MaterialForC</tabstop>
+  <tabstop>MaterialForSi</tabstop>
+  <tabstop>MaterialForMn</tabstop>
+  <tabstop>MaterialForCr</tabstop>
+  <tabstop>MaterialForNi</tabstop>
+  <tabstop>MaterialForCu</tabstop>
+  <tabstop>MaterialForMo</tabstop>
+  <tabstop>MaterialForV</tabstop>
   <tabstop>MaterialForNb</tabstop>
+  <tabstop>MaterialForB</tabstop>
+  <tabstop>MaterialForTi</tabstop>
+  <tabstop>MaterialForCa</tabstop>
   <tabstop>pushButton_6</tabstop>
   <tabstop>pushButton_7</tabstop>
-  <tabstop>LabelSamplesForAl</tabstop>
-  <tabstop>MaterialForMn</tabstop>
+  <tabstop>Lrf1_button_radio</tabstop>
+  <tabstop>Lrf2_button_radio</tabstop>
+  <tabstop>dilution_button_radio</tabstop>
+  <tabstop>formuls_button_radio</tabstop>
+  <tabstop>note_button_radio</tabstop>
  </tabstops>
  <resources/>
  <connections/>
