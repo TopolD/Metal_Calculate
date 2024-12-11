@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Formuls</class>
- <widget class="QWidget" name="Formuls">
+ <class>FormulsDesigner</class>
+ <widget class="QWidget" name="FormulsDesigner">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>433</width>
+    <width>430</width>
     <height>465</height>
    </rect>
   </property>
@@ -110,49 +110,49 @@
     <item>
      <widget class="QRadioButton" name="Cekv">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="Ct">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="Pcm">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="J_Factor">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="Cu_8_Sn">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="Cr_Ni_Mo_V">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QRadioButton" name="Cr_Ni_Cu">
       <property name="text">
-       <string> </string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -164,7 +164,7 @@
      <x>10</x>
      <y>70</y>
      <width>411</width>
-     <height>141</height>
+     <height>142</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="LayoutForElementFormul">
@@ -218,7 +218,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -274,7 +274,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -330,7 +330,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -386,7 +386,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -442,7 +442,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -498,7 +498,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -543,7 +543,7 @@ border-bottom: 2px solid #E0E0E0;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="LabelCr_Ni_cu">
+       <widget class="QLabel" name="LabelCr_Ni_Cu">
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -554,7 +554,7 @@ border-bottom: 2px solid #E0E0E0;</string>
 border-bottom: 2px solid #E0E0E0;</string>
         </property>
         <property name="text">
-         <string> 0</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -581,7 +581,19 @@ border-bottom: 2px solid #E0E0E0;</string>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
-       <number>0</number>
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
       </property>
       <item>
        <layout class="QHBoxLayout" name="LayoutForElementAndAnalize">
@@ -657,7 +669,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -697,7 +709,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -712,6 +724,9 @@ border-bottom: 2px solid #E0E0E0;
        <layout class="QHBoxLayout" name="LayoutForMn">
         <item>
          <widget class="QLabel" name="LabelMn">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -729,6 +744,9 @@ border-bottom: 2px solid #F5F5F5;
         </item>
         <item>
          <widget class="QLineEdit" name="InputForMn">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="maximumSize">
            <size>
             <width>284</width>
@@ -737,7 +755,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -777,8 +795,8 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
-border-bottom: 2px solid #E0E0E0;
+
+border-bottom: 2px solid #BCFBA7;
 </string>
           </property>
           <property name="alignment">
@@ -817,7 +835,6 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -857,7 +874,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -897,7 +914,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -937,7 +954,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -977,7 +994,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -1017,7 +1034,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
@@ -1057,7 +1074,7 @@ border-bottom: 2px solid #F5F5F5;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);
-border: none;
+
 border-bottom: 2px solid #E0E0E0;
 </string>
           </property>
