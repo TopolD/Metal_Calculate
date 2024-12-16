@@ -1,3 +1,4 @@
+from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QWidget, QApplication
 
@@ -12,6 +13,15 @@ class DisplayHandlerDilution(QWidget, Ui_Dilution_Widget):
         self.dilution_dict = self.initial_dict()
         self.line_edit_handler()
 
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_layout)
+        self.timer.start(100)
+
+    def update_layout(self):
+        layout_width = self.Dilution_Layout.sizeHint().width()
+        layout_height = self.Dilution_Layout.sizeHint().height()
+        self.resize(layout_width + 90, layout_height + 10)
+        self.updateGeometry()
     def initial_dict(self):
         dilution_dict = {
             'Ladles': {

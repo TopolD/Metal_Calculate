@@ -13,1745 +13,1669 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>110</y>
-     <width>411</width>
-     <height>350</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>350</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:#FFFFFF</string>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <property name="leftMargin">
-       <number>5</number>
-      </property>
-      <property name="bottomMargin">
-       <number>5</number>
-      </property>
-      <item>
-       <layout class="QHBoxLayout" name="Label_for_dilution">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Element_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Элементы</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladel_N1">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>№1</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladel_N2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>№2</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladel_N3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>№3</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Calculation_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Расчёт,%</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_C">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_C_Label">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>C</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_C_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_C_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_C_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_C_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Si">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Si_Label">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Si</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Si_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Si_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Si_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Si_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Mo">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Mn_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Mn</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mn_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Mn_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Cu">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Cu_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Cu</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cu_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cu_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cu_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Cu_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Cr">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Cr_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Cr</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cr_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cr_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Cr_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Cr_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Ti">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Ti_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Ti</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ti_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ti_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ti_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Ti_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Ni">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Ni_Label">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Ni</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ni_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ni_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Ni_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Ni_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Sn">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Sn_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>P</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Sn_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Sn_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Sn_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Sn_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_V">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_V_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>V</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_V_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_V_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_V_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_V_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Mn">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Mo_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Mo</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Mo_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Mo_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Nb">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Nb_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Nb</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Nb_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Nb_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Nb_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Nb_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_Al">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_Al_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>Al</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Al_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Al_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_Al_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_Al_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Dil_layout_for_P">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="Dil_P_Label">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-border-bottom: 2px solid #F5F5F5;
-</string>
-          </property>
-          <property name="text">
-           <string>P</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_P_N1">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_P_N2">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Ladel_P_N3">
-          <property name="maximumSize">
-           <size>
-            <width>79</width>
-            <height>34</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
-
-border: none;
-border-bottom: 2px solid #E0E0E0;
-</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="Dil_P_Label_Calc">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="widget_2" native="true">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>50</y>
      <width>411</width>
-     <height>50</height>
+     <height>408</height>
     </rect>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>417</width>
-     <height>50</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 5px;
+   <layout class="QVBoxLayout" name="Dilution_Layout">
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>417</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
 background-color: rgb(255, 255, 255);n</string>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <layout class="QHBoxLayout" name="Layout_for_button_with_LadleButton">
-      <property name="leftMargin">
-       <number>5</number>
       </property>
-      <property name="rightMargin">
-       <number>5</number>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="Layout_for_button_with_LadleButton">
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="Layout_Ladel_1">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladle_1">
+             <property name="text">
+              <string>Ковш №1</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Input_Weight_Ladle_1">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="Layout_Ladel_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladle_2">
+             <property name="text">
+              <string>Ковш №2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Input_Weight_Ladle_2">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="Layout_Ladel_3">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladle_3">
+             <property name="text">
+              <string>Ковш №3</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Input_Weight_Ladle_3">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="Layout_TotalWeight">
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>10</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-      <property name="bottomMargin">
-       <number>5</number>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>350</height>
+       </size>
       </property>
-      <item>
-       <layout class="QVBoxLayout" name="Layout_Ladel_1">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladle_1">
-          <property name="text">
-           <string>Ковш №1</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladle_1">
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="Layout_Ladel_2">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladle_2">
-          <property name="text">
-           <string>Ковш №2</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladle_2">
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="Layout_Ladel_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="Ladle_3">
-          <property name="text">
-           <string>Ковш №3</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Input_Weight_Ladle_3">
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid gray;\nborder-radius: 5%</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="Layout_TotalWeight">
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>10</width>
-            <height>10</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+      <property name="styleSheet">
+       <string notr="true">background-color:#FFFFFF</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="Label_for_dilution">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Element_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Элементы</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladel_N1">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>№1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladel_N2">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>№2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Ladel_N3">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>№3</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Calculation_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Расчёт,%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_C">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_C_Label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>C</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_C_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_C_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_C_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_C_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Si">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Si_Label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Si</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Si_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Si_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Si_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Si_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Mo">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Mn_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Mn</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mn_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mn_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mn_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Mn_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Cu">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Cu_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Cu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cu_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cu_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cu_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Cu_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Cr">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Cr_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Cr</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cr_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cr_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Cr_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Cr_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Ti">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Ti_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Ti</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ti_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ti_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ti_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Ti_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Ni">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Ni_Label">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Ni</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ni_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ni_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Ni_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Ni_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Sn">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Sn_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>P</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Sn_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Sn_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Sn_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Sn_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_V">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_V_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>V</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_V_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_V_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_V_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_V_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Mn">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Mo_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Mo</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mo_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mo_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Mo_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Mo_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Nb">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Nb_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Nb</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Nb_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Nb_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Nb_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Nb_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_Al">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_Al_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>Al</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Al_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Al_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_Al_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_Al_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="Dil_layout_for_P">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Dil_P_Label">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 2px solid #F5F5F5;
+</string>
+             </property>
+             <property name="text">
+              <string>P</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_P_N1">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_P_N2">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Ladel_P_N3">
+             <property name="maximumSize">
+              <size>
+               <width>79</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Dil_P_Label_Calc">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>1</x>
-     <y>13</y>
-     <width>41</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>41</width>
-     <height>21</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>41</width>
-     <height>21</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: None</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../../../Downloads/vector (2).svg</normaloff>../../../Downloads/vector (2).svg</iconset>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_7">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>20</y>
-     <width>41</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>41</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>41</width>
-     <height>21</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: None</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../../../Downloads/vector (3).svg</normaloff>../../../Downloads/vector (3).svg</iconset>
-   </property>
   </widget>
  </widget>
  <tabstops>
@@ -1797,8 +1721,6 @@ background-color: rgb(255, 255, 255);n</string>
   <tabstop>Ladel_P_N1</tabstop>
   <tabstop>Ladel_P_N2</tabstop>
   <tabstop>Ladel_P_N3</tabstop>
-  <tabstop>pushButton_6</tabstop>
-  <tabstop>pushButton_7</tabstop>
  </tabstops>
  <resources/>
  <connections/>

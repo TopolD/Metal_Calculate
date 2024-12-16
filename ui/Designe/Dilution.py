@@ -16,773 +16,17 @@ class Ui_Dilution_Widget(object):
         Dilution_Widget.setObjectName("Dilution_Widget")
         Dilution_Widget.resize(432, 470)
         self.widget = QtWidgets.QWidget(Dilution_Widget)
-        self.widget.setGeometry(QtCore.QRect(10, 110, 411, 350))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
-        self.widget.setSizePolicy(sizePolicy)
-        self.widget.setMaximumSize(QtCore.QSize(16777215, 350))
-        self.widget.setStyleSheet("background-color:#FFFFFF")
+        self.widget.setGeometry(QtCore.QRect(10, 50, 411, 408))
         self.widget.setObjectName("widget")
-        self.gridLayout = QtWidgets.QGridLayout(self.widget)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setObjectName("gridLayout")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setContentsMargins(5, -1, -1, 5)
-        self.verticalLayout.setSpacing(6)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.Label_for_dilution = QtWidgets.QHBoxLayout()
-        self.Label_for_dilution.setSpacing(0)
-        self.Label_for_dilution.setObjectName("Label_for_dilution")
-        self.Element_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Element_Label.setFont(font)
-        self.Element_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Element_Label.setObjectName("Element_Label")
-        self.Label_for_dilution.addWidget(self.Element_Label)
-        self.Ladel_N1 = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Ladel_N1.setFont(font)
-        self.Ladel_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Ladel_N1.setObjectName("Ladel_N1")
-        self.Label_for_dilution.addWidget(self.Ladel_N1)
-        self.Ladel_N2 = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Ladel_N2.setFont(font)
-        self.Ladel_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Ladel_N2.setObjectName("Ladel_N2")
-        self.Label_for_dilution.addWidget(self.Ladel_N2)
-        self.Ladel_N3 = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Ladel_N3.setFont(font)
-        self.Ladel_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Ladel_N3.setObjectName("Ladel_N3")
-        self.Label_for_dilution.addWidget(self.Ladel_N3)
-        self.Calculation_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Calculation_Label.setFont(font)
-        self.Calculation_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Calculation_Label.setObjectName("Calculation_Label")
-        self.Label_for_dilution.addWidget(self.Calculation_Label)
-        self.verticalLayout.addLayout(self.Label_for_dilution)
-        self.Dil_layout_for_C = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_C.setSpacing(0)
-        self.Dil_layout_for_C.setObjectName("Dil_layout_for_C")
-        self.Dil_C_Label = QtWidgets.QLabel(self.widget)
-        self.Dil_C_Label.setMinimumSize(QtCore.QSize(0, 0))
-        self.Dil_C_Label.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_C_Label.setFont(font)
-        self.Dil_C_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_C_Label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.Dil_C_Label.setObjectName("Dil_C_Label")
-        self.Dil_layout_for_C.addWidget(self.Dil_C_Label)
-        self.Ladel_C_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_C_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_C_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_C_N1.setText("")
-        self.Ladel_C_N1.setObjectName("Ladel_C_N1")
-        self.Dil_layout_for_C.addWidget(self.Ladel_C_N1)
-        self.Ladel_C_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_C_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_C_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_C_N2.setObjectName("Ladel_C_N2")
-        self.Dil_layout_for_C.addWidget(self.Ladel_C_N2)
-        self.Ladel_C_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_C_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_C_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_C_N3.setObjectName("Ladel_C_N3")
-        self.Dil_layout_for_C.addWidget(self.Ladel_C_N3)
-        self.Dil_C_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_C_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_C_Label_Calc.setFont(font)
-        self.Dil_C_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_C_Label_Calc.setObjectName("Dil_C_Label_Calc")
-        self.Dil_layout_for_C.addWidget(self.Dil_C_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_C)
-        self.Dil_layout_for_Si = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Si.setSpacing(0)
-        self.Dil_layout_for_Si.setObjectName("Dil_layout_for_Si")
-        self.Dil_Si_Label = QtWidgets.QLabel(self.widget)
-        self.Dil_Si_Label.setMinimumSize(QtCore.QSize(0, 0))
-        self.Dil_Si_Label.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Si_Label.setFont(font)
-        self.Dil_Si_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Si_Label.setObjectName("Dil_Si_Label")
-        self.Dil_layout_for_Si.addWidget(self.Dil_Si_Label)
-        self.Ladel_Si_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Si_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Si_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Si_N1.setObjectName("Ladel_Si_N1")
-        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N1)
-        self.Ladel_Si_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Si_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Si_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Si_N2.setObjectName("Ladel_Si_N2")
-        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N2)
-        self.Ladel_Si_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Si_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Si_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Si_N3.setObjectName("Ladel_Si_N3")
-        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N3)
-        self.Dil_Si_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Si_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Si_Label_Calc.setFont(font)
-        self.Dil_Si_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Si_Label_Calc.setObjectName("Dil_Si_Label_Calc")
-        self.Dil_layout_for_Si.addWidget(self.Dil_Si_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Si)
-        self.Dil_layout_for_Mo = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Mo.setSpacing(0)
-        self.Dil_layout_for_Mo.setObjectName("Dil_layout_for_Mo")
-        self.Dil_Mn_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Mn_Label.setFont(font)
-        self.Dil_Mn_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Mn_Label.setObjectName("Dil_Mn_Label")
-        self.Dil_layout_for_Mo.addWidget(self.Dil_Mn_Label)
-        self.Ladel_Mn_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mn_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mn_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mn_N1.setObjectName("Ladel_Mn_N1")
-        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N1)
-        self.Ladel_Mn_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mn_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mn_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mn_N2.setObjectName("Ladel_Mn_N2")
-        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N2)
-        self.Ladel_Mn_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mn_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mn_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mn_N3.setObjectName("Ladel_Mn_N3")
-        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N3)
-        self.Dil_Mn_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Mn_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Mn_Label_Calc.setFont(font)
-        self.Dil_Mn_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Mn_Label_Calc.setObjectName("Dil_Mn_Label_Calc")
-        self.Dil_layout_for_Mo.addWidget(self.Dil_Mn_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Mo)
-        self.Dil_layout_for_Cu = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Cu.setSpacing(0)
-        self.Dil_layout_for_Cu.setObjectName("Dil_layout_for_Cu")
-        self.Dil_Cu_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Cu_Label.setFont(font)
-        self.Dil_Cu_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Cu_Label.setObjectName("Dil_Cu_Label")
-        self.Dil_layout_for_Cu.addWidget(self.Dil_Cu_Label)
-        self.Ladel_Cu_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cu_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cu_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cu_N1.setObjectName("Ladel_Cu_N1")
-        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N1)
-        self.Ladel_Cu_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cu_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cu_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cu_N2.setObjectName("Ladel_Cu_N2")
-        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N2)
-        self.Ladel_Cu_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cu_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cu_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cu_N3.setObjectName("Ladel_Cu_N3")
-        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N3)
-        self.Dil_Cu_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Cu_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Cu_Label_Calc.setFont(font)
-        self.Dil_Cu_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Cu_Label_Calc.setObjectName("Dil_Cu_Label_Calc")
-        self.Dil_layout_for_Cu.addWidget(self.Dil_Cu_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Cu)
-        self.Dil_layout_for_Cr = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Cr.setSpacing(0)
-        self.Dil_layout_for_Cr.setObjectName("Dil_layout_for_Cr")
-        self.Dil_Cr_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Cr_Label.setFont(font)
-        self.Dil_Cr_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Cr_Label.setObjectName("Dil_Cr_Label")
-        self.Dil_layout_for_Cr.addWidget(self.Dil_Cr_Label)
-        self.Ladel_Cr_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cr_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cr_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cr_N1.setObjectName("Ladel_Cr_N1")
-        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N1)
-        self.Ladel_Cr_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cr_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cr_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cr_N2.setObjectName("Ladel_Cr_N2")
-        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N2)
-        self.Ladel_Cr_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Cr_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Cr_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Cr_N3.setObjectName("Ladel_Cr_N3")
-        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N3)
-        self.Dil_Cr_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Cr_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Cr_Label_Calc.setFont(font)
-        self.Dil_Cr_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Cr_Label_Calc.setObjectName("Dil_Cr_Label_Calc")
-        self.Dil_layout_for_Cr.addWidget(self.Dil_Cr_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Cr)
-        self.Dil_layout_for_Ti = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Ti.setSpacing(0)
-        self.Dil_layout_for_Ti.setObjectName("Dil_layout_for_Ti")
-        self.Dil_Ti_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Ti_Label.setFont(font)
-        self.Dil_Ti_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Ti_Label.setObjectName("Dil_Ti_Label")
-        self.Dil_layout_for_Ti.addWidget(self.Dil_Ti_Label)
-        self.Ladel_Ti_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ti_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ti_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ti_N1.setObjectName("Ladel_Ti_N1")
-        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N1)
-        self.Ladel_Ti_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ti_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ti_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ti_N2.setObjectName("Ladel_Ti_N2")
-        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N2)
-        self.Ladel_Ti_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ti_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ti_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ti_N3.setObjectName("Ladel_Ti_N3")
-        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N3)
-        self.Dil_Ti_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Ti_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Ti_Label_Calc.setFont(font)
-        self.Dil_Ti_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Ti_Label_Calc.setObjectName("Dil_Ti_Label_Calc")
-        self.Dil_layout_for_Ti.addWidget(self.Dil_Ti_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Ti)
-        self.Dil_layout_for_Ni = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Ni.setSpacing(0)
-        self.Dil_layout_for_Ni.setObjectName("Dil_layout_for_Ni")
-        self.Dil_Ni_Label = QtWidgets.QLabel(self.widget)
-        self.Dil_Ni_Label.setMaximumSize(QtCore.QSize(16777215, 34))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Ni_Label.setFont(font)
-        self.Dil_Ni_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Ni_Label.setObjectName("Dil_Ni_Label")
-        self.Dil_layout_for_Ni.addWidget(self.Dil_Ni_Label)
-        self.Ladel_Ni_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ni_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ni_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ni_N1.setObjectName("Ladel_Ni_N1")
-        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N1)
-        self.Ladel_Ni_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ni_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ni_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ni_N2.setObjectName("Ladel_Ni_N2")
-        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N2)
-        self.Ladel_Ni_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Ni_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Ni_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Ni_N3.setObjectName("Ladel_Ni_N3")
-        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N3)
-        self.Dil_Ni_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Ni_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Ni_Label_Calc.setFont(font)
-        self.Dil_Ni_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Ni_Label_Calc.setObjectName("Dil_Ni_Label_Calc")
-        self.Dil_layout_for_Ni.addWidget(self.Dil_Ni_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Ni)
-        self.Dil_layout_for_Sn = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Sn.setSpacing(0)
-        self.Dil_layout_for_Sn.setObjectName("Dil_layout_for_Sn")
-        self.Dil_Sn_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Sn_Label.setFont(font)
-        self.Dil_Sn_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Sn_Label.setObjectName("Dil_Sn_Label")
-        self.Dil_layout_for_Sn.addWidget(self.Dil_Sn_Label)
-        self.Ladel_Sn_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Sn_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Sn_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Sn_N1.setObjectName("Ladel_Sn_N1")
-        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N1)
-        self.Ladel_Sn_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Sn_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Sn_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Sn_N2.setObjectName("Ladel_Sn_N2")
-        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N2)
-        self.Ladel_Sn_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Sn_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Sn_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Sn_N3.setObjectName("Ladel_Sn_N3")
-        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N3)
-        self.Dil_Sn_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Sn_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Sn_Label_Calc.setFont(font)
-        self.Dil_Sn_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Sn_Label_Calc.setObjectName("Dil_Sn_Label_Calc")
-        self.Dil_layout_for_Sn.addWidget(self.Dil_Sn_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Sn)
-        self.Dil_layout_for_V = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_V.setSpacing(0)
-        self.Dil_layout_for_V.setObjectName("Dil_layout_for_V")
-        self.Dil_V_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_V_Label.setFont(font)
-        self.Dil_V_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_V_Label.setObjectName("Dil_V_Label")
-        self.Dil_layout_for_V.addWidget(self.Dil_V_Label)
-        self.Ladel_V_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_V_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_V_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_V_N1.setObjectName("Ladel_V_N1")
-        self.Dil_layout_for_V.addWidget(self.Ladel_V_N1)
-        self.Ladel_V_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_V_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_V_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_V_N2.setObjectName("Ladel_V_N2")
-        self.Dil_layout_for_V.addWidget(self.Ladel_V_N2)
-        self.Ladel_V_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_V_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_V_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_V_N3.setObjectName("Ladel_V_N3")
-        self.Dil_layout_for_V.addWidget(self.Ladel_V_N3)
-        self.Dil_V_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_V_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_V_Label_Calc.setFont(font)
-        self.Dil_V_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_V_Label_Calc.setObjectName("Dil_V_Label_Calc")
-        self.Dil_layout_for_V.addWidget(self.Dil_V_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_V)
-        self.Dil_layout_for_Mn = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Mn.setSpacing(0)
-        self.Dil_layout_for_Mn.setObjectName("Dil_layout_for_Mn")
-        self.Dil_Mo_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Mo_Label.setFont(font)
-        self.Dil_Mo_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Mo_Label.setObjectName("Dil_Mo_Label")
-        self.Dil_layout_for_Mn.addWidget(self.Dil_Mo_Label)
-        self.Ladel_Mo_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mo_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mo_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mo_N1.setObjectName("Ladel_Mo_N1")
-        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N1)
-        self.Ladel_Mo_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mo_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mo_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mo_N2.setObjectName("Ladel_Mo_N2")
-        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N2)
-        self.Ladel_Mo_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Mo_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Mo_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Mo_N3.setObjectName("Ladel_Mo_N3")
-        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N3)
-        self.Dil_Mo_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Mo_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Mo_Label_Calc.setFont(font)
-        self.Dil_Mo_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Mo_Label_Calc.setObjectName("Dil_Mo_Label_Calc")
-        self.Dil_layout_for_Mn.addWidget(self.Dil_Mo_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Mn)
-        self.Dil_layout_for_Nb = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Nb.setSpacing(0)
-        self.Dil_layout_for_Nb.setObjectName("Dil_layout_for_Nb")
-        self.Dil_Nb_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Nb_Label.setFont(font)
-        self.Dil_Nb_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Nb_Label.setObjectName("Dil_Nb_Label")
-        self.Dil_layout_for_Nb.addWidget(self.Dil_Nb_Label)
-        self.Ladel_Nb_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Nb_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Nb_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Nb_N1.setObjectName("Ladel_Nb_N1")
-        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N1)
-        self.Ladel_Nb_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Nb_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Nb_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Nb_N2.setObjectName("Ladel_Nb_N2")
-        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N2)
-        self.Ladel_Nb_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Nb_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Nb_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Nb_N3.setObjectName("Ladel_Nb_N3")
-        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N3)
-        self.Dil_Nb_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Nb_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Nb_Label_Calc.setFont(font)
-        self.Dil_Nb_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Nb_Label_Calc.setObjectName("Dil_Nb_Label_Calc")
-        self.Dil_layout_for_Nb.addWidget(self.Dil_Nb_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Nb)
-        self.Dil_layout_for_Al = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_Al.setSpacing(0)
-        self.Dil_layout_for_Al.setObjectName("Dil_layout_for_Al")
-        self.Dil_Al_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_Al_Label.setFont(font)
-        self.Dil_Al_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_Al_Label.setObjectName("Dil_Al_Label")
-        self.Dil_layout_for_Al.addWidget(self.Dil_Al_Label)
-        self.Ladel_Al_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Al_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Al_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Al_N1.setObjectName("Ladel_Al_N1")
-        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N1)
-        self.Ladel_Al_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Al_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Al_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Al_N2.setObjectName("Ladel_Al_N2")
-        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N2)
-        self.Ladel_Al_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_Al_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_Al_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_Al_N3.setObjectName("Ladel_Al_N3")
-        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N3)
-        self.Dil_Al_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_Al_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_Al_Label_Calc.setFont(font)
-        self.Dil_Al_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_Al_Label_Calc.setObjectName("Dil_Al_Label_Calc")
-        self.Dil_layout_for_Al.addWidget(self.Dil_Al_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_Al)
-        self.Dil_layout_for_P = QtWidgets.QHBoxLayout()
-        self.Dil_layout_for_P.setSpacing(0)
-        self.Dil_layout_for_P.setObjectName("Dil_layout_for_P")
-        self.Dil_P_Label = QtWidgets.QLabel(self.widget)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Dil_P_Label.setFont(font)
-        self.Dil_P_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"border-bottom: 2px solid #F5F5F5;\n"
-"")
-        self.Dil_P_Label.setObjectName("Dil_P_Label")
-        self.Dil_layout_for_P.addWidget(self.Dil_P_Label)
-        self.Ladel_P_N1 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_P_N1.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_P_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_P_N1.setObjectName("Ladel_P_N1")
-        self.Dil_layout_for_P.addWidget(self.Ladel_P_N1)
-        self.Ladel_P_N2 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_P_N2.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_P_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_P_N2.setObjectName("Ladel_P_N2")
-        self.Dil_layout_for_P.addWidget(self.Ladel_P_N2)
-        self.Ladel_P_N3 = QtWidgets.QLineEdit(self.widget)
-        self.Ladel_P_N3.setMaximumSize(QtCore.QSize(79, 34))
-        self.Ladel_P_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"\n"
-"border: none;\n"
-"border-bottom: 2px solid #E0E0E0;\n"
-"")
-        self.Ladel_P_N3.setObjectName("Ladel_P_N3")
-        self.Dil_layout_for_P.addWidget(self.Ladel_P_N3)
-        self.Dil_P_Label_Calc = QtWidgets.QLabel(self.widget)
-        self.Dil_P_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setWeight(50)
-        self.Dil_P_Label_Calc.setFont(font)
-        self.Dil_P_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
-        self.Dil_P_Label_Calc.setObjectName("Dil_P_Label_Calc")
-        self.Dil_layout_for_P.addWidget(self.Dil_P_Label_Calc)
-        self.verticalLayout.addLayout(self.Dil_layout_for_P)
-        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
-        self.widget_2 = QtWidgets.QWidget(Dilution_Widget)
-        self.widget_2.setGeometry(QtCore.QRect(10, 50, 411, 50))
+        self.Dilution_Layout = QtWidgets.QVBoxLayout(self.widget)
+        self.Dilution_Layout.setContentsMargins(0, 0, 0, 0)
+        self.Dilution_Layout.setObjectName("Dilution_Layout")
+        self.widget_2 = QtWidgets.QWidget(self.widget)
         self.widget_2.setMaximumSize(QtCore.QSize(417, 50))
         self.widget_2.setStyleSheet("border-radius: 5px;\n"
 "background-color: rgb(255, 255, 255);n")
         self.widget_2.setObjectName("widget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.widget_2)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.Layout_for_button_with_LadleButton = QtWidgets.QHBoxLayout()
         self.Layout_for_button_with_LadleButton.setContentsMargins(5, -1, 5, 5)
@@ -844,36 +88,766 @@ class Ui_Dilution_Widget(object):
         self.Layout_TotalWeight.addWidget(self.label)
         self.Layout_for_button_with_LadleButton.addLayout(self.Layout_TotalWeight)
         self.gridLayout_2.addLayout(self.Layout_for_button_with_LadleButton, 0, 0, 1, 1)
-        self.pushButton_6 = QtWidgets.QPushButton(Dilution_Widget)
-        self.pushButton_6.setGeometry(QtCore.QRect(1, 13, 41, 21))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        self.Dilution_Layout.addWidget(self.widget_2)
+        self.widget1 = QtWidgets.QWidget(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_6.sizePolicy().hasHeightForWidth())
-        self.pushButton_6.setSizePolicy(sizePolicy)
-        self.pushButton_6.setMinimumSize(QtCore.QSize(41, 21))
-        self.pushButton_6.setMaximumSize(QtCore.QSize(41, 21))
-        self.pushButton_6.setStyleSheet("border: None")
-        self.pushButton_6.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Downloads/vector (2).svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_6.setIcon(icon)
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(Dilution_Widget)
-        self.pushButton_7.setGeometry(QtCore.QRect(390, 20, 41, 16))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_7.sizePolicy().hasHeightForWidth())
-        self.pushButton_7.setSizePolicy(sizePolicy)
-        self.pushButton_7.setMinimumSize(QtCore.QSize(41, 0))
-        self.pushButton_7.setMaximumSize(QtCore.QSize(41, 21))
-        self.pushButton_7.setStyleSheet("border: None")
-        self.pushButton_7.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../Downloads/vector (3).svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_7.setIcon(icon1)
-        self.pushButton_7.setObjectName("pushButton_7")
+        sizePolicy.setHeightForWidth(self.widget1.sizePolicy().hasHeightForWidth())
+        self.widget1.setSizePolicy(sizePolicy)
+        self.widget1.setMaximumSize(QtCore.QSize(16777215, 350))
+        self.widget1.setStyleSheet("background-color:#FFFFFF")
+        self.widget1.setObjectName("widget1")
+        self.gridLayout = QtWidgets.QGridLayout(self.widget1)
+        self.gridLayout.setObjectName("gridLayout")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setContentsMargins(5, -1, -1, 5)
+        self.verticalLayout.setSpacing(6)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.Label_for_dilution = QtWidgets.QHBoxLayout()
+        self.Label_for_dilution.setSpacing(0)
+        self.Label_for_dilution.setObjectName("Label_for_dilution")
+        self.Element_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Element_Label.setFont(font)
+        self.Element_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Element_Label.setObjectName("Element_Label")
+        self.Label_for_dilution.addWidget(self.Element_Label)
+        self.Ladel_N1 = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Ladel_N1.setFont(font)
+        self.Ladel_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Ladel_N1.setObjectName("Ladel_N1")
+        self.Label_for_dilution.addWidget(self.Ladel_N1)
+        self.Ladel_N2 = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Ladel_N2.setFont(font)
+        self.Ladel_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Ladel_N2.setObjectName("Ladel_N2")
+        self.Label_for_dilution.addWidget(self.Ladel_N2)
+        self.Ladel_N3 = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Ladel_N3.setFont(font)
+        self.Ladel_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Ladel_N3.setObjectName("Ladel_N3")
+        self.Label_for_dilution.addWidget(self.Ladel_N3)
+        self.Calculation_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Calculation_Label.setFont(font)
+        self.Calculation_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Calculation_Label.setObjectName("Calculation_Label")
+        self.Label_for_dilution.addWidget(self.Calculation_Label)
+        self.verticalLayout.addLayout(self.Label_for_dilution)
+        self.Dil_layout_for_C = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_C.setSpacing(0)
+        self.Dil_layout_for_C.setObjectName("Dil_layout_for_C")
+        self.Dil_C_Label = QtWidgets.QLabel(self.widget1)
+        self.Dil_C_Label.setMinimumSize(QtCore.QSize(0, 0))
+        self.Dil_C_Label.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_C_Label.setFont(font)
+        self.Dil_C_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_C_Label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.Dil_C_Label.setObjectName("Dil_C_Label")
+        self.Dil_layout_for_C.addWidget(self.Dil_C_Label)
+        self.Ladel_C_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_C_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_C_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_C_N1.setText("")
+        self.Ladel_C_N1.setObjectName("Ladel_C_N1")
+        self.Dil_layout_for_C.addWidget(self.Ladel_C_N1)
+        self.Ladel_C_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_C_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_C_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_C_N2.setObjectName("Ladel_C_N2")
+        self.Dil_layout_for_C.addWidget(self.Ladel_C_N2)
+        self.Ladel_C_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_C_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_C_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_C_N3.setObjectName("Ladel_C_N3")
+        self.Dil_layout_for_C.addWidget(self.Ladel_C_N3)
+        self.Dil_C_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_C_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_C_Label_Calc.setFont(font)
+        self.Dil_C_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_C_Label_Calc.setObjectName("Dil_C_Label_Calc")
+        self.Dil_layout_for_C.addWidget(self.Dil_C_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_C)
+        self.Dil_layout_for_Si = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Si.setSpacing(0)
+        self.Dil_layout_for_Si.setObjectName("Dil_layout_for_Si")
+        self.Dil_Si_Label = QtWidgets.QLabel(self.widget1)
+        self.Dil_Si_Label.setMinimumSize(QtCore.QSize(0, 0))
+        self.Dil_Si_Label.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Si_Label.setFont(font)
+        self.Dil_Si_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Si_Label.setObjectName("Dil_Si_Label")
+        self.Dil_layout_for_Si.addWidget(self.Dil_Si_Label)
+        self.Ladel_Si_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Si_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Si_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Si_N1.setObjectName("Ladel_Si_N1")
+        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N1)
+        self.Ladel_Si_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Si_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Si_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Si_N2.setObjectName("Ladel_Si_N2")
+        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N2)
+        self.Ladel_Si_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Si_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Si_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Si_N3.setObjectName("Ladel_Si_N3")
+        self.Dil_layout_for_Si.addWidget(self.Ladel_Si_N3)
+        self.Dil_Si_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Si_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Si_Label_Calc.setFont(font)
+        self.Dil_Si_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Si_Label_Calc.setObjectName("Dil_Si_Label_Calc")
+        self.Dil_layout_for_Si.addWidget(self.Dil_Si_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Si)
+        self.Dil_layout_for_Mo = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Mo.setSpacing(0)
+        self.Dil_layout_for_Mo.setObjectName("Dil_layout_for_Mo")
+        self.Dil_Mn_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Mn_Label.setFont(font)
+        self.Dil_Mn_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Mn_Label.setObjectName("Dil_Mn_Label")
+        self.Dil_layout_for_Mo.addWidget(self.Dil_Mn_Label)
+        self.Ladel_Mn_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mn_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mn_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mn_N1.setObjectName("Ladel_Mn_N1")
+        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N1)
+        self.Ladel_Mn_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mn_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mn_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mn_N2.setObjectName("Ladel_Mn_N2")
+        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N2)
+        self.Ladel_Mn_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mn_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mn_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mn_N3.setObjectName("Ladel_Mn_N3")
+        self.Dil_layout_for_Mo.addWidget(self.Ladel_Mn_N3)
+        self.Dil_Mn_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Mn_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Mn_Label_Calc.setFont(font)
+        self.Dil_Mn_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Mn_Label_Calc.setObjectName("Dil_Mn_Label_Calc")
+        self.Dil_layout_for_Mo.addWidget(self.Dil_Mn_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Mo)
+        self.Dil_layout_for_Cu = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Cu.setSpacing(0)
+        self.Dil_layout_for_Cu.setObjectName("Dil_layout_for_Cu")
+        self.Dil_Cu_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Cu_Label.setFont(font)
+        self.Dil_Cu_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Cu_Label.setObjectName("Dil_Cu_Label")
+        self.Dil_layout_for_Cu.addWidget(self.Dil_Cu_Label)
+        self.Ladel_Cu_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cu_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cu_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cu_N1.setObjectName("Ladel_Cu_N1")
+        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N1)
+        self.Ladel_Cu_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cu_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cu_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cu_N2.setObjectName("Ladel_Cu_N2")
+        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N2)
+        self.Ladel_Cu_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cu_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cu_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cu_N3.setObjectName("Ladel_Cu_N3")
+        self.Dil_layout_for_Cu.addWidget(self.Ladel_Cu_N3)
+        self.Dil_Cu_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Cu_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Cu_Label_Calc.setFont(font)
+        self.Dil_Cu_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Cu_Label_Calc.setObjectName("Dil_Cu_Label_Calc")
+        self.Dil_layout_for_Cu.addWidget(self.Dil_Cu_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Cu)
+        self.Dil_layout_for_Cr = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Cr.setSpacing(0)
+        self.Dil_layout_for_Cr.setObjectName("Dil_layout_for_Cr")
+        self.Dil_Cr_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Cr_Label.setFont(font)
+        self.Dil_Cr_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Cr_Label.setObjectName("Dil_Cr_Label")
+        self.Dil_layout_for_Cr.addWidget(self.Dil_Cr_Label)
+        self.Ladel_Cr_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cr_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cr_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cr_N1.setObjectName("Ladel_Cr_N1")
+        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N1)
+        self.Ladel_Cr_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cr_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cr_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cr_N2.setObjectName("Ladel_Cr_N2")
+        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N2)
+        self.Ladel_Cr_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Cr_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Cr_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Cr_N3.setObjectName("Ladel_Cr_N3")
+        self.Dil_layout_for_Cr.addWidget(self.Ladel_Cr_N3)
+        self.Dil_Cr_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Cr_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Cr_Label_Calc.setFont(font)
+        self.Dil_Cr_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Cr_Label_Calc.setObjectName("Dil_Cr_Label_Calc")
+        self.Dil_layout_for_Cr.addWidget(self.Dil_Cr_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Cr)
+        self.Dil_layout_for_Ti = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Ti.setSpacing(0)
+        self.Dil_layout_for_Ti.setObjectName("Dil_layout_for_Ti")
+        self.Dil_Ti_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Ti_Label.setFont(font)
+        self.Dil_Ti_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Ti_Label.setObjectName("Dil_Ti_Label")
+        self.Dil_layout_for_Ti.addWidget(self.Dil_Ti_Label)
+        self.Ladel_Ti_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ti_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ti_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ti_N1.setObjectName("Ladel_Ti_N1")
+        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N1)
+        self.Ladel_Ti_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ti_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ti_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ti_N2.setObjectName("Ladel_Ti_N2")
+        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N2)
+        self.Ladel_Ti_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ti_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ti_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ti_N3.setObjectName("Ladel_Ti_N3")
+        self.Dil_layout_for_Ti.addWidget(self.Ladel_Ti_N3)
+        self.Dil_Ti_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Ti_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Ti_Label_Calc.setFont(font)
+        self.Dil_Ti_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Ti_Label_Calc.setObjectName("Dil_Ti_Label_Calc")
+        self.Dil_layout_for_Ti.addWidget(self.Dil_Ti_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Ti)
+        self.Dil_layout_for_Ni = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Ni.setSpacing(0)
+        self.Dil_layout_for_Ni.setObjectName("Dil_layout_for_Ni")
+        self.Dil_Ni_Label = QtWidgets.QLabel(self.widget1)
+        self.Dil_Ni_Label.setMaximumSize(QtCore.QSize(16777215, 34))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Ni_Label.setFont(font)
+        self.Dil_Ni_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Ni_Label.setObjectName("Dil_Ni_Label")
+        self.Dil_layout_for_Ni.addWidget(self.Dil_Ni_Label)
+        self.Ladel_Ni_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ni_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ni_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ni_N1.setObjectName("Ladel_Ni_N1")
+        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N1)
+        self.Ladel_Ni_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ni_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ni_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ni_N2.setObjectName("Ladel_Ni_N2")
+        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N2)
+        self.Ladel_Ni_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Ni_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Ni_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Ni_N3.setObjectName("Ladel_Ni_N3")
+        self.Dil_layout_for_Ni.addWidget(self.Ladel_Ni_N3)
+        self.Dil_Ni_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Ni_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Ni_Label_Calc.setFont(font)
+        self.Dil_Ni_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Ni_Label_Calc.setObjectName("Dil_Ni_Label_Calc")
+        self.Dil_layout_for_Ni.addWidget(self.Dil_Ni_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Ni)
+        self.Dil_layout_for_Sn = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Sn.setSpacing(0)
+        self.Dil_layout_for_Sn.setObjectName("Dil_layout_for_Sn")
+        self.Dil_Sn_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Sn_Label.setFont(font)
+        self.Dil_Sn_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Sn_Label.setObjectName("Dil_Sn_Label")
+        self.Dil_layout_for_Sn.addWidget(self.Dil_Sn_Label)
+        self.Ladel_Sn_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Sn_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Sn_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Sn_N1.setObjectName("Ladel_Sn_N1")
+        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N1)
+        self.Ladel_Sn_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Sn_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Sn_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Sn_N2.setObjectName("Ladel_Sn_N2")
+        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N2)
+        self.Ladel_Sn_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Sn_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Sn_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Sn_N3.setObjectName("Ladel_Sn_N3")
+        self.Dil_layout_for_Sn.addWidget(self.Ladel_Sn_N3)
+        self.Dil_Sn_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Sn_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Sn_Label_Calc.setFont(font)
+        self.Dil_Sn_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Sn_Label_Calc.setObjectName("Dil_Sn_Label_Calc")
+        self.Dil_layout_for_Sn.addWidget(self.Dil_Sn_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Sn)
+        self.Dil_layout_for_V = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_V.setSpacing(0)
+        self.Dil_layout_for_V.setObjectName("Dil_layout_for_V")
+        self.Dil_V_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_V_Label.setFont(font)
+        self.Dil_V_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_V_Label.setObjectName("Dil_V_Label")
+        self.Dil_layout_for_V.addWidget(self.Dil_V_Label)
+        self.Ladel_V_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_V_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_V_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_V_N1.setObjectName("Ladel_V_N1")
+        self.Dil_layout_for_V.addWidget(self.Ladel_V_N1)
+        self.Ladel_V_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_V_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_V_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_V_N2.setObjectName("Ladel_V_N2")
+        self.Dil_layout_for_V.addWidget(self.Ladel_V_N2)
+        self.Ladel_V_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_V_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_V_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_V_N3.setObjectName("Ladel_V_N3")
+        self.Dil_layout_for_V.addWidget(self.Ladel_V_N3)
+        self.Dil_V_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_V_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_V_Label_Calc.setFont(font)
+        self.Dil_V_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_V_Label_Calc.setObjectName("Dil_V_Label_Calc")
+        self.Dil_layout_for_V.addWidget(self.Dil_V_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_V)
+        self.Dil_layout_for_Mn = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Mn.setSpacing(0)
+        self.Dil_layout_for_Mn.setObjectName("Dil_layout_for_Mn")
+        self.Dil_Mo_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Mo_Label.setFont(font)
+        self.Dil_Mo_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Mo_Label.setObjectName("Dil_Mo_Label")
+        self.Dil_layout_for_Mn.addWidget(self.Dil_Mo_Label)
+        self.Ladel_Mo_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mo_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mo_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mo_N1.setObjectName("Ladel_Mo_N1")
+        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N1)
+        self.Ladel_Mo_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mo_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mo_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mo_N2.setObjectName("Ladel_Mo_N2")
+        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N2)
+        self.Ladel_Mo_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Mo_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Mo_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Mo_N3.setObjectName("Ladel_Mo_N3")
+        self.Dil_layout_for_Mn.addWidget(self.Ladel_Mo_N3)
+        self.Dil_Mo_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Mo_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Mo_Label_Calc.setFont(font)
+        self.Dil_Mo_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Mo_Label_Calc.setObjectName("Dil_Mo_Label_Calc")
+        self.Dil_layout_for_Mn.addWidget(self.Dil_Mo_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Mn)
+        self.Dil_layout_for_Nb = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Nb.setSpacing(0)
+        self.Dil_layout_for_Nb.setObjectName("Dil_layout_for_Nb")
+        self.Dil_Nb_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Nb_Label.setFont(font)
+        self.Dil_Nb_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Nb_Label.setObjectName("Dil_Nb_Label")
+        self.Dil_layout_for_Nb.addWidget(self.Dil_Nb_Label)
+        self.Ladel_Nb_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Nb_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Nb_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Nb_N1.setObjectName("Ladel_Nb_N1")
+        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N1)
+        self.Ladel_Nb_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Nb_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Nb_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Nb_N2.setObjectName("Ladel_Nb_N2")
+        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N2)
+        self.Ladel_Nb_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Nb_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Nb_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Nb_N3.setObjectName("Ladel_Nb_N3")
+        self.Dil_layout_for_Nb.addWidget(self.Ladel_Nb_N3)
+        self.Dil_Nb_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Nb_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Nb_Label_Calc.setFont(font)
+        self.Dil_Nb_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Nb_Label_Calc.setObjectName("Dil_Nb_Label_Calc")
+        self.Dil_layout_for_Nb.addWidget(self.Dil_Nb_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Nb)
+        self.Dil_layout_for_Al = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_Al.setSpacing(0)
+        self.Dil_layout_for_Al.setObjectName("Dil_layout_for_Al")
+        self.Dil_Al_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_Al_Label.setFont(font)
+        self.Dil_Al_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_Al_Label.setObjectName("Dil_Al_Label")
+        self.Dil_layout_for_Al.addWidget(self.Dil_Al_Label)
+        self.Ladel_Al_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Al_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Al_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Al_N1.setObjectName("Ladel_Al_N1")
+        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N1)
+        self.Ladel_Al_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Al_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Al_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Al_N2.setObjectName("Ladel_Al_N2")
+        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N2)
+        self.Ladel_Al_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_Al_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_Al_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_Al_N3.setObjectName("Ladel_Al_N3")
+        self.Dil_layout_for_Al.addWidget(self.Ladel_Al_N3)
+        self.Dil_Al_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_Al_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_Al_Label_Calc.setFont(font)
+        self.Dil_Al_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_Al_Label_Calc.setObjectName("Dil_Al_Label_Calc")
+        self.Dil_layout_for_Al.addWidget(self.Dil_Al_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_Al)
+        self.Dil_layout_for_P = QtWidgets.QHBoxLayout()
+        self.Dil_layout_for_P.setSpacing(0)
+        self.Dil_layout_for_P.setObjectName("Dil_layout_for_P")
+        self.Dil_P_Label = QtWidgets.QLabel(self.widget1)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Dil_P_Label.setFont(font)
+        self.Dil_P_Label.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-bottom: 2px solid #F5F5F5;\n"
+"")
+        self.Dil_P_Label.setObjectName("Dil_P_Label")
+        self.Dil_layout_for_P.addWidget(self.Dil_P_Label)
+        self.Ladel_P_N1 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_P_N1.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_P_N1.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_P_N1.setObjectName("Ladel_P_N1")
+        self.Dil_layout_for_P.addWidget(self.Ladel_P_N1)
+        self.Ladel_P_N2 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_P_N2.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_P_N2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_P_N2.setObjectName("Ladel_P_N2")
+        self.Dil_layout_for_P.addWidget(self.Ladel_P_N2)
+        self.Ladel_P_N3 = QtWidgets.QLineEdit(self.widget1)
+        self.Ladel_P_N3.setMaximumSize(QtCore.QSize(79, 34))
+        self.Ladel_P_N3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"\n"
+"border: none;\n"
+"border-bottom: 2px solid #E0E0E0;\n"
+"")
+        self.Ladel_P_N3.setObjectName("Ladel_P_N3")
+        self.Dil_layout_for_P.addWidget(self.Ladel_P_N3)
+        self.Dil_P_Label_Calc = QtWidgets.QLabel(self.widget1)
+        self.Dil_P_Label_Calc.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Dil_P_Label_Calc.setFont(font)
+        self.Dil_P_Label_Calc.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dil_P_Label_Calc.setObjectName("Dil_P_Label_Calc")
+        self.Dil_layout_for_P.addWidget(self.Dil_P_Label_Calc)
+        self.verticalLayout.addLayout(self.Dil_layout_for_P)
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.Dilution_Layout.addWidget(self.widget1)
 
         self.retranslateUi(Dilution_Widget)
         QtCore.QMetaObject.connectSlotsByName(Dilution_Widget)
@@ -918,12 +892,14 @@ class Ui_Dilution_Widget(object):
         Dilution_Widget.setTabOrder(self.Ladel_Al_N3, self.Ladel_P_N1)
         Dilution_Widget.setTabOrder(self.Ladel_P_N1, self.Ladel_P_N2)
         Dilution_Widget.setTabOrder(self.Ladel_P_N2, self.Ladel_P_N3)
-        Dilution_Widget.setTabOrder(self.Ladel_P_N3, self.pushButton_6)
-        Dilution_Widget.setTabOrder(self.pushButton_6, self.pushButton_7)
 
     def retranslateUi(self, Dilution_Widget):
         _translate = QtCore.QCoreApplication.translate
         Dilution_Widget.setWindowTitle(_translate("Dilution_Widget", "Form"))
+        self.Ladle_1.setText(_translate("Dilution_Widget", "Ковш №1"))
+        self.Ladle_2.setText(_translate("Dilution_Widget", "Ковш №2"))
+        self.Ladle_3.setText(_translate("Dilution_Widget", "Ковш №3"))
+        self.label.setText(_translate("Dilution_Widget", "0"))
         self.Element_Label.setText(_translate("Dilution_Widget", "Элементы"))
         self.Ladel_N1.setText(_translate("Dilution_Widget", "№1"))
         self.Ladel_N2.setText(_translate("Dilution_Widget", "№2"))
@@ -955,10 +931,6 @@ class Ui_Dilution_Widget(object):
         self.Dil_Al_Label_Calc.setText(_translate("Dilution_Widget", "0"))
         self.Dil_P_Label.setText(_translate("Dilution_Widget", "P"))
         self.Dil_P_Label_Calc.setText(_translate("Dilution_Widget", "0"))
-        self.Ladle_1.setText(_translate("Dilution_Widget", "Ковш №1"))
-        self.Ladle_2.setText(_translate("Dilution_Widget", "Ковш №2"))
-        self.Ladle_3.setText(_translate("Dilution_Widget", "Ковш №3"))
-        self.label.setText(_translate("Dilution_Widget", "0"))
 
 
 if __name__ == "__main__":

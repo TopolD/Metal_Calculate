@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, QRect, QTimer
+from PyQt5.QtCore import  QTimer
 from PyQt5.QtWidgets import QWidget, QApplication, QComboBox
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
@@ -18,59 +18,21 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
         self.InputClass = input_data_handler(self)
 
         self.line_edit_handler_for_display()
-        self.animation_buttons()
 
-        self.Widget_for_maint_button.setVisible(False)
 
-        self.pushButton_6.enterEvent = self.show_buttons
-        self.pushButton_6.leaveEvent = self.check_hide_buttons
-        self.Widget_for_maint_button.enterEvent = self.show_buttons
-        self.Widget_for_maint_button.leaveEvent = self.check_hide_buttons
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_layout)
+        self.timer.start(100)
 
-        self.is_animating = False
-        self.keep_visible = False
 
-    def animation_buttons(self):
 
-        self.container_animation = QPropertyAnimation(self.Widget_for_maint_button, b'geometry')
-        self.container_animation.setDuration(300)
-        self.container_animation.setEasingCurve(QEasingCurve.OutCubic)
+    def update_layout(self):
+        layout_width = self.AllLrf.sizeHint().width()
+        layout_height = self.AllLrf.sizeHint().height()
+        self.resize(layout_width + 90, layout_height + 10)
+        self.updateGeometry()
 
-    def show_buttons(self, event):
 
-        self.keep_visible = True
-        if not self.Widget_for_maint_button.isVisible():
-            self.Widget_for_maint_button.setVisible(True)
-            self.container_animation.stop()
-
-            x_pos = self.pushButton_6.x() + self.pushButton_6.width()
-            y_pos = self.pushButton_6.y()
-
-            self.container_animation.setStartValue(QRect(x_pos, y_pos, 0, self.Widget_for_maint_button.height()))
-            self.container_animation.setEndValue(QRect(x_pos, y_pos, 350, self.Widget_for_maint_button.height()))
-            self.container_animation.start()
-            self.is_animating = True
-
-    def check_hide_buttons(self, event):
-        self.keep_visible = False
-        QTimer.singleShot(100, self.hide_buttons)
-
-    def hide_buttons(self):
-        if not self.keep_visible and self.Widget_for_maint_button.isVisible():
-            self.container_animation.stop()
-            x_pos = self.pushButton_6.x() + self.pushButton_6.width()
-            y_pos = self.pushButton_6.y()
-
-            self.container_animation.setStartValue(self.Widget_for_maint_button.geometry())
-            self.container_animation.setEndValue(QRect(x_pos, y_pos, 0, self.Widget_for_maint_button.height()))
-            self.container_animation.start()
-            self.is_animating = True
-            self.container_animation.finished.connect(self.hide_widget)
-
-    def hide_widget(self):
-        self.Widget_for_maint_button.setVisible(False)
-        self.is_animating = False
-        self.container_animation.finished.disconnect()
 
     def line_edit_handler_for_display(self):
         self.InputTechCard.setValidator(QIntValidator(0, 999))
@@ -78,6 +40,9 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
 
         self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 2))
         self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_material)
+
+
+
 
     def line_edit_handler_for_calculate_material(self):
         self.reset_samples_dict()
@@ -227,6 +192,7 @@ class changing_field_values:
         self.handle_widget_visibility_for_fuse_material_target(key, visible=True)
 
     def handler_hiding_for_fuse_material_target(self, key):
+
         self.handle_widget_visibility_for_fuse_material_target(key, visible=False)
 
     def get_fuse_data_with_db(self):
