@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QTimer
+
 from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QWidget, QApplication, QLineEdit
 
@@ -123,15 +123,6 @@ class DisplayHandlerFormuls(QWidget, Ui_FormulsDesigner):
             'Cr_Ni_Mo_V': self.Calc_Cr_Ni_Mo_V,
             'Cr_Ni_Cu': self.Calc_Cr_Ni_Cu,
         }
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_layout)
-        self.timer.start(100)
-
-    def update_layout(self):
-        layout_width = self.FormulsLayout.sizeHint().width()
-        layout_height = self.FormulsLayout.sizeHint().height()
-        self.resize(layout_width + 90, layout_height + 10)
-        self.updateGeometry()
 
     def reset_formuls_dict(self):
         self.handler_input_data_dict = {

@@ -11,11 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(429, 485)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_Calculate(object):
+    def setupUi(self, Calculate):
+        Calculate.setObjectName("Calculate")
+        Calculate.resize(429, 485)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../icons/calculator.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Calculate.setWindowIcon(icon)
+        self.centralwidget = QtWidgets.QWidget(Calculate)
         self.centralwidget.setObjectName("centralwidget")
         self.widget_For_main_window = QtWidgets.QWidget(self.centralwidget)
         self.widget_For_main_window.setGeometry(QtCore.QRect(10, 10, 411, 481))
@@ -30,9 +33,9 @@ class Ui_MainWindow(object):
         self.Main_button_for_RadButton = QtWidgets.QPushButton(self.widget_For_main_window)
         self.Main_button_for_RadButton.setStyleSheet("border:None;")
         self.Main_button_for_RadButton.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../icons/vector-1.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Main_button_for_RadButton.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../icons/vector-1.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Main_button_for_RadButton.setIcon(icon1)
         self.Main_button_for_RadButton.setObjectName("Main_button_for_RadButton")
         self.layout_for_radio_button.addWidget(self.Main_button_for_RadButton)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -40,9 +43,9 @@ class Ui_MainWindow(object):
         self.History_Button = QtWidgets.QPushButton(self.widget_For_main_window)
         self.History_Button.setStyleSheet("border:None;")
         self.History_Button.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../icons/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.History_Button.setIcon(icon1)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("../icons/vector.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.History_Button.setIcon(icon2)
         self.History_Button.setObjectName("History_Button")
         self.layout_for_radio_button.addWidget(self.History_Button)
         self.verticalLayout.addLayout(self.layout_for_radio_button)
@@ -69,9 +72,9 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}")
         self.Lrf1_RadButton.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../icons/fire.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Lrf1_RadButton.setIcon(icon2)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("../icons/fire.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Lrf1_RadButton.setIcon(icon3)
         self.Lrf1_RadButton.setObjectName("Lrf1_RadButton")
         self.main_Rad_button.addWidget(self.Lrf1_RadButton)
         self.Lrf2_RadButton = QtWidgets.QRadioButton(self.WIdget_for_radio_Button)
@@ -87,7 +90,7 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}")
         self.Lrf2_RadButton.setText("")
-        self.Lrf2_RadButton.setIcon(icon2)
+        self.Lrf2_RadButton.setIcon(icon3)
         self.Lrf2_RadButton.setObjectName("Lrf2_RadButton")
         self.main_Rad_button.addWidget(self.Lrf2_RadButton)
         self.Buck_RadButton = QtWidgets.QRadioButton(self.WIdget_for_radio_Button)
@@ -101,9 +104,9 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}")
         self.Buck_RadButton.setText("")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../icons/bucket.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Buck_RadButton.setIcon(icon3)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("../icons/bucket.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Buck_RadButton.setIcon(icon4)
         self.Buck_RadButton.setObjectName("Buck_RadButton")
         self.main_Rad_button.addWidget(self.Buck_RadButton)
         self.Form_RadButton = QtWidgets.QRadioButton(self.WIdget_for_radio_Button)
@@ -117,9 +120,9 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}")
         self.Form_RadButton.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../icons/Atom.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Form_RadButton.setIcon(icon4)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("../icons/Atom.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Form_RadButton.setIcon(icon5)
         self.Form_RadButton.setObjectName("Form_RadButton")
         self.main_Rad_button.addWidget(self.Form_RadButton)
         self.Note_RadButton = QtWidgets.QRadioButton(self.WIdget_for_radio_Button)
@@ -133,27 +136,27 @@ class Ui_MainWindow(object):
 "    height: 0px;\n"
 "}")
         self.Note_RadButton.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../icons/note.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Note_RadButton.setIcon(icon5)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("../icons/note.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Note_RadButton.setIcon(icon6)
         self.Note_RadButton.setObjectName("Note_RadButton")
         self.main_Rad_button.addWidget(self.Note_RadButton)
         self.gridLayout_2.addLayout(self.main_Rad_button, 0, 0, 1, 1)
-        MainWindow.setCentralWidget(self.centralwidget)
+        Calculate.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(Calculate)
+        QtCore.QMetaObject.connectSlotsByName(Calculate)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Calculate):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        Calculate.setWindowTitle(_translate("Calculate", "Calculate"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    Calculate = QtWidgets.QMainWindow()
+    ui = Ui_Calculate()
+    ui.setupUi(Calculate)
+    Calculate.show()
     sys.exit(app.exec_())

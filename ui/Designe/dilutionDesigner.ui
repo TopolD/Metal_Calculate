@@ -13,13 +13,13 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>50</y>
+     <y>7</y>
      <width>411</width>
-     <height>408</height>
+     <height>451</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="Dilution_Layout">

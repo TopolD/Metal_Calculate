@@ -11,7 +11,7 @@ def convert_ui_to_py(directory: str, input_ui: str, output_py: str):
 
 convert_ui_to_py(
     directory="C:\\Users\\user\\PycharmProjects\\Calculate\\ui\\Designe",
-    input_ui="dilutionDesigner.ui",
-    output_py="Dilution.py"
+    input_ui="MainWindowDesigner.ui",
+    output_py="WindowM.py"
 )
 print('success')

@@ -1,4 +1,4 @@
-from PyQt5.QtCore import  QTimer
+from PyQt5.QtCore import QPropertyAnimation, QRect
 from PyQt5.QtWidgets import QWidget, QApplication, QComboBox
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
@@ -19,30 +19,14 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
 
         self.line_edit_handler_for_display()
 
-
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_layout)
-        self.timer.start(100)
-
-
-
-    def update_layout(self):
-        layout_width = self.AllLrf.sizeHint().width()
-        layout_height = self.AllLrf.sizeHint().height()
-        self.resize(layout_width + 90, layout_height + 10)
-        self.updateGeometry()
-
-
-
     def line_edit_handler_for_display(self):
         self.InputTechCard.setValidator(QIntValidator(0, 999))
+        self.InputTechCard.setMaxLength(3)
         self.InputTechCard.editingFinished.connect(self.InputClass.handle_input)
 
-        self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 2))
+        self.InputWeight.setValidator(QDoubleValidator(0.0, 200.0, 1))
+        self.InputWeight.setMaxLength(5)
         self.InputWeight.editingFinished.connect(self.line_edit_handler_for_calculate_material)
-
-
-
 
     def line_edit_handler_for_calculate_material(self):
         self.reset_samples_dict()
@@ -54,6 +38,7 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
             input_field = getattr(self, input_name, None)
             if input_field:
                 input_field.setValidator(QDoubleValidator(0.0, 4.0, 3))
+                input_field.setMaxLength(5)
                 input_field.editingFinished.connect(
                     lambda line_edit=input_field, mat=material: self.handler_input(line_edit, mat)
                 )
@@ -80,17 +65,27 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
 
         input_value = line_edit.text()
         if input_value:
-            if material in ['Cpr', 'Al', 'Ti', 'Ca']:
-                self.OutputClass.samples_dict['corewire'][material] = input_value
-                self.OutputClass.samples_dict['material'][material] = material_box_value
-            else:
-                self.OutputClass.samples_dict['samples'][material] = input_value
-                self.OutputClass.samples_dict['material'][material] = material_box_value
+            if input_value > str(self.show_top_material(material)).replace(".", ","):
+                line_edit.clear()
+                line_edit.setFocus()
 
-            self.OutputClass.samples_dict['W'] = self.InputWeight.text()
-            self.OutputClass.samples_dict['temp'] = self.LabelTargetCoreForCa.text()
-            self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
-            # print(self.OutputClass.samples_dict)
+            else:
+                if material in ['Cpr', 'Al', 'Ti', 'Ca']:
+                    self.OutputClass.samples_dict['corewire'][material] = input_value
+                    self.OutputClass.samples_dict['material'][material] = material_box_value
+                else:
+                    self.OutputClass.samples_dict['samples'][material] = input_value
+                    self.OutputClass.samples_dict['material'][material] = material_box_value
+
+                self.OutputClass.samples_dict['W'] = self.InputWeight.text()
+                self.OutputClass.samples_dict['temp'] = self.LabelTargetCoreForCa.text()
+                self.CalculateClass.Handler_for_calculate(self.OutputClass.samples_dict)
+
+    def show_top_material(self, material):
+        material_dict = get_data_calculate_with_db().get_data_target_for_fuse()
+        for attr_key, atrr_value in material_dict.items():
+            if attr_key == material:
+                return atrr_value
 
     def reset_samples_dict(self):
         self.OutputClass.samples_dict = {
@@ -98,7 +93,7 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
             'samples': {},
             'material': {},
             'corewire': {},
-            'temp':self.LabelTargetCoreForCa.text()
+            'temp': self.LabelTargetCoreForCa.text()
         }
 
     def handle_material_change(self, material, material_box):
@@ -120,7 +115,6 @@ class input_data_handler:
         DataHolder.set_data(tcn_value, None)
 
         self.parent.OutputClass.output_label_for_fuse()
-        self.parent.OutputClass.output_label_for_target_fuse()
 
 
 class changing_field_values:
@@ -133,7 +127,7 @@ class changing_field_values:
             'samples': {},
             'material': {},
             'corewire': {},
-            'temp':{}
+            'temp': {}
         }
 
         self.elements_visible_list = []
@@ -142,11 +136,44 @@ class changing_field_values:
         return input_data_handler(self.parent).handle_input()
 
     def output_label_for_fuse(self):
-        FuseData = self.get_fuse_data_with_db()
-        self.parent.SteelName.setText(FuseData['FuseName'])
-        self.parent.TempForVd.setText(FuseData['TempVd'])
-        self.parent.Mnlz1.setText(FuseData['Temp_ccm1'])
-        self.parent.Mnlz2.setText(FuseData['Temp_ccm2'])
+        try:
+            FuseData = self.get_fuse_data_with_db()
+            self.parent.SteelName.setText(FuseData['FuseName'])
+            self.parent.TempForVd.setText(FuseData['TempVd'])
+            self.parent.Mnlz1.setText(FuseData['Temp_ccm1'])
+            self.parent.Mnlz2.setText(FuseData['Temp_ccm2'])
+            self.parent.OutputClass.output_label_for_target_fuse()
+        except TypeError:
+            self.parent.InputTechCard.clear()
+            self.exception_handling()
+        finally:
+            self.parent.InputTechCard.setFocus()
+
+    def exception_handling(self):
+        self.parent.InputTechCard.setFocus()
+        self.parent.InputTechCard.setStyleSheet("""
+            border: 1px solid yellow;
+            border-radius: 5%
+        """)
+        self.animation_for_vibration_Edit()
+
+    def animation_for_vibration_Edit(self):
+        rect = self.parent.InputTechCard.geometry()
+        animation = QPropertyAnimation(self.parent.InputTechCard, b"geometry")
+        animation.setDuration(300)
+        animation.setKeyValueAt(0, rect)
+        animation.setKeyValueAt(0.25, QRect(rect.x() - 5, rect.y(), rect.width(), rect.height()))
+        animation.setKeyValueAt(0.5, rect)
+        animation.setKeyValueAt(0.75, QRect(rect.x() + 5, rect.y(), rect.width(), rect.height()))
+        animation.setKeyValueAt(1, rect)
+        animation.finished.connect(self.reset_style)
+        animation.start()
+        self.animation = animation
+
+    def reset_style(self):
+        self.parent.InputTechCard.setStyleSheet("""
+            border: 1px solid gray;\nborder-radius: 5%
+        """)
 
     def output_label_for_target_fuse(self):
         FuseData = self.get_fuse_data_target_with_db()
@@ -212,7 +239,7 @@ class handler_data:
                             Data)
         result = CalculationHandler(self.parent.InputTechCard.text(), Data).HandlerSamples()
         for attr_key, attr_value in result.items():
-            if attr_key in ['Cpr', 'Al', 'Ti','Ca']:
+            if attr_key in ['Cpr', 'Al', 'Ti', 'Ca']:
                 LabelMetersCoreInit = f'LabelMetersCoreFor{attr_key}'
                 LabelMetersCoreName = getattr(self.parent, LabelMetersCoreInit, None)
                 if LabelMetersCoreName:
@@ -225,10 +252,16 @@ class handler_data:
 
     def flight_check_materials(self, handler, value):
         if value < 0:
+
+
             handler.setStyleSheet("""
                      border-bottom: 2px solid #FFA5A5;
     
                  """)
+            W = float(self.parent.InputWeight.text().replace(',', '.'))*1000
+            percent_si = (float(self.parent.LabelKiloForMn.text().replace(',', '.')) * 0.17) * 100
+            result = (percent_si/ W)+float(self.parent.LabelSamplesForSi.text().replace(',','.'))
+            handler.setText(str(round(result,3)))
         else:
             handler.setText(str(value))
             handler.setStyleSheet("""

@@ -24,7 +24,7 @@ class HandlerCleanData:
                 return Clean_Data
         except Exception as e:
             print(e)
-        self.clean_data(DataDb)
+
 
 
 class get_data_calculate_with_db:
