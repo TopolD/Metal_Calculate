@@ -10,7 +10,7 @@ def convert_ui_to_py(directory: str, input_ui: str, output_py: str):
 
 
 convert_ui_to_py(
-    directory="C:\\Users\\user\\PycharmProjects\\Calculate\\ui\\Designe",
+    directory="C:\\Users\\user\\PycharmProjects\\Calculate\\ui\\Designe\\Converter",
     input_ui="MainWindowDesigner.ui",
     output_py="WindowM.py"
 )

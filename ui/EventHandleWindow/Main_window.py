@@ -1,12 +1,11 @@
 from PyQt5.QtCore import QRect, QPropertyAnimation, QEvent, QTimer
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from ui.EventHandleWindow.EventHandlerForLrf import DisplayHandlerLrf
 from ui.EventHandleWindow.EventHandlerForDilution import DisplayHandlerDilution
 from ui.EventHandleWindow.EventHadnlerForFormuls import DisplayHandlerFormuls
 
-from ui.Designe.WindowM import *
+from ui.Designe.Converter.WindowM import *
 
 
 class AllWindow(QMainWindow, Ui_Calculate):
@@ -32,8 +31,8 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 font-weight: bold;
             }
             QPushButton:hover {
-                background-color: #A9A9A9; /* Серый цвет при наведении */
-                border-color: #808080; /* Более темная граница */
+                background-color: #A9A9A9; 
+                border-color: #808080; 
             }
         """))
 

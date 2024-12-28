@@ -2,7 +2,7 @@ from PyQt5.QtCore import QPropertyAnimation, QRect
 from PyQt5.QtWidgets import QWidget, QApplication, QComboBox
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
-from ui.Designe.Lrf import Ui_LRF1_Widget
+from ui.Designe.Converter.Lrf import Ui_LRF1_Widget
 from ui.calculate import CalculationHandler
 from utils_calculate.formuls_for_calculate import DataHolder, get_data_calculate_with_db
 
