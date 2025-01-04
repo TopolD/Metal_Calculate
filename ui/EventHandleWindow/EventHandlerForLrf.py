@@ -2,7 +2,7 @@ from PyQt5.QtCore import QPropertyAnimation, QRect
 from PyQt5.QtWidgets import QWidget, QApplication, QComboBox
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 
-from ui.Designe.Converter.Lrf import Ui_LRF1_Widget
+from ui.Designe.Lrf import Ui_LRF1_Widget
 from ui.calculate import CalculationHandler
 from utils_calculate.formuls_for_calculate import DataHolder, get_data_calculate_with_db
 
@@ -248,20 +248,26 @@ class handler_data:
             LabelKiloInit = f'LabelKiloFor{attr_key}'
             LabelKiloName = getattr(self.parent, LabelKiloInit, None)
             if LabelKiloName:
-                self.flight_check_materials(LabelKiloName, attr_value)
+                self.flight_check_materials(LabelKiloInit, LabelKiloName, attr_value)
 
-    def flight_check_materials(self, handler, value):
+    def flight_check_materials(self, nameEdit, handler, value):
+
         if value < 0:
+            Weight = float(self.parent.InputWeight.text()) * 1000
 
+            if nameEdit == 'LabelKiloForSi':
+                material_mn = get_data_calculate_with_db().get_material().get('Mn').get('Si')
+                Weight_mn = self.parent.LabelKiloForMn.text()
+                get_material = (float(Weight_mn) * material_mn) / Weight
+                result = get_material + float(self.parent.LabelSamplesForSi.text().replace(',', '.'))
 
+                handler.setText(str(round(result, 4)))
+            else:
+                handler.setText('!!!')
             handler.setStyleSheet("""
                      border-bottom: 2px solid #FFA5A5;
-    
                  """)
-            W = float(self.parent.InputWeight.text().replace(',', '.'))*1000
-            percent_si = (float(self.parent.LabelKiloForMn.text().replace(',', '.')) * 0.17) * 100
-            result = (percent_si/ W)+float(self.parent.LabelSamplesForSi.text().replace(',','.'))
-            handler.setText(str(round(result,3)))
+
         else:
             handler.setText(str(value))
             handler.setStyleSheet("""

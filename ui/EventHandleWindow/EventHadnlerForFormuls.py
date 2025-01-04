@@ -2,7 +2,7 @@
 from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QWidget, QApplication, QLineEdit
 
-from ui.Designe.Converter.Formuls import Ui_FormulsDesigner
+from ui.Designe.Formuls import Ui_FormulsDesigner
 
 
 class DisplayHandlerFormuls(QWidget, Ui_FormulsDesigner):

@@ -1,11 +1,11 @@
 from PyQt5.QtCore import QRect, QPropertyAnimation, QEvent, QTimer
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from ui.Designe.WindowM import Ui_Calculate
 from ui.EventHandleWindow.EventHandlerForLrf import DisplayHandlerLrf
 from ui.EventHandleWindow.EventHandlerForDilution import DisplayHandlerDilution
 from ui.EventHandleWindow.EventHadnlerForFormuls import DisplayHandlerFormuls
-
-from ui.Designe.Converter.WindowM import *
 
 
 class AllWindow(QMainWindow, Ui_Calculate):
@@ -19,6 +19,66 @@ class AllWindow(QMainWindow, Ui_Calculate):
 
         self.Dil = DisplayHandlerDilution()
         self.Form = DisplayHandlerFormuls()
+        self.Lrf1_RadButton.setStyleSheet("""
+            QRadioButton::indicator {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+            }
+             QRadioButton::indicator:hover {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+             QRadioButton::indicator:checked  {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire_checked.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+        """)
+        self.Lrf2_RadButton.setStyleSheet("""
+            QRadioButton::indicator {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+            }
+             QRadioButton::indicator:hover {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+             QRadioButton::indicator:checked  {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/fire/fire_checked.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+        """)
 
         self.setStyleSheet(("""
             QPushButton {
@@ -34,11 +94,126 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 background-color: #A9A9A9; 
                 border-color: #808080; 
             }
+
+        
         """))
 
-        self.popup_window = self.WIdget_for_radio_Button
-        self.popup_window.setGeometry(0, 0, 0, 0)
-        self.popup_window.setStyleSheet("""
+        self.Buck_RadButton.setStyleSheet("""
+            QRadioButton::indicator {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/bucket/bucket.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+            }
+             QRadioButton::indicator:hover {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/bucket/bucket_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+             QRadioButton::indicator:checked  {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/bucket/bucket_checked.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+        """)
+
+        self.Form_RadButton.setStyleSheet("""
+            QRadioButton::indicator {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/atom/atom.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+            }
+             QRadioButton::indicator:hover {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/atom/atom_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+             QRadioButton::indicator:checked  {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/atom/atom_checked.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+        """)
+
+        self.Note_RadButton.setStyleSheet("""
+            QRadioButton::indicator {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/note/note.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+            }
+             QRadioButton::indicator:hover {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/note/note_hover.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+             QRadioButton::indicator:checked  {
+                width: 30px;
+                height: 30px;
+                background-image: url('../icons/note/note_checked.svg');
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                
+            }
+        """)
+        self.button_for_db= self.Widget_For_Db
+        self.button_for_db.setGeometry(0, 0, 0, 0)
+        self.button_for_db.setStyleSheet("""
+            QWidget {
+                background-color: white;
+                color: black;
+                border: 2px ;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: bold;
+            }""")
+        self.animation_db=QPropertyAnimation(self.button_for_db, b"geometry")
+        self.animation_db.setDuration(300)
+        self.hide_timer_db = QTimer(self)
+        self.hide_timer_db.setInterval(200)
+        self.hide_timer_db.setSingleShot(True)
+
+
+
+
+
+        self.radio_button_window = self.WIdget_for_radio_Button
+        self.radio_button_window.setGeometry(0, 0, 0, 0)
+        self.radio_button_window.setStyleSheet("""
             QWidget {
                 background-color: white;
                 color: black;
@@ -48,7 +223,7 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 font-weight: bold;
             }""")
 
-        self.animation = QPropertyAnimation(self.popup_window, b"geometry")
+        self.animation = QPropertyAnimation(self.radio_button_window, b"geometry")
         self.animation.setDuration(300)
 
         self.hide_timer = QTimer(self)
@@ -58,7 +233,7 @@ class AllWindow(QMainWindow, Ui_Calculate):
 
         self.Main_button_for_RadButton.installEventFilter(self)
 
-        self.popup_window.installEventFilter(self)
+        self.radio_button_window.installEventFilter(self)
 
         self.popup_x = 65
         self.popup_y = 8
@@ -84,6 +259,54 @@ class AllWindow(QMainWindow, Ui_Calculate):
             self.show_window(sender.objectName())
 
 
+    def eventFilter(self, source, event):
+        if source == self.Main_button_for_RadButton:
+            if event.type() == QEvent.Enter:
+                self.hide_timer.stop()
+                self.show_popup()
+            elif event.type() == QEvent.Leave:
+                self.hide_timer.start()
+        elif source == self.radio_button_window:
+            if event.type() == QEvent.Enter:
+                self.hide_timer.stop()
+            elif event.type() == QEvent.Leave:
+                self.hide_timer.start()
+        return super().eventFilter(source, event)
+
+    def show_popup(self):
+
+        self.animation.setStartValue(QRect(self.popup_x, self.popup_y, 0, self.popup_height))
+        self.animation.setEndValue(QRect(self.popup_x, self.popup_y, self.popup_width, self.popup_height))
+        self.animation.start()
+
+    def hide_popup(self):
+
+        self.animation.setStartValue(self.radio_button_window.geometry())
+        self.animation.setEndValue(QRect(self.popup_x, self.popup_y, 0, self.popup_height))
+        self.animation.start()
+
+
+    def show_window(self, name_window):
+        match name_window:
+            case 'Lrf1_RadButton':
+                self.initial_display_handler(self.Lrf_1)
+                self.Lrf_1.label.setText('LRF-1')
+                self.update_layout('Lrf')
+
+            case 'Lrf2_RadButton':
+                self.initial_display_handler(self.Lrf_2)
+                self.Lrf_2.label.setText('LRF-2')
+                self.update_layout('Lrf')
+
+            case 'Buck_RadButton':
+                self.initial_display_handler(self.Dil)
+                self.update_layout('Dil')
+
+            case 'Form_RadButton':
+                self.initial_display_handler(self.Form)
+                self.update_layout('Form')
+            case 'Note_RadButton':
+                pass
 
     def update_layout(self, name_layout):
         match name_layout:
@@ -91,7 +314,7 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 layout_width = DisplayHandlerLrf().AllLrf.sizeHint().width()
                 layout_height = DisplayHandlerLrf().AllLrf.sizeHint().height()
                 self.widget_For_main_window.resize(layout_width + 90, layout_height + 100)
-                self.resize(layout_width + 90, layout_height + 80)
+                self.resize(layout_width + 110, layout_height + 80)
                 self.updateGeometry()
             case 'Dil':
                 layout_width = DisplayHandlerFormuls().FormulsLayout.sizeHint().width()
@@ -103,7 +326,7 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 layout_width = DisplayHandlerFormuls().FormulsLayout.sizeHint().width()
                 layout_height = DisplayHandlerFormuls().FormulsLayout.sizeHint().height()
                 self.widget_For_main_window.resize(layout_width + 230, layout_height + 60)
-                self.resize(layout_width + 250, layout_height + 70)
+                self.resize(layout_width + 250, layout_height + 80)
                 self.updateGeometry()
             case _:
                 pass
@@ -133,51 +356,7 @@ class AllWindow(QMainWindow, Ui_Calculate):
                 return True
         return False
 
-    def show_window(self, name_window):
-        match name_window:
-            case 'Lrf1_RadButton':
-                self.initial_display_handler(self.Lrf_1)
-                self.update_layout('Lrf')
 
-            case 'Lrf2_RadButton':
-                self.initial_display_handler(self.Lrf_2)
-                self.update_layout('Lrf')
-
-            case 'Buck_RadButton':
-                self.initial_display_handler(self.Dil)
-                self.update_layout('Dil')
-
-            case 'Form_RadButton':
-                self.initial_display_handler(self.Form)
-                self.update_layout('Form')
-            case 'Note_RadButton':
-                pass
-
-    def eventFilter(self, source, event):
-        if source == self.Main_button_for_RadButton:
-            if event.type() == QEvent.Enter:
-                self.hide_timer.stop()
-                self.show_popup()
-            elif event.type() == QEvent.Leave:
-                self.hide_timer.start()
-        elif source == self.popup_window:
-            if event.type() == QEvent.Enter:
-                self.hide_timer.stop()
-            elif event.type() == QEvent.Leave:
-                self.hide_timer.start()
-        return super().eventFilter(source, event)
-
-    def show_popup(self):
-
-        self.animation.setStartValue(QRect(self.popup_x, self.popup_y, 0, self.popup_height))
-        self.animation.setEndValue(QRect(self.popup_x, self.popup_y, self.popup_width, self.popup_height))
-        self.animation.start()
-
-    def hide_popup(self):
-
-        self.animation.setStartValue(self.popup_window.geometry())
-        self.animation.setEndValue(QRect(self.popup_x, self.popup_y, 0, self.popup_height))
-        self.animation.start()
 
 
 if __name__ == "__main__":

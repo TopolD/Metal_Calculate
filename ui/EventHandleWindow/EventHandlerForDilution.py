@@ -2,7 +2,7 @@
 from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QWidget, QApplication
 
-from ui.Designe.Converter.Dilution import Ui_Dilution_Widget
+from ui.Designe.Dilution import Ui_Dilution_Widget
 
 
 class DisplayHandlerDilution(QWidget, Ui_Dilution_Widget):

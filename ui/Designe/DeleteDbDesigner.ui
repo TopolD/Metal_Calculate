@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="ComboBox_For_DbModels">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -64,7 +64,7 @@
     </property>
    </item>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_for_delete">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -74,7 +74,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_delete">
    <property name="geometry">
     <rect>
      <x>90</x>

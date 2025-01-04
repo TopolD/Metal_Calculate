@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="ComboBox_For_DbModels">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -73,11 +73,11 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QHBoxLayout" name="Layout_Inut_name_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="LabelName">
         <property name="text">
          <string>Name</string>
         </property>
@@ -87,7 +87,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="Inut_name_db">
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
@@ -106,18 +106,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <layout class="QHBoxLayout" name="Layout_Inut_C_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_C">
         <property name="text">
          <string>C</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="Inut_C_db"/>
       </item>
      </layout>
     </item>
@@ -132,18 +132,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <layout class="QHBoxLayout" name="Layout_Inut_Mn_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="label_Mn">
         <property name="text">
          <string>Mn</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3"/>
+       <widget class="QLineEdit" name="Inut_Mn_db"/>
       </item>
      </layout>
     </item>
@@ -158,18 +158,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
+   <layout class="QHBoxLayout" name="Layout_Inut_Cr_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_Cr">
         <property name="text">
          <string>Cr</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="Inut_Cr_db"/>
       </item>
      </layout>
     </item>
@@ -184,18 +184,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <layout class="QHBoxLayout" name="Layout_Inut_Si_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="label_Si">
         <property name="text">
          <string>Si</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLineEdit" name="Inut_Si_db"/>
       </item>
      </layout>
     </item>
@@ -210,18 +210,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_6">
+   <layout class="QHBoxLayout" name="Layout_Inut_Ti_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="label_Ti">
         <property name="text">
          <string>Ti</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_6"/>
+       <widget class="QLineEdit" name="Inut_Ti_db"/>
       </item>
      </layout>
     </item>
@@ -236,18 +236,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_7">
+   <layout class="QHBoxLayout" name="Layout_Inut_Nb_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_7">
       <item>
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="label_Nb">
         <property name="text">
          <string>Nb</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_7"/>
+       <widget class="QLineEdit" name="Inut_Nb_db"/>
       </item>
      </layout>
     </item>
@@ -262,18 +262,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_8">
+   <layout class="QHBoxLayout" name="Layout_Inut_B_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_8">
       <item>
-       <widget class="QLabel" name="label_8">
+       <widget class="QLabel" name="label_B">
         <property name="text">
          <string>B</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_8"/>
+       <widget class="QLineEdit" name="Inut_B_db"/>
       </item>
      </layout>
     </item>
@@ -288,18 +288,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_9">
+   <layout class="QHBoxLayout" name="Layout_Inut_Cu_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_9">
       <item>
-       <widget class="QLabel" name="label_9">
+       <widget class="QLabel" name="label_Cu">
         <property name="text">
          <string>Cu</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_9"/>
+       <widget class="QLineEdit" name="Inut_Cu_db"/>
       </item>
      </layout>
     </item>
@@ -314,18 +314,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_10">
+   <layout class="QHBoxLayout" name="Layout_Inut_Ni_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_10">
       <item>
-       <widget class="QLabel" name="label_10">
+       <widget class="QLabel" name="label_Ni">
         <property name="text">
          <string>Ni</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_10"/>
+       <widget class="QLineEdit" name="Inut_Ni_db"/>
       </item>
      </layout>
     </item>
@@ -340,18 +340,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_11">
+   <layout class="QHBoxLayout" name="Layout_Inut_Mo_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_11">
       <item>
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="label_Mo">
         <property name="text">
          <string>Mo</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_11"/>
+       <widget class="QLineEdit" name="Inut_Mo_db"/>
       </item>
      </layout>
     </item>
@@ -366,18 +366,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_12">
+   <layout class="QHBoxLayout" name="Layout_Inut_V_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_12">
       <item>
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="label_V">
         <property name="text">
          <string>V</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_12"/>
+       <widget class="QLineEdit" name="Inut_V_db"/>
       </item>
      </layout>
     </item>
@@ -392,18 +392,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_13">
+   <layout class="QHBoxLayout" name="Layout_Inut_Al_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_13">
       <item>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="label_Al">
         <property name="text">
          <string>Al</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_13"/>
+       <widget class="QLineEdit" name="Inut_Al_db"/>
       </item>
      </layout>
     </item>
@@ -418,18 +418,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_14">
+   <layout class="QHBoxLayout" name="Layout_Inut_S_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_14">
       <item>
-       <widget class="QLabel" name="label_14">
+       <widget class="QLabel" name="label_S">
         <property name="text">
          <string>S</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_14"/>
+       <widget class="QLineEdit" name="Inut_S_db"/>
       </item>
      </layout>
     </item>
@@ -444,18 +444,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_15">
+   <layout class="QHBoxLayout" name="Layout_Inut_Fe_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_15">
       <item>
-       <widget class="QLabel" name="label_15">
+       <widget class="QLabel" name="label_Fe">
         <property name="text">
          <string>Fe</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_15"/>
+       <widget class="QLineEdit" name="Inut_Fe_db"/>
       </item>
      </layout>
     </item>
@@ -470,18 +470,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_16">
+   <layout class="QHBoxLayout" name="Layout_Inut_Ca_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_16">
       <item>
-       <widget class="QLabel" name="label_16">
+       <widget class="QLabel" name="label_Ca">
         <property name="text">
          <string>Ca</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_16"/>
+       <widget class="QLineEdit" name="Inut_Ca_db"/>
       </item>
      </layout>
     </item>
@@ -496,18 +496,18 @@
      <height>43</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_17">
+   <layout class="QHBoxLayout" name="Layout_Inut_P_db">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_17">
       <item>
-       <widget class="QLabel" name="label_17">
+       <widget class="QLabel" name="label_P">
         <property name="text">
          <string>P</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_17"/>
+       <widget class="QLineEdit" name="Inut_P_db"/>
       </item>
      </layout>
     </item>

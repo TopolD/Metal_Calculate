@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
+    <width>426</width>
     <height>485</height>
    </rect>
   </property>
@@ -69,7 +69,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../icons/vector.svg</normaloff>../icons/vector.svg</iconset>
+             <normaloff>../icons/gear.svg</normaloff>../icons/gear.svg</iconset>
            </property>
           </widget>
          </item>
@@ -105,16 +105,12 @@
          </property>
          <property name="styleSheet">
           <string notr="true">QRadioButton::indicator {
-    width: 0px; /* Убираем стандартный кружок */
+    width: 0px; 
     height: 0px;
 }</string>
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../icons/fire.svg</normaloff>../icons/fire.svg</iconset>
          </property>
         </widget>
        </item>
@@ -142,10 +138,6 @@
          <property name="text">
           <string/>
          </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../icons/fire.svg</normaloff>../icons/fire.svg</iconset>
-         </property>
         </widget>
        </item>
        <item>
@@ -165,10 +157,6 @@
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../icons/bucket.svg</normaloff>../icons/bucket.svg</iconset>
          </property>
         </widget>
        </item>
@@ -190,10 +178,6 @@
          <property name="text">
           <string/>
          </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../icons/Atom.svg</normaloff>../icons/Atom.svg</iconset>
-         </property>
         </widget>
        </item>
        <item>
@@ -214,9 +198,54 @@
          <property name="text">
           <string/>
          </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="Widget_For_Db" native="true">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>210</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="layout_for_button_in_db">
+       <item>
+        <widget class="QPushButton" name="Button_For_add_in_Db">
+         <property name="text">
+          <string/>
+         </property>
          <property name="icon">
           <iconset>
-           <normaloff>../icons/note.svg</normaloff>../icons/note.svg</iconset>
+           <normaloff>../icons/Frame 116.svg</normaloff>../icons/Frame 116.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Button_For_update_in_Db">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../icons/modify.svg</normaloff>../icons/modify.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Button_For_del_in_Db">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../icons/vector.svg</normaloff>../icons/vector.svg</iconset>
          </property>
         </widget>
        </item>
