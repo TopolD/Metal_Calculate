@@ -11,7 +11,7 @@ def convert_ui_to_py(directory: str, input_ui: str, output_py: str):
 
 convert_ui_to_py(
     directory="C:\\Users\\user\\PycharmProjects\\Calculate\\ui\\Designe\\",
-    input_ui="LrfDesigner.ui",
-    output_py="Lrf.py"
+    input_ui="CreateDbDesigner.ui",
+    output_py="CreateDb.py"
 )
 print('success')

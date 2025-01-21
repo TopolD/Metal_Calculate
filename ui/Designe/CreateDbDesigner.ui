@@ -6,510 +6,1083 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>210</height>
+    <width>678</width>
+    <height>280</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>170</y>
-     <width>221</width>
-     <height>41</height>
+     <x>11</x>
+     <y>13</y>
+     <width>651</width>
+     <height>258</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="ComboBox_For_DbModels">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>69</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Absr</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Ch</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Cr</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Fuse</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Fuse_T</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_name_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QComboBox" name="ComboBox_For_DbModels">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+      </property>
       <item>
-       <widget class="QLabel" name="LabelName">
-        <property name="text">
-         <string>Name</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
+       <property name="text">
+        <string>КоэфУсв</string>
+       </property>
       </item>
       <item>
-       <widget class="QLineEdit" name="Inut_name_db">
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+       <property name="text">
+        <string>ХимСостав</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Проволока</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Марка</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="Layout_for_forms">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="Layout_for_chemicalcomp">
+        <property name="spacing">
+         <number>0</number>
         </property>
-       </widget>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="chemical_comp">
+        <item>
+         <layout class="QHBoxLayout" name="one">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_name_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="LabelName">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_name_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_C_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_C">
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_C_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Mn_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_Mn">
+                <property name="text">
+                 <string>Mn</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Mn_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Si_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_Si">
+                <property name="text">
+                 <string>Si</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Si_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Cr_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="label_Cr">
+                <property name="text">
+                 <string>Cr</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Cr_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ti_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_Ti">
+                <property name="text">
+                 <string>Ti</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ti_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_V_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QLabel" name="label_V">
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_V_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="two">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Mo_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QLabel" name="label_Mo">
+                <property name="text">
+                 <string>Mo</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Mo_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_B_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_B">
+                <property name="text">
+                 <string>B</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_B_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Nb_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_Nb">
+                <property name="text">
+                 <string>Nb</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Nb_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ni_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_Ni">
+                <property name="text">
+                 <string>Ni</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ni_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Cu_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QLabel" name="label_Cu">
+                <property name="text">
+                 <string>Cu</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Cu_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Al_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QLabel" name="label_Al">
+                <property name="text">
+                 <string>Al</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Al_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_S_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QLabel" name="label_S">
+                <property name="text">
+                 <string>S</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_S_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Fe_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <widget class="QLabel" name="label_Fe">
+                <property name="text">
+                 <string>Fe</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Fe_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ca_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QLabel" name="label_Ca">
+                <property name="text">
+                 <string>Ca</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ca_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_P_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QLabel" name="label_P">
+                <property name="text">
+                 <string>P</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_P_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="Layout_for_fuse_form">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="Fuse_Tcn">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_tcn">
+            <property name="text">
+             <string>Тех-карта</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="input_Tcn">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="Fuse_Name">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_FuseName">
+            <property name="text">
+             <string>Марка</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Input_FuseName">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="TempVd">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_TempVd">
+            <property name="text">
+             <string>Вд</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Input_TempVd">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="Temp_ccm1">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_Temp_ccm1">
+            <property name="text">
+             <string>Мнлз-1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Input_Temp_ccm1">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="Temp_ccm2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_Temp_ccm2">
+            <property name="text">
+             <string>Мнлз-2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Input_Temp_ccm2">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="chemical_comp_for_fuse">
+        <item>
+         <layout class="QHBoxLayout" name="Fuse_one">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_C_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QLabel" name="label_C_2">
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_C_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Mn_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QLabel" name="label_Mn_2">
+                <property name="text">
+                 <string>Mn</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Mn_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Si_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_21">
+              <item>
+               <widget class="QLabel" name="label_Si_2">
+                <property name="text">
+                 <string>Si</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Si_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Cr_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <item>
+               <widget class="QLabel" name="label_Cr_2">
+                <property name="text">
+                 <string>Cr</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Cr_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ti_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_23">
+              <item>
+               <widget class="QLabel" name="label_Ti_2">
+                <property name="text">
+                 <string>Ti</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ti_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_V_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_24">
+              <item>
+               <widget class="QLabel" name="label_V_2">
+                <property name="text">
+                 <string>V</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_V_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="Fuse_two">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Mo_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="QLabel" name="label_Mo_2">
+                <property name="text">
+                 <string>Mo</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Mo_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_B_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_26">
+              <item>
+               <widget class="QLabel" name="label_B_2">
+                <property name="text">
+                 <string>B</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_B_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Nb_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_27">
+              <item>
+               <widget class="QLabel" name="label_Nb_2">
+                <property name="text">
+                 <string>Nb</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Nb_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ni_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_28">
+              <item>
+               <widget class="QLabel" name="label_Ni_2">
+                <property name="text">
+                 <string>Ni</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ni_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Cu_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_29">
+              <item>
+               <widget class="QLabel" name="label_Cu_2">
+                <property name="text">
+                 <string>Cu</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Cu_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Al_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_30">
+              <item>
+               <widget class="QLabel" name="label_Al_2">
+                <property name="text">
+                 <string>Al</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Al_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_S_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_31">
+              <item>
+               <widget class="QLabel" name="label_S_2">
+                <property name="text">
+                 <string>S</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_S_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Ca_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_33">
+              <item>
+               <widget class="QLabel" name="label_Ca_2">
+                <property name="text">
+                 <string>Ca</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Ca_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="Layout_Inut_Cpr_for_Fuse_db">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_34">
+              <item>
+               <widget class="QLabel" name="label_P_2">
+                <property name="text">
+                 <string>Cpr</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="Inut_Cpr_for_Fus_db">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_C_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_C">
-        <property name="text">
-         <string>C</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_C_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Mn_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QLabel" name="label_Mn">
-        <property name="text">
-         <string>Mn</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Mn_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_4">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Cr_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <widget class="QLabel" name="label_Cr">
-        <property name="text">
-         <string>Cr</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Cr_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_5">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Si_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item>
-       <widget class="QLabel" name="label_Si">
-        <property name="text">
-         <string>Si</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Si_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_6">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Ti_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <widget class="QLabel" name="label_Ti">
-        <property name="text">
-         <string>Ti</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Ti_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_7">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Nb_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_7">
-      <item>
-       <widget class="QLabel" name="label_Nb">
-        <property name="text">
-         <string>Nb</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Nb_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_8">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_B_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_8">
-      <item>
-       <widget class="QLabel" name="label_B">
-        <property name="text">
-         <string>B</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_B_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_9">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Cu_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_9">
-      <item>
-       <widget class="QLabel" name="label_Cu">
-        <property name="text">
-         <string>Cu</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Cu_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_10">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Ni_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_10">
-      <item>
-       <widget class="QLabel" name="label_Ni">
-        <property name="text">
-         <string>Ni</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Ni_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_11">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Mo_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_11">
-      <item>
-       <widget class="QLabel" name="label_Mo">
-        <property name="text">
-         <string>Mo</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Mo_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_12">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>20</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_V_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_12">
-      <item>
-       <widget class="QLabel" name="label_V">
-        <property name="text">
-         <string>V</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_V_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_13">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>70</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Al_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_13">
-      <item>
-       <widget class="QLabel" name="label_Al">
-        <property name="text">
-         <string>Al</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Al_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_14">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>120</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_S_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_14">
-      <item>
-       <widget class="QLabel" name="label_S">
-        <property name="text">
-         <string>S</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_S_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_15">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>120</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Fe_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_15">
-      <item>
-       <widget class="QLabel" name="label_Fe">
-        <property name="text">
-         <string>Fe</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Fe_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_16">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>120</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_Ca_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_16">
-      <item>
-       <widget class="QLabel" name="label_Ca">
-        <property name="text">
-         <string>Ca</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_Ca_db"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_17">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>120</y>
-     <width>58</width>
-     <height>43</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="Layout_Inut_P_db">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_17">
-      <item>
-       <widget class="QLabel" name="label_P">
-        <property name="text">
-         <string>P</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Inut_P_db"/>
-      </item>
-     </layout>
+    <item row="1" column="1">
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

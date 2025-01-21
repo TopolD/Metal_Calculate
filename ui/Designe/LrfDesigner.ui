@@ -3983,8 +3983,8 @@ border-bottom: 2px solid #F5F5F5;
   <tabstop>LabelSamplesForCpr</tabstop>
   <tabstop>LabelSamplesForAl</tabstop>
   <tabstop>LabelSamplesForTi</tabstop>
-  <tabstop>LabelSamplesForCa</tabstop>
   <tabstop>LabelTargetCoreForCa</tabstop>
+  <tabstop>LabelSamplesForCa</tabstop>
   <tabstop>MaterialForC</tabstop>
   <tabstop>MaterialForSi</tabstop>
   <tabstop>MaterialForMn</tabstop>

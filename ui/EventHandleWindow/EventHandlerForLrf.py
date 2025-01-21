@@ -64,6 +64,7 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
             material_box_value = Material_Box_edit.text()
 
         input_value = line_edit.text()
+
         if input_value:
             if input_value > str(self.show_top_material(material)).replace(".", ","):
                 line_edit.clear()
@@ -73,6 +74,7 @@ class DisplayHandlerLrf(QWidget, Ui_LRF1_Widget):
                 if material in ['Cpr', 'Al', 'Ti', 'Ca']:
                     self.OutputClass.samples_dict['corewire'][material] = input_value
                     self.OutputClass.samples_dict['material'][material] = material_box_value
+
                 else:
                     self.OutputClass.samples_dict['samples'][material] = input_value
                     self.OutputClass.samples_dict['material'][material] = material_box_value
@@ -138,7 +140,7 @@ class changing_field_values:
     def output_label_for_fuse(self):
         try:
             FuseData = self.get_fuse_data_with_db()
-            self.parent.SteelName.setText(FuseData['FuseName'])
+            self.parent.SteelName.setText(FuseData['Name'])
             self.parent.TempForVd.setText(FuseData['TempVd'])
             self.parent.Mnlz1.setText(FuseData['Temp_ccm1'])
             self.parent.Mnlz2.setText(FuseData['Temp_ccm2'])
@@ -243,7 +245,7 @@ class handler_data:
                 LabelMetersCoreInit = f'LabelMetersCoreFor{attr_key}'
                 LabelMetersCoreName = getattr(self.parent, LabelMetersCoreInit, None)
                 if LabelMetersCoreName:
-                    self.flight_check_materials(LabelMetersCoreName, attr_value)
+                    self.flight_check_materials(None, handler=LabelMetersCoreName, value=attr_value)
 
             LabelKiloInit = f'LabelKiloFor{attr_key}'
             LabelKiloName = getattr(self.parent, LabelKiloInit, None)

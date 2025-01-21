@@ -60,7 +60,7 @@ class get_data_calculate_with_db:
 
         if Material_dict:
             for value_atr, value_name in Material_dict.items():
-                raw_result = self.db.ChemicalComposition.get(MaterialName=value_name)
+                raw_result = self.db.ChemicalComposition.get(Name=value_name)
                 if raw_result:
                     result = HandlerCleanData().clean_data(raw_result)
                     filtered_result = {k: v for k, v in result.items() if k not in ('ID', 'MaterialName')}
@@ -215,4 +215,4 @@ class calculate_core_wire():
         Temp = 0.000012 * (float(self.Data_fuse_for_core.get('temp')))
         W =   float(self.Data_fuse_for_core['W'])*1000
         coef = (0.25 / 0.32 / 0.4)
-        return ((S+Al+Temp-0.01675)*W)/coef
+        return round(((S+Al+Temp-0.01675)*W)/coef,1)

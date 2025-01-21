@@ -22,7 +22,7 @@ class ConnDb:
     def AbsorptionRateData(self):
         class AbsorptionRate(self.db.Entity):
             ID = PrimaryKey(int, auto=True)
-            AbrName = Required(str)
+            Name = Required(str,unique=True)
             C = Optional(float)
             Mn = Optional(float)
             Si = Optional(float)
@@ -45,7 +45,7 @@ class ConnDb:
     def ChemicalData(self):
         class ChemicalComposition(self.db.Entity):
             ID = PrimaryKey(int, auto=True)
-            MaterialName = Required(str)
+            Name = Required(str,unique=True)
             C = Optional(float)
             Mn = Optional(float)
             Si = Optional(float)
@@ -68,18 +68,18 @@ class ConnDb:
     def FuseData(self):
         class Fuse(self.db.Entity):
 
-            Tcn = Required(str)
-            FuseName = Required(str)
+            Tcn = Required(str,unique=True)
+            Name = Required(str)
             TempVd = Required(str)
             Temp_ccm1 = Required(str)
             Temp_ccm2 = Required(str)
-            TargetForFuse= Optional('FuseTarget')
+            TargetForFuse= Optional('FuseTarget',cascade_delete=True)
 
         self.Fuse = Fuse
 
     def FuseDataTarget(self):
         class FuseTarget(self.db.Entity):
-            Fuse = Required('Fuse')
+            Fuse = Required('Fuse',reverse='TargetForFuse')
             Tcn = PrimaryKey(str)
             C = Optional(float)
             Mn = Optional(float)
@@ -102,7 +102,7 @@ class ConnDb:
     def CoredWireData(self):
         class CoredWire(self.db.Entity):
             ID = PrimaryKey(int, auto=True)
-            CWName = Required(str)
+            Name = Required(str,unique=True)
             C = Optional(float)
             Mn = Optional(float)
             Si = Optional(float)

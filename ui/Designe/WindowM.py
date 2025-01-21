@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Calculate(object):
     def setupUi(self, Calculate):
         Calculate.setObjectName("Calculate")
-        Calculate.resize(426, 485)
+        Calculate.resize(426, 502)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../icons/calculator.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Calculate.setWindowIcon(icon)
@@ -130,7 +130,7 @@ class Ui_Calculate(object):
         self.main_Rad_button.addWidget(self.Note_RadButton)
         self.gridLayout_2.addLayout(self.main_Rad_button, 0, 0, 1, 1)
         self.Widget_For_Db = QtWidgets.QWidget(self.centralwidget)
-        self.Widget_For_Db.setGeometry(QtCore.QRect(800, 210, 16, 16))
+        self.Widget_For_Db.setGeometry(QtCore.QRect(390, 0, 16, 16))
         self.Widget_For_Db.setObjectName("Widget_For_Db")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.Widget_For_Db)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -140,7 +140,7 @@ class Ui_Calculate(object):
         self.Button_For_add_in_Db = QtWidgets.QPushButton(self.Widget_For_Db)
         self.Button_For_add_in_Db.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../icons/Frame 116.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("../icons/add-button-svgrepo-com.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.Button_For_add_in_Db.setIcon(icon3)
         self.Button_For_add_in_Db.setObjectName("Button_For_add_in_Db")
         self.layout_for_button_in_db.addWidget(self.Button_For_add_in_Db)

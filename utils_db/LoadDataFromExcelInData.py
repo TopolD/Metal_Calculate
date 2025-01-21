@@ -22,7 +22,7 @@ def load_data_from_excel_fuse(file_path, sheet_name, start_row, conn_db):
             try:
                 fuse = conn_db.Fuse(
                     Tcn=str(row.iloc[1]),
-                    FuseName=str(row.iloc[2]),
+                    Name=str(row.iloc[2]),
                     TempVd=str(row.iloc[3]),
                     Temp_ccm1=str(row.iloc[4]),
                     Temp_ccm2=str(row.iloc[5]),
@@ -46,7 +46,7 @@ def load_data_from_excel_fuse(file_path, sheet_name, start_row, conn_db):
                     Cu=to_float(row.iloc[14]),
                     Al=to_float(row.iloc[10]),
                     S=to_float(row.iloc[9]),
-                    Ca=to_float(row.iloc[19]),
+                    Ca=0.1,
                     Cpr=to_float(row.iloc[20]),
                 )
 

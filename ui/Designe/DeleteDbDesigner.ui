@@ -38,29 +38,31 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+   </property>
    <item>
     <property name="text">
-     <string>Absr</string>
+     <string>КоэфУсв</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Ch</string>
+     <string>ХимСостав</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Cr</string>
+     <string>Проволока</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Fuse</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Fuse_T</string>
+     <string>Марка</string>
     </property>
    </item>
   </widget>
@@ -73,18 +75,25 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+
+border: none;
+border-bottom: 2px solid #E0E0E0;
+</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label_delete">
    <property name="geometry">
     <rect>
      <x>90</x>
      <y>10</y>
-     <width>47</width>
-     <height>13</height>
+     <width>51</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string>Название</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
