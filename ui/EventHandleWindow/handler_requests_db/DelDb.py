@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QLayout, QMessageBox
+from PyQt5.QtWidgets import QDialog, QApplication, QMessageBox
 
 from ui.Designe.DeleteDb import Ui_DialogDelete_Db
 from utils_db.services import get_instance

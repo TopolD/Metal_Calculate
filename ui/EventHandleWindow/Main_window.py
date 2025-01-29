@@ -2,11 +2,13 @@ from PyQt5.QtCore import QRect, QPropertyAnimation, QEvent, QTimer
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog
 
-from ui.Designe.CreateDb import Ui_DialogCreate_Db
 from ui.Designe.WindowM import Ui_Calculate
 from ui.EventHandleWindow.EventHandlerForLrf import DisplayHandlerLrf
 from ui.EventHandleWindow.EventHandlerForDilution import DisplayHandlerDilution
 from ui.EventHandleWindow.EventHadnlerForFormuls import DisplayHandlerFormuls
+from ui.EventHandleWindow.handler_requests_db.AddDb import Dialog_Add
+from ui.EventHandleWindow.handler_requests_db.DelDb import Dialog_Del
+from ui.EventHandleWindow.handler_requests_db.UpdDb import Dialog_Upd
 
 
 class AllWindow(QMainWindow, Ui_Calculate):
@@ -27,13 +29,17 @@ class AllWindow(QMainWindow, Ui_Calculate):
         self.init_radio_button()
         self.Lrf1_RadButton.setChecked(True)
 
+        self.dialog_handler = DialogHandler(self)
         self.initial_button_for_db()
+
+
+
 
     def initial_button_for_db(self):
 
-        self.Button_For_add_in_Db.clicked.connect(DialogHandler.on_button_clicked)
-        self.Button_For_update_in_Db.clicked.connect(DialogHandler.on_button_clicked)
-        self.Button_For_del_in_Db.clicked.connect(DialogHandler.on_button_clicked)
+        self.Button_For_add_in_Db.clicked.connect(self.dialog_handler.button_called_methods)
+        self.Button_For_update_in_Db.clicked.connect(self.dialog_handler.button_called_methods)
+        self.Button_For_del_in_Db.clicked.connect(self.dialog_handler.button_called_methods)
 
     def eventFilter(self, source, event):
         if source == self.Main_button_for_RadButton:
@@ -438,13 +444,21 @@ class DialogHandler(QDialog):
         super().__init__()
         self.parent = parent
 
-    def on_button_clicked(self, checked):
-        sender = self.sender()
-        if checked:
-            self.show_dialog_window(sender.objectName())
-
+    def button_called_methods(self,checked):
+        button = self.sender()
+        if button:
+            self.show_dialog_window(button.objectName())
     def show_dialog_window(self, dialog_name):
-        pass
+        match dialog_name:
+            case 'Button_For_add_in_Db':
+                dialog = Dialog_Add()
+                dialog.exec_()
+            case 'Button_For_update_in_Db':
+                dialog = Dialog_Upd()
+                dialog.exec_()
+            case 'Button_For_del_in_Db':
+                dialog = Dialog_Del()
+                dialog.exec_()
 
 
 if __name__ == "__main__":

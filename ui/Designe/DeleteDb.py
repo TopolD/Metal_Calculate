@@ -52,7 +52,7 @@ class Ui_DialogDelete_Db(object):
 
     def retranslateUi(self, DialogDelete_Db):
         _translate = QtCore.QCoreApplication.translate
-        DialogDelete_Db.setWindowTitle(_translate("DialogDelete_Db", "Dialog"))
+        DialogDelete_Db.setWindowTitle(_translate("DialogDelete_Db", "Delete"))
         self.ComboBox_For_DbModels.setItemText(0, _translate("DialogDelete_Db", "КоэфУсв"))
         self.ComboBox_For_DbModels.setItemText(1, _translate("DialogDelete_Db", "ХимСостав"))
         self.ComboBox_For_DbModels.setItemText(2, _translate("DialogDelete_Db", "Проволока"))
