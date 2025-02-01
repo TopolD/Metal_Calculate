@@ -36,7 +36,7 @@ class DisplayHandlerDilution(QWidget, Ui_Dilution_Widget):
         for list_value in Dilution_material_list:
             for value in range(1, 4):
                 dilution_name = f'Ladel_{list_value}_N{value}'
-                print(dilution_name)
+
                 dilution_label = getattr(self, dilution_name, None)
                 if dilution_label:
                     dilution_label.setValidator(QDoubleValidator(0.0, 4.0, 3))

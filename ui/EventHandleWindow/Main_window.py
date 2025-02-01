@@ -126,8 +126,8 @@ class AllWindow(QMainWindow, Ui_Calculate):
             case 'Form':
                 layout_width = DisplayHandlerFormuls().FormulsLayout.sizeHint().width()
                 layout_height = DisplayHandlerFormuls().FormulsLayout.sizeHint().height()
-                self.widget_For_main_window.resize(layout_width + 230, layout_height + 60)
-                self.resize(layout_width + 250, layout_height + 80)
+                self.widget_For_main_window.resize(layout_width + 270, layout_height + 100)
+                self.resize(layout_width + 270, layout_height + 90)
                 self.updateGeometry()
             case _:
                 pass
