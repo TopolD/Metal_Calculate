@@ -43,31 +43,4 @@
 - и другие зависимости, указанные в `requirements.txt`
 
 
----
-### 📌 "Как пользоваться?"
-
-<figure style="text-align: center;">
-  <img src="present/Анализ%20добавок.gif" alt="Анализ добавок" width="200" height="200" style="border-radius: 50%; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
-  <figcaption>⚙️ Анализ добавок</figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <img src="present/Расчёт%20для%20микролегирование.gif" alt="Микролегирование" width="200" height="200" style="border-radius: 50%; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
-  <figcaption>📄  Расчёт для микролегирования</figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <img src="present/Работа%20с%20Базой%20данных.gif" alt="Работа с Базой данных" width="200" height="200" style="border-radius: 50%; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
-  <figcaption>🗄️ Работа с Базой данных </figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <img src="present/Метод%20Разбавление.gif" alt="Метод разбавления" width="200" height="200" style="border-radius: 50%; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
-  <figcaption>🧪 Метод разбавления </figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <img src="present/Расчёт%20формул.gif" alt="Расчёт по формулам" width="200" height="200" style="border-radius: 50%; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
-  <figcaption>📊 Расчёт по формулам </figcaption>
-</figure>
 
