@@ -32,9 +32,6 @@ class AllWindow(QMainWindow, Ui_Calculate):
         self.dialog_handler = DialogHandler(self)
         self.initial_button_for_db()
 
-
-
-
     def initial_button_for_db(self):
 
         self.Button_For_add_in_Db.clicked.connect(self.dialog_handler.button_called_methods)
@@ -245,11 +242,58 @@ class StyleForButton:
     def __init__(self, parent):
         self.parent = parent
 
+        self.parent.Main_button_for_RadButton.setStyleSheet("""
+            background-image: url('./icons/vector-1.svg');
+            width: 20px;
+            height: 20px;
+            background-size: 10px 10px; 
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+        """)
+        self.parent.History_Button.setStyleSheet("""
+            background-image: url('./icons/gear.svg');
+            width: 20px;
+            height: 20px;
+            background-size: 10px 10px; 
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+        """)
+
+        self.parent.Button_For_add_in_Db.setStyleSheet("""
+            background-image: url('./icons/add.svg');
+            width: 30px;
+            height: 30px;
+            background-size: 10px 10px; 
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+        """)
+        self.parent.Button_For_del_in_Db.setStyleSheet("""
+           background-image: url('./icons/vector.svg');
+                width: 30px;
+                height: 30px;
+                background-size: 10px 10px; 
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+       """)
+        self.parent.Button_For_update_in_Db.setStyleSheet("""
+           background-image: url('./icons/modify.svg');
+            width: 30px;
+            height: 30px;
+            background-size: 10px 10px; 
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+       """)
+
         self.parent.Lrf1_RadButton.setStyleSheet("""
                 QRadioButton::indicator {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire.svg');
+                    background-image: url('./icons/fire/fire.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -258,7 +302,7 @@ class StyleForButton:
                  QRadioButton::indicator:hover {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire_hover.svg');
+                    background-image: url('./icons/fire/fire_hover.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;
@@ -267,7 +311,7 @@ class StyleForButton:
                  QRadioButton::indicator:checked  {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire_checked.svg');
+                    background-image: url('./icons/fire/fire_checked.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -279,7 +323,7 @@ class StyleForButton:
                 QRadioButton::indicator {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire.svg');
+                    background-image: url('./icons/fire/fire.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -288,7 +332,7 @@ class StyleForButton:
                  QRadioButton::indicator:hover {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire_hover.svg');
+                    background-image: url('./icons/fire/fire_hover.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;
@@ -297,7 +341,7 @@ class StyleForButton:
                  QRadioButton::indicator:checked  {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/fire/fire_checked.svg');
+                    background-image: url('./icons/fire/fire_checked.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -348,7 +392,7 @@ class StyleForButton:
                 QRadioButton::indicator {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/bucket/bucket.svg');
+                    background-image: url('./icons/bucket/bucket.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -357,7 +401,7 @@ class StyleForButton:
                  QRadioButton::indicator:hover {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/bucket/bucket_hover.svg');
+                    background-image: url('./icons/bucket/bucket_hover.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;
@@ -366,7 +410,7 @@ class StyleForButton:
                  QRadioButton::indicator:checked  {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/bucket/bucket_checked.svg');
+                    background-image: url('./icons/bucket/bucket_checked.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -379,7 +423,7 @@ class StyleForButton:
                 QRadioButton::indicator {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/atom/atom.svg');
+                    background-image: url('./icons/atom/atom.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -388,7 +432,7 @@ class StyleForButton:
                  QRadioButton::indicator:hover {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/atom/atom_hover.svg');
+                    background-image: url('./icons/atom/atom_hover.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;
@@ -397,7 +441,7 @@ class StyleForButton:
                  QRadioButton::indicator:checked  {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/atom/atom_checked.svg');
+                    background-image: url('./icons/atom/atom_checked.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -410,7 +454,7 @@ class StyleForButton:
                 QRadioButton::indicator {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/note/note.svg');
+                    background-image: url('./icons/note/note.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -419,7 +463,7 @@ class StyleForButton:
                  QRadioButton::indicator:hover {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/note/note_hover.svg');
+                    background-image: url('./icons/note/note_hover.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;
@@ -428,7 +472,7 @@ class StyleForButton:
                  QRadioButton::indicator:checked  {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../icons/note/note_checked.svg');
+                    background-image: url('./icons/note/note_checked.svg');
                     background-size: 10px 10px; 
                     background-repeat: no-repeat;
                     background-position: center;
@@ -444,10 +488,11 @@ class DialogHandler(QDialog):
         super().__init__()
         self.parent = parent
 
-    def button_called_methods(self,checked):
+    def button_called_methods(self, checked):
         button = self.sender()
         if button:
             self.show_dialog_window(button.objectName())
+
     def show_dialog_window(self, dialog_name):
         match dialog_name:
             case 'Button_For_add_in_Db':
