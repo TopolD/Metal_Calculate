@@ -48,7 +48,6 @@ class Ui_DialogUpdate_db(object):
         self.ComboBox_For_DbModels.addItem("")
         self.ComboBox_For_DbModels.addItem("")
         self.ComboBox_For_DbModels.addItem("")
-        self.ComboBox_For_DbModels.addItem("")
 
         self.retranslateUi(DialogUpdate_db)
         self.buttonBox.accepted.connect(DialogUpdate_db.accept) # type: ignore
@@ -62,7 +61,6 @@ class Ui_DialogUpdate_db(object):
         self.ComboBox_For_DbModels.setItemText(1, _translate("DialogUpdate_db", "ХимСостав"))
         self.ComboBox_For_DbModels.setItemText(2, _translate("DialogUpdate_db", "Проволока"))
         self.ComboBox_For_DbModels.setItemText(3, _translate("DialogUpdate_db", "Марка"))
-        self.ComboBox_For_DbModels.setItemText(4, _translate("DialogUpdate_db", "Целевые"))
 
 
 if __name__ == "__main__":

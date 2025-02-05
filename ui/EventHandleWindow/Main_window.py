@@ -70,7 +70,6 @@ class AllWindow(QMainWindow, Ui_Calculate):
             self.Lrf2_RadButton,
             self.Buck_RadButton,
             self.Form_RadButton,
-            self.Note_RadButton,
         ]:
             radio_button.toggled.connect(self.on_radio_toggled)
 
@@ -450,36 +449,6 @@ class StyleForButton:
                 }
             """)
 
-        self.parent.Note_RadButton.setStyleSheet("""
-                QRadioButton::indicator {
-                    width: 30px;
-                    height: 30px;
-                    background-image: url('./icons/note/note.svg');
-                    background-size: 10px 10px; 
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border: none;
-                }
-                 QRadioButton::indicator:hover {
-                    width: 30px;
-                    height: 30px;
-                    background-image: url('./icons/note/note_hover.svg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border: none;
-    
-                }
-                 QRadioButton::indicator:checked  {
-                    width: 30px;
-                    height: 30px;
-                    background-image: url('./icons/note/note_checked.svg');
-                    background-size: 10px 10px; 
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border: none;
-    
-                }
-            """)
 
 
 class DialogHandler(QDialog):

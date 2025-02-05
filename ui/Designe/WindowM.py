@@ -109,19 +109,6 @@ class Ui_Calculate(object):
         self.Form_RadButton.setText("")
         self.Form_RadButton.setObjectName("Form_RadButton")
         self.main_Rad_button.addWidget(self.Form_RadButton)
-        self.Note_RadButton = QtWidgets.QRadioButton(self.WIdget_for_radio_Button)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Note_RadButton.setFont(font)
-        self.Note_RadButton.setStyleSheet("QRadioButton::indicator {\n"
-"    width: 0px; /* Убираем стандартный кружок */\n"
-"    height: 0px;\n"
-"}")
-        self.Note_RadButton.setText("")
-        self.Note_RadButton.setObjectName("Note_RadButton")
-        self.main_Rad_button.addWidget(self.Note_RadButton)
         self.gridLayout_2.addLayout(self.main_Rad_button, 0, 0, 1, 1)
         self.Widget_For_Db = QtWidgets.QWidget(self.centralwidget)
         self.Widget_For_Db.setGeometry(QtCore.QRect(390, 0, 16, 16))

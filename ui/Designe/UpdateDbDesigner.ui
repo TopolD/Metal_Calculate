@@ -110,11 +110,6 @@
      <string>Марка</string>
     </property>
    </item>
-   <item>
-    <property name="text">
-     <string>Целевые</string>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>
